@@ -1,0 +1,38 @@
+// app global css in SCSS form
+.font-16 {
+  font-size: 16px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-34 {
+  font-size: 34px;
+}
+
+.font-82 {
+  font-size: 82px;
+}
+
+.gap-x-xs {
+  gap: 0 4px;
+}
+.gap-x-md {
+  gap: 0 16px;
+}
+.gap-x-lg {
+  gap: 0 24px;
+}
+
+.gap-lg {
+  gap: 24px;
+}
+
+img {
+  user-select: none;
+}
+
+.sticky {
+  position: sticky;
+}

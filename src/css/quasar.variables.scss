@@ -1,0 +1,65 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+$typography-font-family: "Open Sans", sans-serif !default;
+
+$text-weights: (
+  thin: 300,
+  light: 400,
+  regular: 600,
+  medium: 700,
+  bold: 800,
+  bolder: 800,
+) !default;
+
+$main-page: #04060a;
+$header-color: rgba(4, 6, 10, 0.21);
+$grey-separator: rgba(255, 255, 255, 0.1);
+$red-button: #dc143b;
+
+.bg-main-page {
+  background-color: $main-page;
+}
+.bg-header-black {
+  background-color: $header-color;
+}
+.bg-grey-separator {
+  background-color: $grey-separator;
+}
+.bg-red-button {
+  background-color: $red-button !important;
+}
+.text-red-button {
+  color: $red-button;
+}
+
+// --------------------------------------
+
+$red-7: #dc143b;
+
+// --------------------------------------
+
+$primary: #1976d2;
+$secondary: #26a69a;
+$accent: #9c27b0;
+
+$dark: #1d1d1d;
+$dark-page: #121212;
+
+$positive: #21ba45;
+$negative: #c10015;
+$info: #31ccec;
+$warning: #f2c037;
