@@ -71,6 +71,87 @@
           <q-icon class="q-ml-sm" name="bi-arrow-right" size="16px"></q-icon>
         </q-btn>
       </div>
+      <div class="row justify-center full-width" style="padding-top: 114px; padding-bottom: 140px;">
+        <div class="col-8">
+          <div class="font-34">О нас</div>
+          <div class="q-mt-xl row justify-center" style="gap: 26px">
+            <div class="aboutCard col">
+              <div>
+                <q-img :src="require('assets/images/modernityCard.png')">
+                  <div
+                    class="column justify-center full-width transparent"
+                    style="padding: 40px !important"
+                  >
+                    <div class="row justify-center">
+                      <q-chip
+                        outline
+                        label="Современность"
+                        color="red-7"
+                        text-color="red-7"
+                      />
+                    </div>
+                    <div class="text-center q-mt-sm">
+                      <span class="font-27"
+                        >Следуем трендам и используем актуальные технологии в
+                        работе</span
+                      >
+                    </div>
+                  </div>
+                </q-img>
+              </div>
+            </div>
+            <div class="aboutCard col">
+              <div>
+                <q-img :src="require('assets/images/transparencyCard.png')">
+                  <div
+                    class="column justify-center full-width transparent"
+                    style="padding: 40px !important"
+                  >
+                    <div class="row justify-center">
+                      <q-chip
+                        outline
+                        label="Прозрачность"
+                        color="red-7"
+                        text-color="red-7"
+                      />
+                    </div>
+                    <div class="text-center q-mt-sm">
+                      <span class="font-27"
+                        >Делаем постоянные отчеты о процессе работы</span
+                      >
+                    </div>
+                  </div>
+                </q-img>
+              </div>
+            </div>
+            <div class="aboutCard col">
+              <div>
+                <q-img :src="require('assets/images/supportCard.png')">
+                  <div
+                    class="column justify-center full-width transparent"
+                    style="padding: 40px !important"
+                  >
+                    <div class="row justify-center">
+                      <q-chip
+                        outline
+                        label="Поддержка"
+                        color="red-7"
+                        text-color="red-7"
+                      />
+                    </div>
+                    <div class="text-center q-mt-sm">
+                      <span class="font-27"
+                        >Оказываем дальнейшую поддержку проекта после
+                        разработки</span
+                      >
+                    </div>
+                  </div></q-img
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -115,5 +196,14 @@ const projects = ref([
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 28px;
   grid-row-gap: 28px;
+}
+.aboutCard {
+  border-radius: 50px;
+  border-image-source: linear-gradient(
+    180deg,
+    rgba(220, 20, 59, 0.12) 0%,
+    rgba(220, 20, 59, 0) 100%
+  );
+  background-color: rgba(5, 7, 11, 1);
 }
 </style>

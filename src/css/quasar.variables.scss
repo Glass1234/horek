@@ -37,7 +37,7 @@ $red-button: #dc143b;
   background-color: $header-color;
 }
 .bg-grey-separator {
-  background-color: $grey-separator;
+  background-color: $grey-separator !important;
 }
 .bg-red-button {
   background-color: $red-button !important;

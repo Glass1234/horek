@@ -1,16 +1,27 @@
 <template>
-  <q-layout class="bg-main-page position-relative" view="lHh Lpr lFf">
-    <q-img class="absolute" src="images/luminescence.png" />
+  <q-layout class="bg-main-page position-relative" view="lHh Lpr lff">
+    <q-img
+      class="absolute"
+      src="images/luminescence.png"
+      style="max-width: 100%; max-height: 100%"
+    />
     <headerCustom />
 
     <q-page-container>
       <router-view />
     </q-page-container>
+    <footerCustom />
+    <q-img
+      class="absolute"
+      src="images/footerglow.png"
+      style="max-width: 100%; max-height: 100%; bottom: 0"
+    />
   </q-layout>
 </template>
 
 <script setup>
 import headerCustom from "components/headerCustom.vue";
+import footerCustom from "components/footerCustom.vue";
 
 import { useStore } from "vuex";
 import { useSSRContext, onMounted } from "vue";

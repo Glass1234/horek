@@ -29,7 +29,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .project {
-  border-radius: 39.125px;
+  border-radius: 40px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   background: #05070b;
   height: 400px;
