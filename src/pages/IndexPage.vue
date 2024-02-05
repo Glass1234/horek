@@ -71,7 +71,10 @@
           <q-icon class="q-ml-sm" name="bi-arrow-right" size="16px"></q-icon>
         </q-btn>
       </div>
-      <div class="row justify-center full-width" style="padding-top: 114px; padding-bottom: 140px;">
+      <div
+        class="row justify-center full-width"
+        style="padding-top: 114px; padding-bottom: 140px"
+      >
         <div class="col-8">
           <div class="font-34">О нас</div>
           <div class="q-mt-xl row justify-center" style="gap: 26px">

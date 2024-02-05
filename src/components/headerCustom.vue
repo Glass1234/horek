@@ -80,6 +80,7 @@
             rounded
             unelevated
             no-caps
+            @click="modalDis.isOpenModal = true"
             :label="t('consultation')"
           />
         </div>
@@ -87,13 +88,64 @@
     </div>
     <q-separator class="bg-grey-separator" />
   </q-header>
+  <q-dialog v-model="modalDis.isOpenModal">
+    <div
+      class="relative-position bg-red-7"
+      style="width: 430px; border-radius: 30px"
+    >
+      <div class="sticky" style="padding: 30px; z-index: 10">
+        <div class="text-center text-white">
+          <div class="font-28">Обсудить ваш проект</div>
+          <div class="font-16" style="color: rgba(255, 255, 255, 0.75)">
+            Укажите контакты для связи<br />
+            (Telegram или Email)
+          </div>
+        </div>
+        <div class="q-mt-xl column" style="gap: 8px">
+          <q-input
+            v-model="modalDis.userName"
+            placeholder="Имя"
+            color="green-2"
+            bg-color="white"
+            outlined
+            dense
+            class="inputCustom"
+          />
+          <q-input
+            v-model="modalDis.userContact"
+            placeholder="Контакт"
+            color="green-2"
+            bg-color="white"
+            outlined
+            dense
+            class="inputCustom"
+          />
+          <q-btn
+            @click="modalDis.sendData()"
+            :disable="
+              !(modalDis.userName.length > 0 && modalDis.userContact.length > 0)
+            "
+            :loading="modalDis.isSendRequest"
+            label="Отправить"
+            color="black"
+            no-caps
+            style="border-radius: 8px"
+          />
+        </div>
+      </div>
+      <div class="absolute" style="bottom: 0; left: 0">
+        <q-img src="images/modalLogoLeft.png" height="286px" width="299px" />
+      </div>
+    </div>
+  </q-dialog>
 </template>
 
 <script setup>
-import { onMounted, ref, reactive } from "vue";
+import { reactive } from "vue";
 import { useStore } from "vuex";
 import { useI18n } from "vue-i18n";
 import { useQuasar } from "quasar";
+
 const $q = useQuasar();
 
 const { t, locale } = useI18n();
@@ -117,6 +169,29 @@ class LanguagePage {
 }
 
 const lang = reactive(new LanguagePage());
+
+class modalDiscuss {
+  isOpenModal = false;
+  isSendRequest = false;
+  userName = "";
+  userContact = "";
+  async sendData() {
+    this.isSendRequest = true;
+    $store.commit("discussionSend/postTG", {
+      name: this.userName,
+      contact: this.userContact,
+    });
+    $q.notify({
+      position: "bottom-right",
+      message: "Информация переданна, ожидайте связи с вами",
+      icon: "tag_faces",
+    });
+    this.isSendRequest = false;
+    this.isOpenModal = false;
+  }
+}
+
+const modalDis = reactive(new modalDiscuss());
 </script>
 
 <style scoped lang="scss">
@@ -137,5 +212,9 @@ const lang = reactive(new LanguagePage());
 }
 .headerBlur {
   backdrop-filter: blur(20.5px);
+}
+
+.inputCustom :deep(.q-field__control) {
+  border-radius: 8px;
 }
 </style>

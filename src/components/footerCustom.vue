@@ -84,12 +84,8 @@
     );
 }
 .footerSeparator {
-  background-color: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    #dc143b 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
+  mix-blend-mode: overlay;
+  background-color: white;
 }
 
 .blockConsultation {
