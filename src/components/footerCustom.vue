@@ -51,7 +51,7 @@
           <router-link class="linkCustom" to="/"
             ><span>портфолио</span></router-link
           >
-          <router-link class="linkCustom" to="/"
+          <router-link class="linkCustom" to="/services"
             ><span>услуги</span></router-link
           >
           <router-link class="linkCustom" to="/contacts"
