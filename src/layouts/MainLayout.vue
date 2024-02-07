@@ -7,11 +7,12 @@
     />
     <headerCustom />
 
-    <q-page-container>
+    <q-page-container class="sticky" style="z-index: 10">
       <router-view />
     </q-page-container>
     <footerCustom />
     <q-img
+      v-if="isIndexPage"
       class="absolute"
       src="images/footerglow.png"
       style="max-width: 100%; max-height: 100%; bottom: 0"
@@ -24,7 +25,8 @@ import headerCustom from "components/headerCustom.vue";
 import footerCustom from "components/footerCustom.vue";
 
 import { useStore } from "vuex";
-import { useSSRContext, onMounted } from "vue";
+import { useSSRContext, computed } from "vue";
+import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
 const $store = useStore();
@@ -49,10 +51,12 @@ const $store = useStore();
 
 // NO SSR
 const { locale } = useI18n();
+const route = useRoute();
 
-const tmp =
+locale.value =
   $store.getters["languageClient/getLangHTTP"] === "ru" ? "ru-RU" : "en-US";
-locale.value = tmp;
+
+const isIndexPage = computed(() => route?.path === "/");
 </script>
 
 <style scoped lang="scss"></style>

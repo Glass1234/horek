@@ -1,5 +1,9 @@
 <template>
-  <q-footer class="bg-header-black footerBlur row justify-center" elevated>
+  <q-footer
+    class="bg-header-black row justify-center"
+    :class="isIndexPage ? 'footerBlur' : ''"
+    elevated
+  >
     <q-separator class="bg-grey-separator full-width" />
     <div class="col-7 column q-py-xl">
       <div class="row items-center justify-between">
@@ -36,7 +40,7 @@
           />
         </div>
       </div>
-      <div class="q-pt-md q-pb-lg">
+      <div class="q-pt-md">
         <q-separator class="footerSeparator" />
       </div>
       <div class="row items-center justify-between">
@@ -50,7 +54,7 @@
           <router-link class="linkCustom" to="/"
             ><span>услуги</span></router-link
           >
-          <router-link class="linkCustom" to="/"
+          <router-link class="linkCustom" to="/contacts"
             ><span>контакты</span></router-link
           >
         </div>
@@ -71,7 +75,13 @@
   </q-footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const isIndexPage = computed(() => route?.path === "/");
+</script>
 
 <style scoped lang="scss">
 .footerBlur {

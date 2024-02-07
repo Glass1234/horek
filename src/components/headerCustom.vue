@@ -19,7 +19,7 @@
           <router-link class="linkCustom" to="/"
             ><span>услуги</span></router-link
           >
-          <router-link class="linkCustom" to="/"
+          <router-link class="linkCustom" to="/contacts"
             ><span>контакты</span></router-link
           >
         </div>
