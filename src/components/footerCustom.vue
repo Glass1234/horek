@@ -48,7 +48,7 @@
           class="row items-center text-uppercase font-16"
           style="gap: 0 60px"
         >
-          <router-link class="linkCustom" to="/"
+          <router-link class="linkCustom" to="/portfolio"
             ><span>портфолио</span></router-link
           >
           <router-link class="linkCustom" to="/services"
