@@ -58,7 +58,7 @@
               text-color="white"
               :clickable="false"
               label="FRONTED"
-              style="width: 89px"
+              style="width: 92px"
             />
             <span class="q-ml-sm" style="word-wrap: break-word"
               >SSR, SPA, PWA, vue3, vueRouter, vuex, pinia, axios, quasar,
@@ -71,7 +71,7 @@
               text-color="white"
               :clickable="false"
               label="OTHER"
-              style="min-width: 89px; max-width: 89px"
+              style="min-width: 92px; max-width: 92px"
             />
             <div class="q-ml-sm" style="word-wrap: break-word">
               <span>Non-GUI приложения на C/C++/Python/Java</span><br />
