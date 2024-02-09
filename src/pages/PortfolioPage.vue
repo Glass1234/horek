@@ -21,7 +21,8 @@
         <div v-for="(item, index) in arr.visibleProjects" :key="index">
           <div class="column">
             <div
-              class="bg-red-2"
+              @click="arr.openItem(item.id)"
+              class="bg-red-2 cursor-pointer"
               style="width: 300px; height: 190px; border-radius: 15px"
             ></div>
             <div class="q-px-xs q-mt-md">
@@ -38,7 +39,10 @@
 
 <script setup>
 import { reactive } from "vue";
+import { useRouter } from "vue-router";
 import projects from "src/store/projects.js";
+
+const router = useRouter();
 
 class ArrProjects {
   allProjects = [];
@@ -84,6 +88,9 @@ class ArrProjects {
       this.usingFilters.splice(index, 1);
     }
     this._setItems();
+  }
+  openItem(id) {
+    router.push({ name: "project", params: { id } });
   }
 }
 

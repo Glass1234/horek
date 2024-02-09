@@ -36,7 +36,7 @@
             </div>
           </div>
           <div class="row items-center justify-center font-82">
-            <div class="text-red-button">для</div>
+            <div>для</div>
             <q-img
               class="q-mx-sm"
               style="rotate: -2deg; margin-bottom: -20px"
