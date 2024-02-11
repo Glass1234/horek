@@ -17,7 +17,7 @@
           {{ project.description }}
         </h2>
       </div>
-      <div class="column q-mt-xl" style="gap: 55px">
+      <div class="column q-mt-xl" style="gap: 100px">
         <div v-for="(item, index) in project.content" :key="index">
           <div v-if="item.type === 'img'">
             <q-img :src="item.src" height="700px" style="border-radius: 16px" />

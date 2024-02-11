@@ -6,7 +6,7 @@
       style="padding-top: 100px; z-index: 10"
     >
       <div>
-        <div>
+        <div style="line-height: 1">
           <div class="row items-baseline font-82 relative-position">
             <div class="text-red-button">Качественные</div>
             <q-img
@@ -16,16 +16,16 @@
               height="52px"
             />
             <div>решения</div>
-            <div class="absolute" style="right: -40px; top: 10px">
+            <div class="absolute" style="right: -30px; top: -5px">
               <div class="row row-btn items-center gap-x-xs">
-                <q-btn color="white" round>
+                <q-btn color="white" to="/services" round>
                   <q-img
                     :src="require(`assets/icons/palitre.svg`)"
                     width="25px"
                     heugth="25px"
                   />
                 </q-btn>
-                <q-btn color="white" round>
+                <q-btn color="white" to="/services" round>
                   <q-img
                     :src="require(`assets/icons/code.svg`)"
                     width="25px"
@@ -46,8 +46,11 @@
             <div>вашего продукта</div>
           </div>
         </div>
-        <div class="q-mt-xl text-center font-24" style="line-height: 38px">
-          занимаемся разработкой digital-проектов
+        <div
+          class="text-center font-25"
+          style="line-height: 38px; color: #beb6b8; padding-top: 30px"
+        >
+          занимаемся разработкой продающих digital-проектов
         </div>
       </div>
       <div class="row justify-center full-width" style="padding-top: 130px">
@@ -66,6 +69,7 @@
           rounded
           unelevated
           no-caps
+          to="/portfolio"
           label="Смотреть все"
         >
           <q-icon class="q-ml-sm" name="bi-arrow-right" size="16px"></q-icon>
@@ -80,7 +84,10 @@
           <div class="q-mt-xl row justify-center" style="gap: 26px">
             <div class="aboutCard col">
               <div>
-                <q-img :src="require('assets/images/modernityCard.png')">
+                <q-img
+                  style="border-radius: 50px"
+                  :src="require('assets/images/modernityCard.png')"
+                >
                   <div
                     class="column justify-center full-width transparent"
                     style="padding: 40px !important"
@@ -105,7 +112,10 @@
             </div>
             <div class="aboutCard col">
               <div>
-                <q-img :src="require('assets/images/transparencyCard.png')">
+                <q-img
+                  style="border-radius: 50px"
+                  :src="require('assets/images/transparencyCard.png')"
+                >
                   <div
                     class="column justify-center full-width transparent"
                     style="padding: 40px !important"
@@ -129,7 +139,10 @@
             </div>
             <div class="aboutCard col">
               <div>
-                <q-img :src="require('assets/images/supportCard.png')">
+                <q-img
+                  style="border-radius: 50px"
+                  :src="require('assets/images/supportCard.png')"
+                >
                   <div
                     class="column justify-center full-width transparent"
                     style="padding: 40px !important"
@@ -166,8 +179,10 @@ import cardProject from "components/cardProject.vue";
 
 const projects = ref([
   {
-    name: "Horektrade",
-    desciption: "automatic crypto exchanger",
+    id: 19,
+    name: "Ani-me",
+    desciption: "новый взгляд на аниме платформы",
+    src_preview: require("assets/projects/mainPreview/1.png"),
   },
   {
     name: "Ani-me",
@@ -202,11 +217,6 @@ const projects = ref([
 }
 .aboutCard {
   border-radius: 50px;
-  border-image-source: linear-gradient(
-    180deg,
-    rgba(220, 20, 59, 0.12) 0%,
-    rgba(220, 20, 59, 0) 100%
-  );
-  background-color: rgba(5, 7, 11, 1);
+  border: 1px solid #dc143b26;
 }
 </style>

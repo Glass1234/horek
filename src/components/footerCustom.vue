@@ -2,10 +2,9 @@
   <q-footer
     class="bg-header-black row justify-center"
     :class="isIndexPage ? 'footerBlur' : ''"
-    elevated
   >
     <q-separator class="bg-grey-separator full-width" />
-    <div class="col-7 column q-py-xl">
+    <div class="col-7 column q-pt-xl q-pb-md">
       <div class="row items-center justify-between">
         <div class="row" style="gap: 0 80px">
           <router-link class="column justify-center" to="/"

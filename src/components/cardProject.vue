@@ -1,5 +1,26 @@
 <template>
-  <div class="project relative-position bg-red">
+  <q-img class="project relative-position" :src="project.src_preview">
+    <div
+      class="absolute"
+      style="top: 42px; left: 42px; background-color: transparent"
+    >
+      <div class="textName">{{ project.name }}</div>
+      <div class="textDescription">{{ project.desciption }}</div>
+    </div>
+    <div
+      class="absolute"
+      style="top: 42px; right: 42px; background-color: transparent"
+    >
+      <q-btn class="openProject" flat round :to="`project/${project.id}`">
+        <q-img
+          :src="require('assets/icons/rowProject.svg')"
+          height="12px"
+          width="12px"
+        />
+      </q-btn>
+    </div>
+  </q-img>
+  <!-- <div class="project relative-position">
     <div class="absolute" style="top: 42px; left: 42px">
       <div class="textName">{{ project.name }}</div>
       <div class="textDescription">{{ project.desciption }}</div>
@@ -13,7 +34,7 @@
         />
       </q-btn>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup>

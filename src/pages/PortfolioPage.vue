@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-center full-width text-white q-pt-lg">
+  <div class="row justify-center full-width text-white q-py-lg">
     <div class="col-8">
       <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
         <q-breadcrumbs-el label="Главная" to="/" />
@@ -20,15 +20,16 @@
       <div class="row q-mt-lg" style="gap: 26px">
         <div v-for="(item, index) in arr.visibleProjects" :key="index">
           <div class="column">
-            <div
+            <q-img
+              class="cursor-pointer"
+              style="width: 300px; height: 190px"
               @click="arr.openItem(item.id)"
-              class="bg-red-2 cursor-pointer"
-              style="width: 300px; height: 190px; border-radius: 15px"
-            ></div>
+              :src="item.src_preview"
+            />
             <div class="q-px-xs q-mt-md">
               <span class="font-16">{{ item.title }}</span
               ><br />
-              <span class="font-13">{{ item.description }}</span>
+              <span style="color: #beb6b8">{{ item.type }}</span>
             </div>
           </div>
         </div>
