@@ -185,16 +185,18 @@ const projects = ref([
     src_preview: require("assets/projects/mainPreview/1.png"),
   },
   {
-    name: "Ani-me",
-    desciption: "a new look at anime platforms",
+    name: "Форумная графика",
+    desciption: "Увеличьте свою конверсию",
   },
   {
-    name: "Case",
-    desciption: "Random case",
+    name: "Horek",
+    desciption: "Немного о нашем лого",
   },
   {
-    name: "Case",
-    desciption: "Random case",
+    id: 12,
+    name: "ExtraMedia",
+    desciption: "Студия перевода и озвучки",
+    src_preview: require("assets/projects/mainPreview/4.png"),
   },
 ]);
 </script>

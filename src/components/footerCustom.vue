@@ -16,7 +16,10 @@
           /></router-link>
           <div class="column font-16">
             <span class="cursor-pointer" style="text-decoration: underline"
-              >Email: horek@horek.com</span
+              >Email:
+              <a href="mailto:horek@horek.com" class="text-white"
+                >horek@horek.com</a
+              ></span
             >
             <span style="color: rgba(255, 255, 255, 0.5)"
               >9:00 - 23:00 Пн-Пт
@@ -24,7 +27,13 @@
           </div>
           <div class="column font-16">
             <span class="cursor-pointer" style="text-decoration: underline"
-              >TG: @horekmanager</span
+              >TG:
+              <a
+                href="https://t.me/horekmanager"
+                class="text-white"
+                target="_blank"
+                >@horekmanager</a
+              ></span
             >
             <span style="color: rgba(255, 255, 255, 0.5)"
               >9:00 - 23:00 Пн-Пт
@@ -32,11 +41,13 @@
           </div>
         </div>
         <div>
-          <q-img
-            class="cursor-pointer"
-            :src="require('assets/icons/telegram.svg')"
-            width="29px"
-          />
+          <a href="https://t.me/horekportfolio" target="_blank">
+            <q-img
+              class="cursor-pointer"
+              :src="require('assets/icons/telegram.svg')"
+              width="29px"
+            />
+          </a>
         </div>
       </div>
       <div class="q-pt-md">

@@ -61,7 +61,7 @@ class ArrProjects {
       this.visibleProjects = JSON.parse(JSON.stringify(this.allProjects));
     } else {
       this.visibleProjects = this.allProjects.filter((item) =>
-        this.usingFilters.includes(item.type)
+        this.usingFilters.includes(item.sort_type)
       );
     }
   }

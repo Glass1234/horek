@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-center full-width text-white q-pt-lg">
+  <div class="row justify-center full-width text-white q-py-lg">
     <div class="col-8" style="padding-bottom: 55px">
       <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
         <q-breadcrumbs-el label="Главная" to="/" />
@@ -14,21 +14,28 @@
           class="font-23 q-mt-md q-my-none"
           style="color: rgba(255, 255, 255, 0.65); line-height: 1"
         >
-          {{ project.description }}
+          {{ project.type }}
         </h2>
       </div>
       <div class="column q-mt-xl" style="gap: 100px">
-        <div v-for="(item, index) in project.content" :key="index">
-          <div v-if="item.type === 'img'">
-            <q-img :src="item.src" height="700px" style="border-radius: 16px" />
-          </div>
+        <template v-for="(item, index) in project.content" :key="index">
+          <template v-if="item.type === 'img'">
+            <q-img :src="item.src" style="border-radius: 16px" />
+          </template>
           <div v-else-if="item.type === 'text'">
             <div class="font-34" style="font-weight: 600">{{ item.title }}</div>
-            <div class="font-23" style="color: rgba(255, 255, 255, 0.65)">
+            <pre
+              class="font-23"
+              style="
+                color: rgba(255, 255, 255, 0.65);
+                white-space: pre-line;
+                font-family: 'Nunito Sans';
+              "
+            >
               {{ item.description }}
-            </div>
+            </pre>
           </div>
-        </div>
+        </template>
       </div>
     </div>
   </div>

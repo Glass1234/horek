@@ -11,19 +11,37 @@
           <span class="font-17" style="color: rgba(255, 255, 255, 0.5)"
             >Почта</span
           >
-          <div class="font-16">horek@horek.com</div>
+          <div class="font-16">
+            <a href="mailto:horek@horek.com" class="text-white"
+              >horek@horek.com</a
+            >
+          </div>
         </div>
         <div class="column" style="gap: 4px 0">
           <span class="font-17" style="color: rgba(255, 255, 255, 0.5)"
             >Telegram</span
           >
-          <div class="font-16">@horekmanager</div>
+          <div class="font-16">
+            <a
+              href="https://t.me/horekmanager"
+              class="text-white"
+              target="_blank"
+              >@horekmanager</a
+            >
+          </div>
         </div>
         <div class="column" style="gap: 4px 0">
           <span class="font-17" style="color: rgba(255, 255, 255, 0.5)"
             >Telegram-канал</span
           >
-          <div class="font-16">@horekportfolio</div>
+          <div class="font-16">
+            <a
+              href="https://t.me/horekportfolio"
+              class="text-white"
+              target="_blank"
+              >@horekportfolio</a
+            >
+          </div>
         </div>
         <div class="column" style="gap: 4px 0">
           <span class="font-17" style="color: rgba(255, 255, 255, 0.5)"
