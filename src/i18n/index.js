@@ -1,5 +1,5 @@
 import enUS from "./en-US";
-import ruRu from "./ru-RU";
+import ruRu from "./ru-Ru";
 
 export default {
   "en-US": enUS,
