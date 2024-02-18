@@ -98,7 +98,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Notify'],
+      plugins: ["Notify"],
     },
 
     // animations: 'all', // --- includes all animations
@@ -145,8 +145,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
+        name: `Horek design`,
+        short_name: `Horek design`,
         description: `A Quasar Project`,
         display: "standalone",
         orientation: "portrait",

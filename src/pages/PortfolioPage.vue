@@ -36,6 +36,9 @@
       </div>
     </div>
   </div>
+  <q-dialog v-model="arr.modalItem.flag">
+    <q-img :src="arr.modalItem.src" />
+  </q-dialog>
 </template>
 
 <script setup>
@@ -47,11 +50,17 @@ const { t } = useI18n();
 
 const router = useRouter();
 
+const flag = reactive({ flag: true });
+
 class ArrProjects {
   allProjects = [];
   visibleProjects = [];
   allfilters = [];
   usingFilters = [];
+  modalItem = {
+    src: "",
+    flag: false,
+  };
   constructor() {
     this.allfilters = [...projects.filter];
     this.allProjects = JSON.parse(JSON.stringify(projects.items));
@@ -93,7 +102,14 @@ class ArrProjects {
     this._setItems();
   }
   openItem(id) {
-    router.push({ name: "project", params: { id } });
+    const item = this.allProjects.filter((item) => item.id === id)[0];
+    if (item.content.length) {
+      router.push({ name: "project", params: { id } });
+    } else {
+      this.modalItem.flag = true;
+      this.modalItem.src = item.src_preview;
+      console.log(this.modalItem);
+    }
   }
 }
 
