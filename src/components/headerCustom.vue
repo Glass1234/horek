@@ -14,13 +14,13 @@
               width="82px"
           /></router-link>
           <router-link class="linkCustom" to="/portfolio"
-            ><span>портфолио</span></router-link
+            ><span>{{ t("Portfolio") }}</span></router-link
           >
           <router-link class="linkCustom" to="/services"
-            ><span>услуги</span></router-link
+            ><span>{{ t("services") }}</span></router-link
           >
           <router-link class="linkCustom" to="/contacts"
-            ><span>контакты</span></router-link
+            ><span>{{ t("contacts") }}</span></router-link
           >
         </div>
         <div class="row items-center gap-x-lg">
@@ -81,7 +81,7 @@
             unelevated
             no-caps
             @click="modalDis.isOpenModal = true"
-            :label="t('consultation')"
+            :label="t('Consultation')"
           />
         </div>
       </div>
@@ -95,16 +95,16 @@
     >
       <div class="sticky" style="padding: 30px; z-index: 10">
         <div class="text-center text-white">
-          <div class="font-28">Обсудить ваш проект</div>
+          <div class="font-28">{{ t("Discuss your project") }}</div>
           <div class="font-16" style="color: rgba(255, 255, 255, 0.75)">
-            Укажите контакты для связи<br />
-            (Telegram или Email)
+            {{ t("Specify the contact person to contact") }}<br />
+            {{ t("(Telegram or Email)") }}
           </div>
         </div>
         <div class="q-mt-xl column" style="gap: 8px">
           <q-input
             v-model="modalDis.userName"
-            placeholder="Имя"
+            :placeholder="t('Name')"
             color="green-2"
             bg-color="white"
             outlined
@@ -113,7 +113,7 @@
           />
           <q-input
             v-model="modalDis.userContact"
-            placeholder="Контакт"
+            :placeholder="t('Contact')"
             color="green-2"
             bg-color="white"
             outlined
@@ -126,7 +126,7 @@
               !(modalDis.userName.length > 0 && modalDis.userContact.length > 0)
             "
             :loading="modalDis.isSendRequest"
-            label="Отправить"
+            :label="t('Send')"
             color="black"
             no-caps
             style="border-radius: 8px"

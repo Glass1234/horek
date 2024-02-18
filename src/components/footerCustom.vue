@@ -22,7 +22,7 @@
               ></span
             >
             <span style="color: rgba(255, 255, 255, 0.5)"
-              >9:00 - 23:00 Пн-Пт
+              >9:00 - 23:00 {{ t("Mon-Fri") }}
             </span>
           </div>
           <div class="column font-16">
@@ -36,7 +36,7 @@
               ></span
             >
             <span style="color: rgba(255, 255, 255, 0.5)"
-              >9:00 - 23:00 Пн-Пт
+              >9:00 - 23:00 {{ t("Mon-Fri") }}
             </span>
           </div>
         </div>
@@ -59,24 +59,26 @@
           style="gap: 0 60px"
         >
           <router-link class="linkCustom" to="/portfolio"
-            ><span>портфолио</span></router-link
+            ><span>{{ t("Portfolio") }}</span></router-link
           >
           <router-link class="linkCustom" to="/services"
-            ><span>услуги</span></router-link
+            ><span>{{ t("services") }}</span></router-link
           >
           <router-link class="linkCustom" to="/contacts"
-            ><span>контакты</span></router-link
+            ><span>{{ t("contacts") }}</span></router-link
           >
         </div>
         <div class="col-5 font-16">
           <div class="row blockConsultation">
-            <div class="q-px-lg q-py-sm">Обсудим ваш проект?</div>
+            <div class="q-px-lg q-py-sm">
+              {{ t("shall we discuss your project?") }}
+            </div>
             <q-space />
             <q-separator class="bg-red-7" vertical />
             <div
               class="text-red-7 text-uppercase q-px-lg q-py-sm cursor-pointer"
             >
-              Консультация
+              {{ t("Consultation") }}
             </div>
           </div>
         </div>
@@ -88,6 +90,9 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 const route = useRoute();
 const isIndexPage = computed(() => route?.path === "/");

@@ -2,8 +2,8 @@
   <div class="row justify-center full-width text-white q-py-lg">
     <div class="col-8" style="padding-bottom: 55px">
       <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
-        <q-breadcrumbs-el label="Главная" to="/" />
-        <q-breadcrumbs-el label="Портфолио" to="/portfolio" />
+        <q-breadcrumbs-el :label="t('Home')" to="/" />
+        <q-breadcrumbs-el :label="t('Portfolio')" to="/portfolio" />
         <q-breadcrumbs-el :label="project.title" />
       </q-breadcrumbs>
       <div class="q-mt-xl">
@@ -45,7 +45,8 @@
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import projects from "src/store/projects.js";
-
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 const route = useRoute();
 
 const project = projects.items.filter((item) => item.id == route.params.id)[0];

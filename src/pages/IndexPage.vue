@@ -8,14 +8,14 @@
       <div>
         <div style="line-height: 1">
           <div class="row items-baseline font-82 relative-position">
-            <div class="text-red-button">Качественные</div>
+            <div class="text-red-button">{{ t("Quality") }}</div>
             <q-img
               class="q-ml-sm q-mr-md"
               :src="require(`assets/icons/stars.svg`)"
               width="52px"
               height="52px"
             />
-            <div>решения</div>
+            <div>{{ t("solutions") }}</div>
             <div class="absolute" style="right: -30px; top: -5px">
               <div class="row row-btn items-center gap-x-xs">
                 <q-btn color="white" to="/services" round>
@@ -36,26 +36,26 @@
             </div>
           </div>
           <div class="row items-center justify-center font-82">
-            <div>для</div>
+            <div>{{ t("for") }}</div>
             <q-img
               class="q-mx-sm"
               style="rotate: -2deg; margin-bottom: -20px"
               :src="require(`assets/icons/rows.svg`)"
               width="120px"
             />
-            <div>вашего продукта</div>
+            <div>{{ t("your product") }}</div>
           </div>
         </div>
         <div
           class="text-center font-25"
           style="line-height: 38px; color: #beb6b8; padding-top: 30px"
         >
-          занимаемся разработкой продающих digital-проектов
+          {{ t("Develop digital sales projects") }}
         </div>
       </div>
       <div class="row justify-center full-width" style="padding-top: 130px">
         <div class="col-8">
-          <div class="text-left font-34">Некоторые наши проекты</div>
+          <div class="text-left font-34">{{ t("Some of our projects") }}</div>
           <div class="q-mt-xl gridProject">
             <div v-for="(item, index) in projects" :key="index">
               <cardProject :project="item" />
@@ -70,7 +70,7 @@
           unelevated
           no-caps
           to="/portfolio"
-          label="Смотреть все"
+          :label="t('View All')"
         >
           <q-icon class="q-ml-sm" name="bi-arrow-right" size="16px"></q-icon>
         </q-btn>
@@ -80,7 +80,7 @@
         style="padding-top: 114px; padding-bottom: 140px"
       >
         <div class="col-8">
-          <div class="font-34">О нас</div>
+          <div class="font-34">{{ t("About Us") }}</div>
           <div class="q-mt-xl row justify-center" style="gap: 26px">
             <div class="aboutCard col">
               <div>
@@ -95,16 +95,17 @@
                     <div class="row justify-center">
                       <q-chip
                         outline
-                        label="Современность"
+                        :label="t('Modernity')"
                         color="red-7"
                         text-color="red-7"
                       />
                     </div>
                     <div class="text-center q-mt-sm">
-                      <span class="font-27"
-                        >Следуем трендам и используем актуальные технологии в
-                        работе</span
-                      >
+                      <span class="font-27">{{
+                        t(
+                          "Follow trends and use the latest technologies in work"
+                        )
+                      }}</span>
                     </div>
                   </div>
                 </q-img>
@@ -123,15 +124,15 @@
                     <div class="row justify-center">
                       <q-chip
                         outline
-                        label="Прозрачность"
+                        :label="t('Transparency')"
                         color="red-7"
                         text-color="red-7"
                       />
                     </div>
                     <div class="text-center q-mt-sm">
-                      <span class="font-27"
-                        >Делаем постоянные отчеты о процессе работы</span
-                      >
+                      <span class="font-27">{{
+                        t("Continuously recording workflow")
+                      }}</span>
                     </div>
                   </div>
                 </q-img>
@@ -150,16 +151,15 @@
                     <div class="row justify-center">
                       <q-chip
                         outline
-                        label="Поддержка"
+                        :label="t('Support')"
                         color="red-7"
                         text-color="red-7"
                       />
                     </div>
                     <div class="text-center q-mt-sm">
-                      <span class="font-27"
-                        >Оказываем дальнейшую поддержку проекта после
-                        разработки</span
-                      >
+                      <span class="font-27">{{
+                        t("After continuing to support project development")
+                      }}</span>
                     </div>
                   </div></q-img
                 >
@@ -177,6 +177,9 @@ import { ref } from "vue";
 
 import cardProject from "components/cardProject.vue";
 
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+
 const projects = ref([
   {
     id: 19,
@@ -185,12 +188,16 @@ const projects = ref([
     src_preview: require("assets/projects/mainPreview/1.png"),
   },
   {
+    otherLink: "portfolio",
     name: "Форумная графика",
     desciption: "Увеличьте свою конверсию",
+    src_preview: require("assets/projects/mainPreview/2.png"),
   },
   {
+    id: 10,
     name: "Horek",
     desciption: "Немного о нашем лого",
+    src_preview: require("assets/projects/mainPreview/3.png"),
   },
   {
     id: 12,

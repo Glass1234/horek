@@ -5,11 +5,11 @@
   >
     <div class="col-8">
       <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
-        <q-breadcrumbs-el label="Главная" to="/" />
-        <q-breadcrumbs-el label="Услуги" />
+        <q-breadcrumbs-el :label="t('Home')" to="/" />
+        <q-breadcrumbs-el :label="t('Services')" />
       </q-breadcrumbs>
       <div>
-        <h2 class="font-34 q-mb-none">Графика</h2>
+        <h2 class="font-34 q-mb-none">{{ t("Graphic arts") }}</h2>
         <div class="row q-mt-md" style="gap: 26px">
           <div class="column" v-for="(item, index) in graphics" :key="index">
             <div class="blockSkill">
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div>
-        <h2 class="font-34 q-mb-none">Веб и UI\UX</h2>
+        <h2 class="font-34 q-mb-none">{{ t("Web and") }} UI\UX</h2>
         <div class="row q-mt-md" style="gap: 26px">
           <div class="column" v-for="(item, index) in UI_UX" :key="index">
             <div class="blockSkill">
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div>
-        <h2 class="font-34 q-mb-none">Код</h2>
+        <h2 class="font-34 q-mb-none">{{ t("Code") }}</h2>
         <div class="blockSkill row justify-center">
           <q-img
             :src="require(`assets/icons/codeIcons.png`)"
@@ -65,7 +65,7 @@
               tailwind, css, scss, html, js</span
             >
           </div>
-          <div class="row font-16 no-wrap">
+          <div class="row font-16 no-wrap q-mt-sm">
             <q-chip
               color="red-7"
               text-color="white"
@@ -74,30 +74,40 @@
               style="min-width: 92px; max-width: 92px"
             />
             <div class="q-ml-sm" style="word-wrap: break-word">
-              <span>Non-GUI приложения на C/C++/Python/Java</span><br />
-              <span>Разработка ботов для ВКонтакте и Discord</span><br />
-              <span>Работа с HTTP протоколом</span><br />
-              <span>Написание парсеров для сайтов и других ресурсов</span><br />
-              <span>Програмирование микроконтроллеров</span><br />
-              <span>Работа с Linux</span><br />
+              <span>Non-GUI {{ t("applications in") }} C/C++/Python/Java</span
+              ><br />
+              <span
+                >{{ t("Development of bots for VKontakte and") }} Discord</span
+              ><br />
+              <span>{{ t("Working with the HTTP protocol") }}</span
+              ><br />
+              <span>{{
+                t("Writing parsers for websites and other resources")
+              }}</span
+              ><br />
+              <span>{{ t("Microcontroller programming") }}</span
+              ><br />
+              <span>{{ t("Experience with") }} Linux</span><br />
             </div>
           </div>
         </div>
-        <h3 class="font-34 q-mb-none">Не нашли чего искали?</h3>
+        <h3 class="font-34 q-mb-none">
+          {{ t("Didn't find what you were looking for?") }}
+        </h3>
         <div class="q-mt-sm">
-          <span
-            >Напишите нам для консультации через Telegram или Email, и менеджер
-            окажет помощь в поиске нужной информации. Мы всегда готовы помочь
-            вам решить любые вопросы и предоставить необходимую поддержку.</span
-          >
+          <span class="font-16">{{
+            t(
+              "Write to us for a consultation via Telegram or Email, and the manager will assist in finding the necessary information. We are always ready to help you resolve any questions and provide the necessary support."
+            )
+          }}</span>
         </div>
-        <h3 class="font-34 q-mb-none">Цены</h3>
+        <h3 class="font-34 q-mb-none">{{ t("Prices") }}</h3>
         <div class="q-mt-sm">
-          <span
-            >Уникальная цена для уникального проекта. Мы адаптируем стоимость
-            наших услуг под ваши технические требования. Узнайте точную
-            стоимость вашего проекта, связавшись с менеджером.</span
-          >
+          <span class="font-16">{{
+            t(
+              "Unique price for a unique project. We adapt the cost of our services to your technical requirements. Find out the exact cost of your project by contacting the manager."
+            )
+          }}</span>
         </div>
       </div>
     </div>
@@ -106,57 +116,59 @@
 
 <script setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 const graphics = ref([
   {
     icon: "1",
-    name: "Логотип",
+    name: t("Logo"),
   },
   {
     icon: "2",
-    name: "Фирменный стиль",
+    name: t("Form style"),
   },
   {
     icon: "3",
-    name: "Рекламный креатив",
+    name: t("Advertising creative"),
   },
   {
     icon: "4",
-    name: "SMM-дизайн (Упаковка)",
+    name: t("SMM design (Packaging)"),
   },
   {
     icon: "5",
-    name: "Брендбук",
+    name: t("Brandbook"),
   },
 ]);
 
 const UI_UX = ref([
   {
     icon: "1",
-    name: "Лендинг",
+    name: t("Landing"),
   },
   {
     icon: "2",
-    name: "Корпоративный сайт",
+    name: t("Corporate website"),
   },
   {
     icon: "3",
-    name: "Промо-сайт",
+    name: t("Promo website"),
   },
   {
     icon: "4",
-    name: "Интернет магазин",
+    name: t("Online store"),
   },
   {
     icon: "5",
-    name: "Онлайн-сервис",
+    name: t("Online service"),
   },
   {
     icon: "6",
-    name: "Мобильное приложение",
+    name: t("Mobile app"),
   },
   {
     icon: "7",
-    name: "Юзер интерфейс",
+    name: t("User interface"),
   },
 ]);
 </script>

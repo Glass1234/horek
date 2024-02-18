@@ -2,8 +2,8 @@
   <div class="row justify-center full-width text-white q-py-lg">
     <div class="col-8">
       <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
-        <q-breadcrumbs-el label="Главная" to="/" />
-        <q-breadcrumbs-el label="Портфолио" />
+        <q-breadcrumbs-el :label="t('Home')" to="/" />
+        <q-breadcrumbs-el :label="t('Portfolio')" />
       </q-breadcrumbs>
       <div class="q-mt-md row" style="gap: 8px">
         <q-chip
@@ -42,6 +42,8 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import projects from "src/store/projects.js";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 const router = useRouter();
 
