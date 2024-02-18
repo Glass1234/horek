@@ -101,11 +101,17 @@
                       />
                     </div>
                     <div class="text-center q-mt-sm">
-                      <span class="font-27">{{
-                        t(
-                          "Follow trends and use the latest technologies in work"
-                        )
-                      }}</span>
+                      <span
+                        :class="{
+                          'font-16': $q.screen.width < 1600,
+                          'font-27': $q.screen.width >= 1600,
+                        }"
+                        >{{
+                          t(
+                            "Follow trends and use the latest technologies in work"
+                          )
+                        }}</span
+                      >
                     </div>
                   </div>
                 </q-img>
@@ -130,9 +136,13 @@
                       />
                     </div>
                     <div class="text-center q-mt-sm">
-                      <span class="font-27">{{
-                        t("Continuously recording workflow")
-                      }}</span>
+                      <span
+                        :class="{
+                          'font-16': $q.screen.width < 1600,
+                          'font-27': $q.screen.width >= 1600,
+                        }"
+                        >{{ t("Continuously recording workflow") }}</span
+                      >
                     </div>
                   </div>
                 </q-img>
@@ -157,9 +167,15 @@
                       />
                     </div>
                     <div class="text-center q-mt-sm">
-                      <span class="font-27">{{
-                        t("After continuing to support project development")
-                      }}</span>
+                      <span
+                        :class="{
+                          'font-16': $q.screen.width < 1600,
+                          'font-27': $q.screen.width >= 1600,
+                        }"
+                        >{{
+                          t("After continuing to support project development")
+                        }}</span
+                      >
                     </div>
                   </div></q-img
                 >

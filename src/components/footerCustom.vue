@@ -50,7 +50,7 @@
           </a>
         </div>
       </div>
-      <div class="q-pt-md">
+      <div class="q-py-md">
         <q-separator class="footerSeparator" />
       </div>
       <div class="row items-center justify-between">
@@ -68,7 +68,12 @@
             ><span>{{ t("contacts") }}</span></router-link
           >
         </div>
-        <div class="col-5 font-16">
+        <div
+          :class="{
+            hidden: $q.screen.width < 1400,
+            'font-16': $q.screen.width >= 1400,
+          }"
+        >
           <div class="row blockConsultation">
             <div class="q-px-lg q-py-sm">
               {{ t("shall we discuss your project?") }}

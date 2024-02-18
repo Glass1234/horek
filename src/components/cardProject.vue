@@ -4,8 +4,25 @@
       class="absolute"
       style="top: 42px; left: 42px; background-color: transparent"
     >
-      <div class="textName" style="line-height: 1">{{ project.name }}</div>
-      <div class="textDescription">{{ project.desciption }}</div>
+      <div
+        class="textName"
+        :class="{
+          'font-24': $q.screen.width < 1500,
+          'font-32': $q.screen.width >= 1500,
+        }"
+        style="line-height: 1"
+      >
+        {{ project.name }}
+      </div>
+      <div
+        class="textDescription"
+        :class="{
+          'font-16': $q.screen.width < 1500,
+          'font-20': $q.screen.width >= 1500,
+        }"
+      >
+        {{ project.desciption }}
+      </div>
     </div>
     <div
       class="absolute"
@@ -51,11 +68,9 @@ const openItem = () => {
 }
 .textName {
   font-weight: 600;
-  font-size: 32px;
   color: white;
 }
 .textDescription {
-  font-size: 20px;
   color: rgba(255, 255, 255, 0.65);
 }
 
