@@ -17,12 +17,12 @@
           :label="item"
         />
       </div>
-      <div class="row q-mt-lg" style="gap: 26px">
+      <div class="parent q-mt-lg" style="gap: 26px">
         <div v-for="(item, index) in arr.visibleProjects" :key="index">
           <div class="column">
             <q-img
               class="cursor-pointer"
-              style="width: 300px; height: 190px"
+              style="height: 190px; border-radius: 14px"
               @click="arr.openItem(item.id)"
               :src="item.src_preview"
             />
@@ -77,28 +77,7 @@ class ArrProjects {
     }
   }
   addFilter(item) {
-    if (item === "Все") {
-      const index = this.usingFilters.indexOf(item);
-      if (index !== -1) {
-        this.usingFilters = [];
-      } else {
-        this.usingFilters = [item];
-      }
-    } else {
-      const index = this.usingFilters.indexOf(item);
-      if (index !== -1) {
-        this.usingFilters.splice(index, 1);
-      } else {
-        this.usingFilters.push(item);
-      }
-    }
-    if (this.allfilters.length === this.usingFilters.length) {
-      this.usingFilters = ["Все"];
-    }
-    if (this.usingFilters.includes("Все") && item !== "Все") {
-      const index = this.usingFilters.indexOf("Все");
-      this.usingFilters.splice(index, 1);
-    }
+    this.usingFilters = [item];
     this._setItems();
   }
   openItem(id) {
@@ -116,4 +95,11 @@ class ArrProjects {
 const arr = reactive(new ArrProjects());
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 26px;
+  grid-row-gap: 26px;
+}
+</style>

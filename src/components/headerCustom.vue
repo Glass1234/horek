@@ -6,7 +6,7 @@
           class="row items-center text-uppercase font-16"
           style="gap: 0 60px"
         >
-          <router-link to="/"
+          <router-link to="/" class="q-pb-sm"
             ><q-img
               class="cursor-pointer"
               src="icons/logo.svg"
