@@ -1,88 +1,168 @@
 <template>
   <q-page class="relative-position">
-    <q-img class="absolute" style="top: 35px" src="images/line.png" />
+    <q-img
+      class="absolute"
+      :style="$q.screen.width > 430 ? { 'top': '35px' } : { 'top': '-30px' }"
+      src="images/line.png" />
     <div
       class="text-white column items-center sticky"
-      style="padding-top: 100px; z-index: 10"
+      :style="$q.screen.width <= 430 ? { 'padding-top': '0px', 'z-index': '10' } : {'padding-top': '100px', 'z-index': '10' }"
     >
       <div>
         <div style="line-height: 1">
-          <div class="row items-baseline font-82 relative-position">
+          <div
+            class="row items-baseline relative-position justify-center" 
+            :class="{ 
+              'font-82': $q.screen.width > 430, 
+              'font-30': $q.screen.width <= 430 
+            }"
+          >
             <div class="text-red-button">{{ t("Quality") }}</div>
             <q-img
               class="q-ml-sm q-mr-md"
+              :width="$q.screen.width > 430 ? '52px' : '18px'"
+              :height="$q.screen.width > 430 ? '52px' : '18px'"
               :src="require(`assets/icons/stars.svg`)"
-              width="52px"
-              height="52px"
             />
             <div>{{ t("solutions") }}</div>
-            <div class="absolute" style="right: -30px; top: -5px">
+            <div class="absolute" :style="$q.screen.width > 430 ? { 'right': '-30px', 'top': '-5px' } : { 'display': 'none' }">
               <div class="row row-btn items-center gap-x-xs">
                 <q-btn color="white" to="/services" round>
                   <q-img
                     :src="require(`assets/icons/palitre.svg`)"
                     width="25px"
-                    heugth="25px"
+                    height="25px"
                   />
                 </q-btn>
                 <q-btn color="white" to="/services" round>
                   <q-img
                     :src="require(`assets/icons/code.svg`)"
                     width="25px"
-                    heugth="25px"
+                    height="25px"
                   />
                 </q-btn>
               </div>
             </div>
           </div>
-          <div class="row items-center justify-center font-82">
+          <div
+            class="row items-center justify-center"
+            :class="{ 
+              'font-82': $q.screen.width > 430, 
+              'font-30': $q.screen.width <= 430 
+            }"
+          >
             <div>{{ t("for") }}</div>
             <q-img
               class="q-mx-sm"
-              style="rotate: -2deg; margin-bottom: -20px"
               :src="require(`assets/icons/rows.svg`)"
-              width="120px"
+              :width="$q.screen.width > 430 ? '120px' : '40px'"
+              :style="$q.screen.width > 430 ? { 'transform': 'rotate(-2deg)', 'margin-bottom': '-20px' } : {}"
             />
             <div>{{ t("your product") }}</div>
           </div>
         </div>
         <div
-          class="text-center font-25"
-          style="line-height: 38px; color: #beb6b8; padding-top: 30px"
+          class="text-center"
+          :class="{ 
+            'font-25': $q.screen.width > 430, 
+            'font-9': $q.screen.width <= 430 
+          }"
+          style="line-height: 38px; color: #beb6b8"
+          :style="$q.screen.width > 430 ? { 'padding-top': '30px' } : { 'padding-top': '9px' }"
         >
           {{ t("Develop digital sales projects") }}
         </div>
       </div>
-      <div class="row justify-center full-width" style="padding-top: 130px">
-        <div class="col-8">
-          <div class="text-left font-34">{{ t("Some of our projects") }}</div>
-          <div class="q-mt-xl gridProject">
-            <div v-for="(item, index) in projects" :key="index">
-              <cardProject :project="item" />
+      <div 
+        class="row justify-center full-width"
+        :style="$q.screen.width > 430 ? { 'padding-top': '130px' } : { 'padding-top': '30px' }"
+      >
+        <div 
+          :class="{
+            'col-8': $q.screen.width > 430,
+            'col-11': $q.screen.width <= 430 }"
+          :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+        >
+          <div 
+            class="text-left"
+            :class="{ 
+              'font-34': $q.screen.width > 430, 
+              'font-16': $q.screen.width <= 430 
+            }"
+          >{{ t("Some of our projects") }}</div>
+          <div 
+            :class="{
+              'q-mt-xl': $q.screen.width > 430,
+              'q-mt-lg': $q.screen.width <= 430 
+            }"
+          >
+            <div
+              :class="{
+                'gridProject': $q.screen.width > 430,
+                'row': $q.screen.width <= 430 
+              }"
+              :style="$q.screen.width <= 430 ? { 'grid-row-gap': '26px' } : {}"
+            >
+              <div v-for="(item, index) in projects" :key="index" :class="{ 'col-6': $q.screen.width > 430, 'col-12': $q.screen.width <= 430 }">
+                <cardProject :project="item" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row justify-center full-width" style="padding-top: 67px">
+      <div
+        class="row justify-center full-width"
+        :style="$q.screen.width <= 430 ? { 'padding-top': '26px' } : {'padding-top': '67px'}"
+      >
         <q-btn
           class="bg-red-button font-16"
           rounded
           unelevated
           no-caps
+          :style="$q.screen.width <= 430 ? { 'width': '150px' } : {'width': '195px' }"
           to="/portfolio"
           :label="t('View All')"
         >
-          <q-icon class="q-ml-sm" name="bi-arrow-right" size="16px"></q-icon>
+          <q-icon
+          class="q-ml-sm"
+          name="bi-arrow-right"
+          size="16px"
+          :style="$q.screen.width <= 430 ? { 'display': 'none' } : {}"
+          ></q-icon>
         </q-btn>
       </div>
       <div
         class="row justify-center full-width"
-        style="padding-top: 114px; padding-bottom: 140px"
+        :style="$q.screen.width <= 430 ? { 'padding-top': '26px', 'padding-bottom': '40px' } : {'padding-top': '114px', 'padding-bottom': '140px' }"
       >
-        <div class="col-8">
-          <div class="font-34">{{ t("About Us") }}</div>
-          <div class="q-mt-xl row justify-center" style="gap: 26px">
-            <div class="aboutCard col">
+        <div
+          :class="{
+            'col-8': $q.screen.width > 430,
+            'col-11': $q.screen.width <= 430 
+          }"
+          :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+        >
+          <div
+            :class="{
+              'font-34': $q.screen.width > 430,
+              'font-16': $q.screen.width <= 430 
+            }"
+          >{{ t("About Us") }}</div>
+          <div 
+            class="row justify-center"
+            :class="{
+              'q-mt-xl': $q.screen.width > 430,
+              'q-mt-lg': $q.screen.width <= 430 
+            }"
+            style="gap: 26px"
+          >
+            <div 
+              class="aboutCard"
+              :class="{
+                'col': $q.screen.width > 430,
+                'col-12': $q.screen.width <= 430 
+              }"
+            >
               <div>
                 <q-img
                   style="border-radius: 50px"
@@ -102,22 +182,30 @@
                     </div>
                     <div class="text-center q-mt-sm">
                       <span
-                        :class="{
-                          'font-16': $q.screen.width < 1600,
-                          'font-27': $q.screen.width >= 1600,
-                        }"
+                      :class="{
+                        'font-24': $q.screen.width <= 430,
+                        'font-16': $q.screen.width < 1600 && $q.screen.width > 430,
+                        'font-27': $q.screen.width >= 1600
+                      }"
+                      style="line-height: 1.2;"
                         >{{
                           t(
                             "Follow trends and use the latest technologies in work"
                           )
-                        }}</span
-                      >
+                        }}
+                      </span>
                     </div>
                   </div>
                 </q-img>
               </div>
             </div>
-            <div class="aboutCard col">
+            <div 
+              class="aboutCard"
+              :class="{
+                'col': $q.screen.width > 430,
+                'col-12': $q.screen.width <= 430 
+              }"
+            >
               <div>
                 <q-img
                   style="border-radius: 50px"
@@ -138,9 +226,11 @@
                     <div class="text-center q-mt-sm">
                       <span
                         :class="{
-                          'font-16': $q.screen.width < 1600,
-                          'font-27': $q.screen.width >= 1600,
+                          'font-24': $q.screen.width <= 430,
+                          'font-16': $q.screen.width < 1600 && $q.screen.width > 430,
+                          'font-27': $q.screen.width >= 1600
                         }"
+                        style="line-height: 1.2;"
                         >{{ t("Continuously recording workflow") }}</span
                       >
                     </div>
@@ -148,7 +238,13 @@
                 </q-img>
               </div>
             </div>
-            <div class="aboutCard col">
+            <div 
+              class="aboutCard"
+              :class="{
+                'col': $q.screen.width > 430,
+                'col-12': $q.screen.width <= 430 
+              }"
+            >
               <div>
                 <q-img
                   style="border-radius: 50px"
@@ -169,9 +265,11 @@
                     <div class="text-center q-mt-sm">
                       <span
                         :class="{
-                          'font-16': $q.screen.width < 1600,
-                          'font-27': $q.screen.width >= 1600,
+                          'font-23': $q.screen.width <= 430,
+                          'font-16': $q.screen.width < 1600 && $q.screen.width > 430,
+                          'font-27': $q.screen.width >= 1600
                         }"
+                        style="line-height: 1.2;"
                         >{{
                           t("After continuing to support project development")
                         }}</span

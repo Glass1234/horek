@@ -1,77 +1,172 @@
 <template>
   <div
-    class="row justify-center full-width text-white q-pt-lg"
-    style="padding-bottom: 100px"
+    class="row justify-center full-width text-white"
+    :class="{
+      'q-pt-lg': $q.screen.width > 430,
+    }"
+    :style="$q.screen.width > 430 ? {'padding-bottom' : '100px'} : {'padding-bottom' : '26px', 'margin-top' : '-30px'}"
   >
-    <div class="col-8">
-      <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
+    <div 
+      :class="{
+        'col-8': $q.screen.width > 430,
+        'col-11': $q.screen.width <= 430 
+      }"
+      :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+    >
+      <q-breadcrumbs class="font-15" active-color="white" gutter="sm" :style="$q.screen.width > 430 ? {} : {'display' : 'none'}">
         <q-breadcrumbs-el :label="t('Home')" to="/" />
         <q-breadcrumbs-el :label="t('Services')" />
       </q-breadcrumbs>
       <div>
-        <h2 class="font-34 q-mb-none">{{ t("Graphic arts") }}</h2>
-        <div class="row q-mt-md" style="gap: 26px">
+        <h2 
+          class=" q-mb-none"
+          :class="{
+            'font-34': $q.screen.width > 430,
+            'font-16': $q.screen.width <= 430 
+          }"
+        >{{ t("Graphic arts") }}</h2>
+        <div
+          class="row"
+          :class="{
+            'q-mt-md': $q.screen.width > 430,
+            'q-mt-xs': $q.screen.width <= 430 
+          }"
+          :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '13px'}"
+        >
           <div class="column" v-for="(item, index) in graphics" :key="index">
             <div class="blockSkill">
               <q-img
                 :src="require(`assets/icons/servicesIcons/${item.icon}.png`)"
-                width="207px"
-                height="207px"
+                :width="$q.screen.width > 430 ? '207px' : '116px'"
+                :height="$q.screen.width > 430 ? '207px' : '116px'"
               />
             </div>
-            <div class="q-mt-sm">
-              <span class="font-16">{{ item.name }}</span>
+            <div
+              :class="{
+                'q-mt-sm': $q.screen.width > 430,
+                'q-mt-xs': $q.screen.width <= 430 
+              }"
+            >
+              <span
+                :class="{ 
+                  'font-16': $q.screen.width > 430, 
+                  'font-9': $q.screen.width <= 430 
+              }"
+            >{{ item.name }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <h2 class="font-34 q-mb-none">{{ t("Web and") }} UI\UX</h2>
-        <div class="row q-mt-md" style="gap: 26px">
+      <div
+        :class="{
+          'q-mb-md': $q.screen.width > 430,
+          'q-mb-lg': $q.screen.width <= 430 
+        }"
+      >
+        <h2 
+          class="q-mb-none"
+          :class="{
+            'font-34': $q.screen.width > 430,
+            'font-16': $q.screen.width <= 430 
+          }"
+        >{{ t("Web and") }} UI\UX</h2>
+        <div 
+          class="row"
+          :class="{
+            'q-mt-md': $q.screen.width > 430,
+            'q-mt-xs': $q.screen.width <= 430 
+          }" 
+          :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '13px'}"
+        >
           <div class="column" v-for="(item, index) in UI_UX" :key="index">
             <div class="blockSkill">
               <q-img
                 :src="require(`assets/icons/UI_UXIcons/${item.icon}.png`)"
-                width="207px"
-                height="207px"
+                :width="$q.screen.width > 430 ? '207px' : '116px'"
+                :height="$q.screen.width > 430 ? '207px' : '116px'"
               />
             </div>
-            <div class="q-mt-sm">
-              <span class="font-16">{{ item.name }}</span>
+            <div               
+              :class="{
+                'q-mt-sm': $q.screen.width > 430,
+                'q-mt-xs': $q.screen.width <= 430 
+              }">
+              <span
+                :class="{ 
+                  'font-16': $q.screen.width > 430, 
+                  'font-9': $q.screen.width <= 430 
+                }"
+            >{{ item.name }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <h2 class="font-34 q-mb-none">{{ t("Code") }}</h2>
-        <div class="blockSkill row justify-center">
+      <div 
+        :class="{ 
+          'q-pt-xl': $q.screen.width > 430, 
+          'q-pt-md': $q.screen.width <= 430 
+        }"
+      >
+        <h
+          :class="{ 
+            'font-34': $q.screen.width > 430, 
+            'font-16': $q.screen.width <= 430 
+          }">
+        {{ t("Code") }}</h>
+        <div
+          class="blockSkill row justify-center "
+          :class="{ 
+            'q-mt-xl': $q.screen.width > 430, 
+            'q-mt-lg': $q.screen.width <= 430 
+          }"
+        >
           <q-img
             :src="require(`assets/icons/codeIcons.png`)"
-            width="207px"
-            height="207px"
+            :width="$q.screen.width > 430 ? '207px' : '116px'"
+            :height="$q.screen.width > 430 ? '207px' : '116px'"
           />
         </div>
         <div class="q-mt-sm">
-          <div class="row items-center font-16 no-wrap">
+          <div 
+            class="row items-center no-wrap"
+            :class="{ 
+              'font-16': $q.screen.width > 430, 
+              'font-9': $q.screen.width <= 430 
+            }"
+          >
             <q-chip
               color="red-7"
               text-color="white"
               :clickable="false"
               label="FRONTED"
-              style="width: 92px"
+              :style="$q.screen.width > 430 ? {'min-width' : '105px', 'max-width' : '105px'} : {'min-width' : '65px', 'max-width' : '65px'}"
+              :class="{ 
+                'font-16': $q.screen.width > 430, 
+                'font-9': $q.screen.width <= 430 
+              }"
             />
             <span class="q-ml-sm" style="word-wrap: break-word"
               >SSR, SPA, PWA, vue3, vueRouter, vuex, pinia, axios, quasar,
               tailwind, css, scss, html, js</span
             >
           </div>
-          <div class="row font-16 no-wrap q-mt-sm">
+          <div 
+            class="row no-wrap q-mt-sm"
+            :class="{ 
+              'font-16': $q.screen.width > 430, 
+              'font-9': $q.screen.width <= 430 
+            }"
+          >
             <q-chip
               color="red-7"
               text-color="white"
               :clickable="false"
+              :class="{ 
+                'font-16': $q.screen.width > 430, 
+                'font-9': $q.screen.width <= 430 
+              }"
               label="OTHER"
-              style="min-width: 92px; max-width: 92px"
+              :style="$q.screen.width > 430 ? {'min-width' : '105px', 'max-width' : '105px'} : {'min-width' : '65px', 'max-width' : '65px'}"
             />
             <div class="q-ml-sm" style="word-wrap: break-word">
               <span>Non-GUI {{ t("applications in") }} C/C++/Python/Java</span
@@ -91,19 +186,50 @@
             </div>
           </div>
         </div>
-        <h3 class="font-34 q-mb-none">
-          {{ t("Didn't find what you were looking for?") }}
+        <h3 
+          class="q-mb-none"
+          :class="{ 
+            'font-34': $q.screen.width > 430, 
+            'font-16': $q.screen.width <= 430 
+          }"
+        > {{ t("Didn't find what you were looking for?") }}
         </h3>
-        <div class="q-mt-sm">
-          <span class="font-16">{{
+        <div
+          :class="{ 
+            'q-mt-sm': $q.screen.width > 430, 
+            'q-mt-none': $q.screen.width <= 430 
+          }"
+        >
+          <span 
+            :class="{ 
+              'font-16': $q.screen.width > 430, 
+              'font-9': $q.screen.width <= 430 
+            }"
+          >{{
             t(
               "Write to us for a consultation via Telegram or Email, and the manager will assist in finding the necessary information. We are always ready to help you resolve any questions and provide the necessary support."
             )
           }}</span>
         </div>
-        <h3 class="font-34 q-mb-none">{{ t("Prices") }}</h3>
-        <div class="q-mt-sm">
-          <span class="font-16">{{
+        <h3
+          class="q-mb-none"
+          :class="{ 
+            'font-34': $q.screen.width > 430, 
+            'font-16': $q.screen.width <= 430 
+          }"
+        > {{ t("Prices") }}</h3>
+        <div
+          :class="{ 
+            'q-mt-sm': $q.screen.width > 430, 
+            'q-mt-none': $q.screen.width <= 430 
+          }"
+        >
+          <span
+            :class="{ 
+              'font-16': $q.screen.width > 430, 
+              'font-9': $q.screen.width <= 430 
+            }"
+          >{{
             t(
               "Unique price for a unique project. We adapt the cost of our services to your technical requirements. Find out the exact cost of your project by contacting the manager."
             )

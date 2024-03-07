@@ -4,17 +4,32 @@
     :class="isIndexPage ? 'footerBlur' : ''"
   >
     <q-separator class="bg-grey-separator full-width" />
-    <div class="col-7 column q-pt-xl q-pb-md">
+    <div
+      class="column q-pb-md"
+      :class="{
+        'col-7, q-pt-xl': $q.screen.width > 430,
+        'col-10, q-pt-md': $q.screen.width <= 430 
+      }"
+    >
       <div class="row items-center justify-between">
-        <div class="row" style="gap: 0 80px">
+        <div
+          class="row"
+          :style="$q.screen.width > 430 ? { 'gap': '0 80px' } : { 'gap': '0 40px' }"
+        >
           <router-link class="column justify-center" to="/"
             ><q-img
               class="cursor-pointer"
               src="icons/logo.svg"
               height="auto"
-              width="120px"
+              :width="$q.screen.width > 430 ? '120px' : '75px'"
           /></router-link>
-          <div class="column font-16">
+          <div
+            class="column"
+            :class="{
+              'font-16': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430 
+            }"
+          >
             <span class="cursor-pointer" style="text-decoration: underline"
               >Email:
               <a href="mailto:horek@horek.com" class="text-white"
@@ -25,7 +40,13 @@
               >9:00 - 23:00 {{ t("Mon-Fri") }}
             </span>
           </div>
-          <div class="column font-16">
+          <div
+            class="column"
+            :class="{
+              'font-16': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430 
+            }"
+          >
             <span class="cursor-pointer" style="text-decoration: underline"
               >TG:
               <a
@@ -40,7 +61,7 @@
             </span>
           </div>
         </div>
-        <div>
+        <div v-if="$q.screen.width > 430">
           <a href="https://t.me/horekportfolio" target="_blank">
             <q-img
               class="cursor-pointer"
@@ -50,23 +71,20 @@
           </a>
         </div>
       </div>
-      <div class="q-py-md">
+      <div class="q-py-md" v-if="$q.screen.width > 430">
         <q-separator class="footerSeparator" />
       </div>
-      <div class="row items-center justify-between">
-        <div
-          class="row items-center text-uppercase font-16"
-          style="gap: 0 60px"
-        >
-          <router-link class="linkCustom" to="/portfolio"
-            ><span>{{ t("Portfolio") }}</span></router-link
-          >
-          <router-link class="linkCustom" to="/services"
-            ><span>{{ t("services") }}</span></router-link
-          >
-          <router-link class="linkCustom" to="/contacts"
-            ><span>{{ t("contacts") }}</span></router-link
-          >
+      <div class="row items-center justify-between" style="gap: 0 60px" v-if="$q.screen.width > 430">
+        <div class="row items-center text-uppercase font-16" style="gap: 0 60px">
+          <router-link class="linkCustom" to="/portfolio">
+            <span>{{ t("Portfolio") }}</span>
+          </router-link>
+          <router-link class="linkCustom" to="/services">
+            <span>{{ t("services") }}</span>
+          </router-link>
+          <router-link class="linkCustom" to="/contacts">
+            <span>{{ t("contacts") }}</span>
+          </router-link>
         </div>
         <div
           :class="{
@@ -75,16 +93,10 @@
           }"
         >
           <div class="row blockConsultation">
-            <div class="q-px-lg q-py-sm">
-              {{ t("shall we discuss your project?") }}
-            </div>
+            <div class="q-px-lg q-py-sm">{{ t("shall we discuss your project?") }}</div>
             <q-space />
             <q-separator class="bg-red-7" vertical />
-            <div
-              class="text-red-7 text-uppercase q-px-lg q-py-sm cursor-pointer"
-            >
-              {{ t("Consultation") }}
-            </div>
+            <div class="text-red-7 text-uppercase q-px-lg q-py-sm cursor-pointer">{{ t("Consultation") }}</div>
           </div>
         </div>
       </div>

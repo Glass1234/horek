@@ -1,27 +1,77 @@
 <template>
-  <div class="row justify-center full-width text-white q-pt-lg">
-    <div class="col-8">
-      <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
+    <div 
+      class="row justify-center full-width text-white"
+      :class="{
+        'q-pt-lg': $q.screen.width > 430,
+      }"
+      :style="$q.screen.width > 430 ? {'padding-bottom' : '100px'} : {'padding-bottom' : '26px', 'margin-top' : '-50px'}"
+    >
+    <div
+      :class="{
+        'col-8': $q.screen.width > 430,
+        'col-11': $q.screen.width <= 430 
+      }"
+      :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+    >
+      <q-breadcrumbs
+        class="font-15"
+        active-color="white"
+        gutter="sm"
+        :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+      >
         <q-breadcrumbs-el :label="t('Home')" to="/" />
         <q-breadcrumbs-el :label="t('Contacts')" />
       </q-breadcrumbs>
-      <h1 class="font-34 q-mb-none">{{ t("Contacts") }}</h1>
-      <div class="row" style="gap: 64px">
+      <h1 
+        class="q-mb-none"
+        :class="{
+          'font-34': $q.screen.width > 430,
+          'font-16': $q.screen.width <= 430
+        }"
+      >{{ t("Contacts") }}</h1>
+      <div class="row"
+        style="gap: 64px"
+        :style="$q.screen.width > 430 ? {} : {'gap' : '25px 72px'}"
+      >
         <div class="column" style="gap: 4px 0">
-          <span class="font-17" style="color: rgba(255, 255, 255, 0.5)">{{
-            t("Mail")
-          }}</span>
-          <div class="font-16">
+          <span
+            :class="{
+              'font-17': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+            style="color: rgba(255, 255, 255, 0.5)"
+          >
+            {{
+              t("Mail")
+            }}
+          </span>
+          <div
+            :class="{
+              'font-16': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+          >
             <a href="mailto:horek@horek.com" class="text-white"
-              >horek@horek.com</a
-            >
+              >horek@horek.com
+            </a>
           </div>
         </div>
         <div class="column" style="gap: 4px 0">
-          <span class="font-17" style="color: rgba(255, 255, 255, 0.5)"
-            >Telegram</span
+          <span
+            :class="{
+              'font-17': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+            style="color: rgba(255, 255, 255, 0.5)"
           >
-          <div class="font-16">
+            Telegram
+          </span>
+          <div
+            :class="{
+              'font-16': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+          >
             <a
               href="https://t.me/horekmanager"
               class="text-white"
@@ -31,10 +81,23 @@
           </div>
         </div>
         <div class="column" style="gap: 4px 0">
-          <span class="font-17" style="color: rgba(255, 255, 255, 0.5)">{{
-            t("Telegram channel")
-          }}</span>
-          <div class="font-16">
+          <span
+            :class="{
+              'font-17': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+            style="color: rgba(255, 255, 255, 0.5)"
+          >
+            {{
+              t("Telegram channel")
+            }}
+          </span>
+          <div
+            :class="{
+              'font-16': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+          >
             <a
               href="https://t.me/horekportfolio"
               class="text-white"
@@ -44,10 +107,25 @@
           </div>
         </div>
         <div class="column" style="gap: 4px 0">
-          <span class="font-17" style="color: rgba(255, 255, 255, 0.5)">{{
-            t("Work time")
-          }}</span>
-          <div class="font-16">9:00 - 23:00 {{ t("Mon-Fri") }}</div>
+          <span
+            :class="{
+              'font-17': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+            style="color: rgba(255, 255, 255, 0.5)"
+          >
+            {{
+              t("Work time")
+            }}
+          </span>
+          <div
+            :class="{
+              'font-16': $q.screen.width > 430,
+              'font-9': $q.screen.width <= 430
+            }"
+          >
+            9:00 - 23:00 {{ t("Mon-Fri") }}
+          </div>
         </div>
       </div>
       <div class="q-mt-lg">

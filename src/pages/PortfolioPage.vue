@@ -1,7 +1,24 @@
 <template>
-  <div class="row justify-center full-width text-white q-py-lg">
-    <div class="col-8">
-      <q-breadcrumbs class="font-15" active-color="white" gutter="sm">
+  <div 
+    class="row justify-center full-width text-white"
+    :class="{
+      'q-pt-lg': $q.screen.width > 430,
+    }"
+    :style="$q.screen.width > 430 ? {'padding-bottom' : '100px'} : {'padding-bottom' : '26px', 'margin-top' : '-20px'}"
+  >
+    <div 
+      :class="{
+        'col-8': $q.screen.width > 430,
+        'col-11': $q.screen.width <= 430 
+      }"
+      :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+    >
+      <q-breadcrumbs
+        class="font-15"
+        active-color="white"
+        gutter="sm"
+        :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+      >
         <q-breadcrumbs-el :label="t('Home')" to="/" />
         <q-breadcrumbs-el :label="t('Portfolio')" />
       </q-breadcrumbs>
@@ -17,19 +34,43 @@
           :label="item"
         />
       </div>
-      <div class="parent q-mt-lg" style="gap: 26px">
+      <div
+        class="parent" 
+        :class="{
+          'q-mt-lg': $q.screen.width > 430,
+          'q-mt-md': $q.screen.width <= 430
+        }"
+        style="gap: 14px"
+      >
         <div v-for="(item, index) in arr.visibleProjects" :key="index">
           <div class="column">
             <q-img
               class="cursor-pointer"
               style="height: 190px; border-radius: 14px"
+              :style="$q.screen.width > 430 ? {'height' : '190px'} : {'height' : '115px'}"
               @click="arr.openItem(item.id)"
               :src="item.src_preview"
             />
-            <div class="q-px-xs q-mt-md">
-              <span class="font-16">{{ item.title }}</span
-              ><br />
-              <span style="color: #beb6b8">{{ item.type }}</span>
+            <div
+              class="q-px-xs q-mt-sm"
+            >
+              <span
+                class="row"
+                :class="{
+                  'font-16': $q.screen.width > 430,
+                  'font-10': $q.screen.width <= 430, 
+                  'row' : $q.screen.width <= 430 
+                }"
+              >{{ item.title }}</span>
+              <span
+                style="color: #beb6b8"
+                class="row"
+                :class="{
+                  'font-10': $q.screen.width > 430,
+                  'font-7': $q.screen.width <= 430, 
+                  'row' : $q.screen.width <= 430 
+                }"
+              >{{ item.type }}</span>
             </div>
           </div>
         </div>
@@ -98,8 +139,16 @@ const arr = reactive(new ArrProjects());
 <style scoped lang="scss">
 .parent {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 26px;
   grid-row-gap: 26px;
+}
+@media (min-width: 431px) {
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 26px;
+    grid-row-gap: 26px;
+}
 }
 </style>
