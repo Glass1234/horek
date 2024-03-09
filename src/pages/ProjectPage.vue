@@ -7,7 +7,8 @@
   >
     <div
       :class="{
-        'col-8': $q.screen.width > 430,
+        'col-8': $q.screen.width > 768,
+        'col-10': $q.screen.width <= 768 && $q.screen.width > 430, 
         'col-11': $q.screen.width <= 430 
       }"
       style="padding-bottom: 55px"
@@ -30,7 +31,9 @@
       >
         <h1 class="q-my-none"
           :class="{
-            'font-34': $q.screen.width > 430,
+            'font-34': $q.screen.width > 1024,
+            'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
+            'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
             'font-10': $q.screen.width <= 430 
           }" 
           style="line-height: 1; font-weight: 600">
@@ -39,7 +42,10 @@
         <h2
           class="q-my-none"
           :class="{
-            'font-23': $q.screen.width > 430,
+            'font-23': $q.screen.width > 1024,
+            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768, 
+            'font-18': $q.screen.width <= 768 && $q.screen.width > 430, 
+            'font-9': $q.screen.width <= 430,
             'font-7': $q.screen.width <= 430,
             'q-mt-xs': $q.screen.width <= 430
           }" 
@@ -53,7 +59,7 @@
           'q-mt-xl': $q.screen.width > 430,
           'q-mt-lg': $q.screen.width <= 430 
         }" 
-        :style="$q.screen.width > 430 ? {'gap' : '100px'} : {'gap' : '26px'}"
+        :style="$q.screen.width > 430 ? {'gap' : '70px'} : {'gap' : '26px'}"
       >
         <template v-for="(item, index) in project.content" :key="index">
           <template v-if="item.type === 'img'">
@@ -62,14 +68,18 @@
           <div v-else-if="item.type === 'text'">
             <div
               :class="{
-                'font-34': $q.screen.width > 430,
+                'font-34': $q.screen.width > 1024,
+                'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
+                'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
                 'font-10': $q.screen.width <= 430 
               }" 
               style="font-weight: 600"
             >{{ item.title }}</div>
             <pre
             :class="{
-                'font-23': $q.screen.width > 430,
+                'font-23': $q.screen.width > 1024,
+                'font-18': $q.screen.width <= 1024 && $q.screen.width > 768, 
+                'font-13': $q.screen.width <= 768 && $q.screen.width > 430, 
                 'font-7': $q.screen.width <= 430 
               }" 
               style="

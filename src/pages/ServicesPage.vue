@@ -8,7 +8,8 @@
   >
     <div 
       :class="{
-        'col-8': $q.screen.width > 430,
+        'col-8': $q.screen.width > 768,
+        'col-10': $q.screen.width <= 768 && $q.screen.width > 430, 
         'col-11': $q.screen.width <= 430 
       }"
       :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
@@ -31,14 +32,13 @@
             'q-mt-md': $q.screen.width > 430,
             'q-mt-xs': $q.screen.width <= 430 
           }"
-          :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '13px'}"
+          :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '10px'}"
         >
           <div class="column" v-for="(item, index) in graphics" :key="index">
             <div class="blockSkill">
               <q-img
                 :src="require(`assets/icons/servicesIcons/${item.icon}.png`)"
-                :width="$q.screen.width > 430 ? '207px' : '116px'"
-                :height="$q.screen.width > 430 ? '207px' : '116px'"
+                :style="dynamicStyles"
               />
             </div>
             <div
@@ -82,8 +82,7 @@
             <div class="blockSkill">
               <q-img
                 :src="require(`assets/icons/UI_UXIcons/${item.icon}.png`)"
-                :width="$q.screen.width > 430 ? '207px' : '116px'"
-                :height="$q.screen.width > 430 ? '207px' : '116px'"
+                :style="dynamicStyles"
               />
             </div>
             <div               
@@ -122,8 +121,7 @@
         >
           <q-img
             :src="require(`assets/icons/codeIcons.png`)"
-            :width="$q.screen.width > 430 ? '207px' : '116px'"
-            :height="$q.screen.width > 430 ? '207px' : '116px'"
+            :style="dynamicStyles"
           />
         </div>
         <div class="q-mt-sm">
@@ -241,7 +239,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 const graphics = ref([
@@ -297,6 +295,41 @@ const UI_UX = ref([
     name: t("User interface"),
   },
 ]);
+
+const screen = ref({ width: window.innerWidth, height: window.innerHeight })
+
+const handleResize = () => {
+  screen.value.width = window.innerWidth
+  screen.value.height = window.innerHeight
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
+
+const dynamicStyles = computed(() => {
+  if (screen.value.width > 768) {
+    return { 
+      width: '207px',
+      height: '207px' 
+    }
+  } else if ((screen.value.width <= 768) && (screen.value.width > 430)) {
+    return { 
+      width: '190px',
+      height: '190px' 
+     }
+  } else {
+    return { 
+      width: '116px',
+      height: '116px' 
+     }
+  }
+})
+
 </script>
 
 <style scoped lang="scss">

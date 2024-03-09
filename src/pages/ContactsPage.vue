@@ -8,7 +8,8 @@
     >
     <div
       :class="{
-        'col-8': $q.screen.width > 430,
+        'col-8': $q.screen.width > 768,
+        'col-10': $q.screen.width <= 768 && $q.screen.width > 430, 
         'col-11': $q.screen.width <= 430 
       }"
       :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
@@ -37,7 +38,7 @@
           <span
             :class="{
               'font-17': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
             style="color: rgba(255, 255, 255, 0.5)"
           >
@@ -48,7 +49,7 @@
           <div
             :class="{
               'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
           >
             <a href="mailto:horek@horek.com" class="text-white"
@@ -60,7 +61,7 @@
           <span
             :class="{
               'font-17': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
             style="color: rgba(255, 255, 255, 0.5)"
           >
@@ -69,7 +70,7 @@
           <div
             :class="{
               'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
           >
             <a
@@ -84,7 +85,7 @@
           <span
             :class="{
               'font-17': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
             style="color: rgba(255, 255, 255, 0.5)"
           >
@@ -95,7 +96,7 @@
           <div
             :class="{
               'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
           >
             <a
@@ -110,7 +111,7 @@
           <span
             :class="{
               'font-17': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
             style="color: rgba(255, 255, 255, 0.5)"
           >
@@ -121,7 +122,7 @@
           <div
             :class="{
               'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430
+              'font-12': $q.screen.width <= 430
             }"
           >
             9:00 - 23:00 {{ t("Mon-Fri") }}

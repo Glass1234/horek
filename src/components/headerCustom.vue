@@ -2,13 +2,17 @@
   <q-header
     class="bg-header-black headerBlur"
     style="z-index: 7000;"
-    :style="$q.screen.width > 430 ? {} : {'position' : 'relative !important'}"
+    :style="$q.screen.width > 768 ? {} : {'position' : 'relative !important'}"
     v-if="modalDis.isOpenModal == false"
   >
     <div class="row justify-center" style="height: 80px">
       <div 
         class="row justify-between col col-8"
-        :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+        :class="{ 
+          'col-8': $q.screen.width > 1024, 
+          'col-10': $q.screen.width <= 1024 
+        }"
+        :style="$q.screen.width > 768 ? {} : {'display' : 'none'}"
       >
         <div
           class="row items-center text-uppercase font-16"
@@ -68,7 +72,7 @@
                 </q-item>
                 <q-separator 
                   class="bg-grey-separator" 
-                  :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+                  :style="$q.screen.width > 768 ? {} : {'display' : 'none'}"
                 />
                 <q-item
                   class="row items-center gap-x-md"
@@ -98,7 +102,7 @@
       </div>
       <div 
         class="row justify-between col col-10"
-        :style="$q.screen.width > 430 ? {'display' : 'none'} : {}"
+        :style="$q.screen.width > 768 ? {'display' : 'none'} : {}"
       >
         <div
           class="row items-center text-uppercase font-16"
@@ -109,7 +113,7 @@
               class="cursor-pointer"
               src="icons/logo.svg"
               height="auto"
-              width="59px"
+              :width="$q.screen.width > 430 ? '83px' : '59px'"
           /></router-link> 
         </div>
         <div class="row items-center">
@@ -125,7 +129,7 @@
     </div>
     <q-separator
       class="bg-grey-separator"
-      :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+      :style="$q.screen.width > 768 ? {} : {'display' : 'none'}"
     />
   </q-header>
   <q-dialog
@@ -136,9 +140,10 @@
       backdrop-filter: blur(32px);"
   >
     <div 
-      style="margin-left: 30px; text-transform: uppercase; gap: 12px 0;"
+      style="margin-left: 30px; text-transform: uppercase; gap: 120px 0;"
       :class="{ 
-        'font-24': $q.screen.width <= 430 
+        'font-24': $q.screen.width <= 430,
+        'font-24': $q.screen.width > 430 
       }"
     >
       <div class="column" style="gap: 12px 0;">

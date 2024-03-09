@@ -13,19 +13,20 @@
           <div
             class="row items-baseline relative-position justify-center" 
             :class="{ 
-              'font-82': $q.screen.width > 430, 
+              'font-82': $q.screen.width > 1024, 
+              'font-64': $q.screen.width <= 1024 && $q.screen.width > 768, 
+              'font-50': $q.screen.width <= 768 && $q.screen.width > 430, 
               'font-30': $q.screen.width <= 430 
             }"
           >
             <div class="text-red-button">{{ t("Quality") }}</div>
             <q-img
               class="q-ml-sm q-mr-md"
-              :width="$q.screen.width > 430 ? '52px' : '18px'"
-              :height="$q.screen.width > 430 ? '52px' : '18px'"
+              :style="dynamicStars"
               :src="require(`assets/icons/stars.svg`)"
             />
             <div>{{ t("solutions") }}</div>
-            <div class="absolute" :style="$q.screen.width > 430 ? { 'right': '-30px', 'top': '-5px' } : { 'display': 'none' }">
+            <div class="absolute" :style="$q.screen.width > 768 ? { 'right': '10px', 'top': '-30px' } : { 'display': 'none' }">
               <div class="row row-btn items-center gap-x-xs">
                 <q-btn color="white" to="/services" round>
                   <q-img
@@ -47,7 +48,9 @@
           <div
             class="row items-center justify-center"
             :class="{ 
-              'font-82': $q.screen.width > 430, 
+              'font-82': $q.screen.width > 1024, 
+              'font-64': $q.screen.width <= 1024 && $q.screen.width > 768, 
+              'font-50': $q.screen.width <= 768 && $q.screen.width > 430, 
               'font-30': $q.screen.width <= 430 
             }"
           >
@@ -55,8 +58,7 @@
             <q-img
               class="q-mx-sm"
               :src="require(`assets/icons/rows.svg`)"
-              :width="$q.screen.width > 430 ? '120px' : '40px'"
-              :style="$q.screen.width > 430 ? { 'transform': 'rotate(-2deg)', 'margin-bottom': '-20px' } : {}"
+              :style="dynamicArrow"
             />
             <div>{{ t("your product") }}</div>
           </div>
@@ -64,7 +66,9 @@
         <div
           class="text-center"
           :class="{ 
-            'font-25': $q.screen.width > 430, 
+            'font-25': $q.screen.width > 1024, 
+            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768, 
+            'font-18': $q.screen.width <= 768 && $q.screen.width > 430, 
             'font-9': $q.screen.width <= 430 
           }"
           style="line-height: 38px; color: #beb6b8"
@@ -79,14 +83,16 @@
       >
         <div 
           :class="{
-            'col-8': $q.screen.width > 430,
-            'col-11': $q.screen.width <= 430 }"
+            'col-8': $q.screen.width > 1024,
+            'col-11': $q.screen.width <= 1024 }"
           :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
         >
           <div 
             class="text-left"
             :class="{ 
-              'font-34': $q.screen.width > 430, 
+              'font-34': $q.screen.width > 1024, 
+              'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
+              'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
               'font-16': $q.screen.width <= 430 
             }"
           >{{ t("Some of our projects") }}</div>
@@ -138,13 +144,16 @@
         <div
           :class="{
             'col-8': $q.screen.width > 430,
+            'col-10': $q.screen.width <= 1024 && $q.screen.width > 430, 
             'col-11': $q.screen.width <= 430 
           }"
           :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
         >
           <div
-            :class="{
-              'font-34': $q.screen.width > 430,
+          :class="{ 
+              'font-34': $q.screen.width > 1024, 
+              'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
+              'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
               'font-16': $q.screen.width <= 430 
             }"
           >{{ t("About Us") }}</div>
@@ -160,7 +169,8 @@
               class="aboutCard"
               :class="{
                 'col': $q.screen.width > 430,
-                'col-12': $q.screen.width <= 430 
+                'col-7': $q.screen.width <= 768 && $q.screen.width > 430, 
+                'col-12': $q.screen.width <= 430
               }"
             >
               <div>
@@ -203,6 +213,7 @@
               class="aboutCard"
               :class="{
                 'col': $q.screen.width > 430,
+                'col-7': $q.screen.width <= 768 && $q.screen.width > 430, 
                 'col-12': $q.screen.width <= 430 
               }"
             >
@@ -242,6 +253,7 @@
               class="aboutCard"
               :class="{
                 'col': $q.screen.width > 430,
+                'col-7': $q.screen.width <= 768 && $q.screen.width > 430, 
                 'col-12': $q.screen.width <= 430 
               }"
             >
@@ -287,7 +299,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 import cardProject from "components/cardProject.vue";
 
@@ -320,6 +332,64 @@ const projects = ref([
     src_preview: require("assets/projects/mainPreview/4.png"),
   },
 ]);
+
+const screen = ref({ width: window.innerWidth, height: window.innerHeight })
+
+const handleResize = () => {
+  screen.value.width = window.innerWidth
+  screen.value.height = window.innerHeight
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
+
+const dynamicStars = computed(() => {
+  if (screen.value.width > 768) {
+    return { 
+      width: '52px',
+      height: '52px' 
+    }
+  } else if ((screen.value.width <= 768) && (screen.value.width > 430)) {
+    return { 
+      width: '32px',
+      height: '32px' 
+     }
+  } else {
+    return { 
+      width: '18px',
+      height: '18px' 
+     }
+  }
+})
+
+const dynamicArrow = computed(() => {
+  if (screen.value.width > 768) {
+
+    return { 
+      transform: 'rotate(-2deg)',
+      'margin-bottom': '-20px',
+      width: '120px',
+    }
+  } else if ((screen.value.width <= 768) && (screen.value.width > 430)) {
+    return { 
+      transform: 'rotate(-2deg)',
+      'margin-bottom': '-10px',
+      width: '80px',
+     }
+  } else {
+    return { 
+      transform: 'rotate(-2deg)',
+      'margin-bottom': '-5px',
+      width: '40px',
+     }
+  }
+})
+
 </script>
 
 <style scoped lang="scss">

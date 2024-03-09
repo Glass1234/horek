@@ -30,7 +30,7 @@
     <div
       class="absolute"
       style="top: 30px; right: 34px; background-color: transparent"
-      :style="$q.screen.width <= 430 ? { 'top': '0px', 'right': '0px' } : {}"
+      :style="$q.screen.width <= 768 ? { 'top': '0px', 'right': '0px' } : {}"
     >
       <q-btn 
         :class="{
@@ -100,8 +100,28 @@ const openItem = () => {
     border-radius: 40px;
     border: 2px solid rgba(255, 255, 255, 0.1);
     background: #05070b;
+    height: 300px;
+    padding: 42px;
+  }
+}
+
+@media (min-width: 769px) {
+  .project {
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #05070b;
+    height: 380px;
+    padding: 42px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .project {
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #05070b;
     height: 400px;
     padding: 42px;
-}
+  }
 }
 </style>

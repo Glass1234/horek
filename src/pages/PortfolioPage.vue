@@ -8,7 +8,8 @@
   >
     <div 
       :class="{
-        'col-8': $q.screen.width > 430,
+        'col-8': $q.screen.width > 768,
+        'col-10': $q.screen.width <= 768 && $q.screen.width > 430, 
         'col-11': $q.screen.width <= 430 
       }"
       :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
@@ -28,6 +29,10 @@
           :key="index"
           @click="arr.addFilter(item)"
           class="cursor-pointer"
+          :class="{
+            'font-16': $q.screen.width > 430,
+            'font-13': $q.screen.width <= 430, 
+          }"
           :color="arr.usingFilters.includes(item) ? 'red-7' : 'red-6'"
           text-color="white"
           :clickable="true"
@@ -58,18 +63,12 @@
                 class="row"
                 :class="{
                   'font-16': $q.screen.width > 430,
-                  'font-10': $q.screen.width <= 430, 
-                  'row' : $q.screen.width <= 430 
+                  'font-12': $q.screen.width <= 430, 
                 }"
               >{{ item.title }}</span>
               <span
                 style="color: #beb6b8"
-                class="row"
-                :class="{
-                  'font-10': $q.screen.width > 430,
-                  'font-7': $q.screen.width <= 430, 
-                  'row' : $q.screen.width <= 430 
-                }"
+                class="row font-10"
               >{{ item.type }}</span>
             </div>
           </div>
@@ -143,12 +142,22 @@ const arr = reactive(new ArrProjects());
   grid-column-gap: 26px;
   grid-row-gap: 26px;
 }
-@media (min-width: 431px) {
+
+@media (min-width: 1025px) {
   .parent {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 26px;
     grid-row-gap: 26px;
+  }
 }
+
+@media (min-width: 431px) {
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 26px;
+    grid-row-gap: 26px;
+  }
 }
 </style>
