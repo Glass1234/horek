@@ -21,8 +21,7 @@
           >
             <div class="text-red-button">{{ t("Quality") }}</div>
             <q-img
-              class="q-ml-sm q-mr-md"
-              :style="dynamicStars"
+              class="q-ml-sm q-mr-md dynamicStars"
               :src="require(`assets/icons/stars.svg`)"
             />
             <div>{{ t("solutions") }}</div>
@@ -56,9 +55,8 @@
           >
             <div>{{ t("for") }}</div>
             <q-img
-              class="q-mx-sm"
+              class="q-mx-sm dynamicArrow"
               :src="require(`assets/icons/rows.svg`)"
-              :style="dynamicArrow"
             />
             <div>{{ t("your product") }}</div>
           </div>
@@ -299,7 +297,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 import cardProject from "components/cardProject.vue";
 
@@ -333,63 +331,6 @@ const projects = ref([
   },
 ]);
 
-const screen = ref({ width: window.innerWidth, height: window.innerHeight })
-
-const handleResize = () => {
-  screen.value.width = window.innerWidth
-  screen.value.height = window.innerHeight
-}
-
-onMounted(() => {
-  window.addEventListener('resize', handleResize)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize)
-})
-
-const dynamicStars = computed(() => {
-  if (screen.value.width > 768) {
-    return { 
-      width: '52px',
-      height: '52px' 
-    }
-  } else if ((screen.value.width <= 768) && (screen.value.width > 430)) {
-    return { 
-      width: '32px',
-      height: '32px' 
-     }
-  } else {
-    return { 
-      width: '18px',
-      height: '18px' 
-     }
-  }
-})
-
-const dynamicArrow = computed(() => {
-  if (screen.value.width > 768) {
-
-    return { 
-      transform: 'rotate(-2deg)',
-      'margin-bottom': '-20px',
-      width: '120px',
-    }
-  } else if ((screen.value.width <= 768) && (screen.value.width > 430)) {
-    return { 
-      transform: 'rotate(-2deg)',
-      'margin-bottom': '-10px',
-      width: '80px',
-     }
-  } else {
-    return { 
-      transform: 'rotate(-2deg)',
-      'margin-bottom': '-5px',
-      width: '40px',
-     }
-  }
-})
-
 </script>
 
 <style scoped lang="scss">
@@ -408,8 +349,46 @@ const dynamicArrow = computed(() => {
   grid-column-gap: 28px;
   grid-row-gap: 28px;
 }
+
 .aboutCard {
   border-radius: 50px;
   border: 1px solid #dc143b26;
+}
+
+.dynamicStars {
+  width: 18px;
+  height: 18px
+}
+
+.dynamicArrow {
+  transform: rotate(-2deg);
+  margin-bottom: -5px;
+  width: 40px;
+}
+
+@media (min-width: 769px) {
+  .dynamicStars {
+    width: 32px;
+    height: 32px
+  }
+
+  .dynamicArrow {
+    transform: rotate(-2deg);
+    margin-bottom: -10px;
+    width: 80px;
+  }
+}
+
+@media (min-width: 431px) {
+  .dynamicStars {
+    width: 52px;
+    height: 52px; 
+  }
+
+  .dynamicArrow {
+    transform: rotate(-2deg);
+    margin-bottom: -10px;
+    width: 120px;
+  }
 }
 </style>

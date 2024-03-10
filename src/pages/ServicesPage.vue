@@ -35,10 +35,9 @@
           :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '10px'}"
         >
           <div class="column" v-for="(item, index) in graphics" :key="index">
-            <div class="blockSkill">
+            <div class="blockSkill blockSkill-size">
               <q-img
                 :src="require(`assets/icons/servicesIcons/${item.icon}.png`)"
-                :style="dynamicStyles"
               />
             </div>
             <div
@@ -79,10 +78,9 @@
           :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '13px'}"
         >
           <div class="column" v-for="(item, index) in UI_UX" :key="index">
-            <div class="blockSkill">
+            <div class="blockSkill blockSkill-size">
               <q-img
                 :src="require(`assets/icons/UI_UXIcons/${item.icon}.png`)"
-                :style="dynamicStyles"
               />
             </div>
             <div               
@@ -121,7 +119,6 @@
         >
           <q-img
             :src="require(`assets/icons/codeIcons.png`)"
-            :style="dynamicStyles"
           />
         </div>
         <div class="q-mt-sm">
@@ -239,7 +236,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 const graphics = ref([
@@ -296,43 +293,10 @@ const UI_UX = ref([
   },
 ]);
 
-const screen = ref({ width: window.innerWidth, height: window.innerHeight })
-
-const handleResize = () => {
-  screen.value.width = window.innerWidth
-  screen.value.height = window.innerHeight
-}
-
-onMounted(() => {
-  window.addEventListener('resize', handleResize)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize)
-})
-
-const dynamicStyles = computed(() => {
-  if (screen.value.width > 768) {
-    return { 
-      width: '207px',
-      height: '207px' 
-    }
-  } else if ((screen.value.width <= 768) && (screen.value.width > 430)) {
-    return { 
-      width: '190px',
-      height: '190px' 
-     }
-  } else {
-    return { 
-      width: '116px',
-      height: '116px' 
-     }
-  }
-})
-
 </script>
 
 <style scoped lang="scss">
+
 .blockSkill {
   background: linear-gradient(
     0deg,
@@ -342,6 +306,27 @@ const dynamicStyles = computed(() => {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
 }
+
+.blockSkill-size {
+  width: 116px;
+  height: 116px
+}
+
+@media (min-width: 769px) {
+  .blockSkill-size {
+    width: 207px;
+    height: 207px
+  }
+}
+
+@media (min-width: 431px) {
+  .blockSkill-size {
+    width: 190px;
+    height: 190px
+  }
+}
+
+
 :deep(.q-chip__content) {
   justify-content: center;
 }
