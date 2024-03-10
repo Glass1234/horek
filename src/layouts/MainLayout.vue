@@ -3,11 +3,23 @@
     <q-img
       class="absolute"
       src="images/luminescence.png"
-      :style="$q.screen.width <= 768 ? { 'max-width': '100%', 'height':  '100vh' } : { 'max-width': '100%', 'max-height':  '100%' }"
+      :style="
+        $q.screen.width <= 768
+          ? { 'max-width': '100%', height: '100vh' }
+          : { 'max-width': '100%', 'max-height': '100%' }
+      "
     />
     <headerCustom />
 
-    <q-page-container class="sticky" style="z-index: 10" :style="$q.screen.width > 768 ? { 'padding-top': '80px' } : { 'padding-top': '10px' }">
+    <q-page-container
+      class="sticky"
+      style="z-index: 10"
+      :style="
+        $q.screen.width > 768
+          ? { 'padding-top': '80px' }
+          : { 'padding-top': '10px' }
+      "
+    >
       <router-view />
     </q-page-container>
     <footerCustom />

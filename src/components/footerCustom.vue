@@ -32,8 +32,8 @@
           >
             <span class="cursor-pointer" style="text-decoration: underline"
               >Email:
-              <a href="mailto:horek@horek.com" class="text-white"
-                >horek@horek.com</a
+              <a href="mailto:manager@horek.design" class="text-white"
+                >manager@horek.design</a
               ></span
             >
             <span style="color: rgba(255, 255, 255, 0.5)"

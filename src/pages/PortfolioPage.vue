@@ -1,24 +1,28 @@
 <template>
-  <div 
+  <div
     class="row justify-center full-width text-white"
     :class="{
       'q-pt-lg': $q.screen.width > 430,
     }"
-    :style="$q.screen.width > 430 ? {'padding-bottom' : '100px'} : {'padding-bottom' : '26px', 'margin-top' : '-20px'}"
+    :style="
+      $q.screen.width > 430
+        ? { 'padding-bottom': '100px' }
+        : { 'padding-bottom': '26px', 'margin-top': '-20px' }
+    "
   >
-    <div 
+    <div
       :class="{
         'col-8': $q.screen.width > 768,
-        'col-10': $q.screen.width <= 768 && $q.screen.width > 430, 
-        'col-11': $q.screen.width <= 430 
+        'col-10': $q.screen.width <= 768 && $q.screen.width > 430,
+        'col-11': $q.screen.width <= 430,
       }"
-      :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+      :style="$q.screen.width > 430 ? {} : { padding: '0 7px' }"
     >
       <q-breadcrumbs
         class="font-15"
         active-color="white"
         gutter="sm"
-        :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+        :style="$q.screen.width > 430 ? {} : { display: 'none' }"
       >
         <q-breadcrumbs-el :label="t('Home')" to="/" />
         <q-breadcrumbs-el :label="t('Portfolio')" />
@@ -31,7 +35,7 @@
           class="cursor-pointer"
           :class="{
             'font-16': $q.screen.width > 430,
-            'font-13': $q.screen.width <= 430, 
+            'font-13': $q.screen.width <= 430,
           }"
           :color="arr.usingFilters.includes(item) ? 'red-7' : 'red-6'"
           text-color="white"
@@ -40,10 +44,10 @@
         />
       </div>
       <div
-        class="parent" 
+        class="parent"
         :class="{
           'q-mt-lg': $q.screen.width > 430,
-          'q-mt-md': $q.screen.width <= 430
+          'q-mt-md': $q.screen.width <= 430,
         }"
         style="gap: 14px"
       >
@@ -52,24 +56,26 @@
             <q-img
               class="cursor-pointer"
               style="height: 190px; border-radius: 14px"
-              :style="$q.screen.width > 430 ? {'height' : '190px'} : {'height' : '115px'}"
+              :style="
+                $q.screen.width > 430
+                  ? { height: '190px' }
+                  : { height: '115px' }
+              "
               @click="arr.openItem(item.id)"
               :src="item.src_preview"
             />
-            <div
-              class="q-px-xs q-mt-sm"
-            >
+            <div class="q-px-xs q-mt-sm">
               <span
                 class="row"
                 :class="{
                   'font-16': $q.screen.width > 430,
-                  'font-12': $q.screen.width <= 430, 
+                  'font-12': $q.screen.width <= 430,
                 }"
-              >{{ item.title }}</span>
-              <span
-                style="color: #beb6b8"
-                class="row font-10"
-              >{{ item.type }}</span>
+                >{{ item.title }}</span
+              >
+              <span style="color: #beb6b8" class="row font-10">{{
+                item.type
+              }}</span>
             </div>
           </div>
         </div>
@@ -127,7 +133,6 @@ class ArrProjects {
     } else {
       this.modalItem.flag = true;
       this.modalItem.src = item.src_preview;
-      console.log(this.modalItem);
     }
   }
 }

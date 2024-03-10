@@ -1,18 +1,18 @@
 <template>
   <q-header
     class="bg-header-black headerBlur"
-    style="z-index: 7000;"
-    :style="$q.screen.width > 768 ? {} : {'position' : 'relative !important'}"
+    style="z-index: 7000"
+    :style="$q.screen.width > 768 ? {} : { position: 'relative !important' }"
     v-if="modalDis.isOpenModal == false"
   >
     <div class="row justify-center" style="height: 80px">
-      <div 
+      <div
         class="row justify-between col col-8"
-        :class="{ 
-          'col-8': $q.screen.width > 1024, 
-          'col-10': $q.screen.width <= 1024 
+        :class="{
+          'col-8': $q.screen.width > 1024,
+          'col-10': $q.screen.width <= 1024,
         }"
-        :style="$q.screen.width > 768 ? {} : {'display' : 'none'}"
+        :style="$q.screen.width > 768 ? {} : { display: 'none' }"
       >
         <div
           class="row items-center text-uppercase font-16"
@@ -70,9 +70,9 @@
                   />
                   <q-item-section>Русский</q-item-section>
                 </q-item>
-                <q-separator 
-                  class="bg-grey-separator" 
-                  :style="$q.screen.width > 768 ? {} : {'display' : 'none'}"
+                <q-separator
+                  class="bg-grey-separator"
+                  :style="$q.screen.width > 768 ? {} : { display: 'none' }"
                 />
                 <q-item
                   class="row items-center gap-x-md"
@@ -100,9 +100,9 @@
           />
         </div>
       </div>
-      <div 
+      <div
         class="row justify-between col col-10"
-        :style="$q.screen.width > 768 ? {'display' : 'none'} : {}"
+        :style="$q.screen.width > 768 ? { display: 'none' } : {}"
       >
         <div
           class="row items-center text-uppercase font-16"
@@ -114,12 +114,12 @@
               src="icons/logo.svg"
               height="auto"
               :width="$q.screen.width > 430 ? '83px' : '59px'"
-          /></router-link> 
+          /></router-link>
         </div>
         <div class="row items-center">
           <q-btn
             flat
-            round 
+            round
             icon="menu"
             style="width: 24px; height: 24px"
             @click="toggleMenu"
@@ -129,34 +129,31 @@
     </div>
     <q-separator
       class="bg-grey-separator"
-      :style="$q.screen.width > 768 ? {} : {'display' : 'none'}"
+      :style="$q.screen.width > 768 ? {} : { display: 'none' }"
     />
   </q-header>
   <q-dialog
     v-model="modalMenu"
     position="left"
-    style="  
-      background-color: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(32px);"
+    style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(32px)"
   >
-    <div 
-      style="margin-left: 30px; text-transform: uppercase; gap: 120px 0;"
-      :class="{ 
+    <div
+      style="margin-left: 30px; text-transform: uppercase; gap: 120px 0"
+      :class="{
         'font-24': $q.screen.width <= 430,
-        'font-24': $q.screen.width > 430 
+        'font-24': $q.screen.width > 430,
       }"
     >
-      <div class="column" style="gap: 12px 0;">
-        <router-link 
-          class="linkCustom" 
-          to="/portfolio"
+      <div class="column" style="gap: 12px 0">
+        <router-link class="linkCustom" to="/portfolio"
           ><span>{{ t("Portfolio") }}</span></router-link
         >
         <router-link class="linkCustom" to="/services"
           ><span>{{ t("services") }}</span></router-link
         >
         <router-link class="linkCustom" to="/contacts"
-          ><span>{{ t("contacts") }}</span></router-link>
+          ><span>{{ t("contacts") }}</span></router-link
+        >
         <div class="row items-center" style="color: white">
           <q-img
             :src="require(`assets/icons/${lang.userLanguage}_flag.svg`)"
@@ -164,22 +161,32 @@
             height="16px"
             style="margin-right: 14px"
           />
-          <div v-if="lang.userLanguage == 'ru'" @click="lang.setLanguages('eng')">Русский</div>
+          <div
+            v-if="lang.userLanguage == 'ru'"
+            @click="lang.setLanguages('eng')"
+          >
+            Русский
+          </div>
           <div v-else @click="lang.setLanguages('ru')">English</div>
         </div>
       </div>
-      <div class="row justify-between items-center text-center q-pt-xl" style="width: 430px;">
+      <div
+        class="row justify-between items-center text-center q-pt-xl"
+        style="width: 430px"
+      >
         <div
           class="font-24 col-4 text-red-button"
           @click="modalDis.isOpenModal = true"
-        >{{ t('Consultation') }}</div>
-          <div class="col-4 ">
-            <q-img
-              class="cursor-pointer"
-              :src="require('assets/icons/telegram.svg')"
-              width="29px"
-            />
-          </div>
+        >
+          {{ t("Consultation") }}
+        </div>
+        <div class="col-4">
+          <q-img
+            class="cursor-pointer"
+            :src="require('assets/icons/telegram.svg')"
+            width="29px"
+          />
+        </div>
       </div>
     </div>
   </q-dialog>
@@ -196,7 +203,7 @@
             {{ t("(Telegram or Email)") }}
           </div>
         </div>
-        <div class="q-mt-xl column" style="gap: 8px">
+        <div class="q-mt-lg column" style="gap: 8px">
           <q-input
             v-model="modalDis.userName"
             :placeholder="t('Name')"
