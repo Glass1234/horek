@@ -35,8 +35,9 @@
           :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '10px'}"
         >
           <div class="column" v-for="(item, index) in graphics" :key="index">
-            <div class="blockSkill blockSkill-size">
+            <div class="blockSkill">
               <q-img
+                class="blockSkill-size"
                 :src="require(`assets/icons/servicesIcons/${item.icon}.png`)"
               />
             </div>
@@ -78,9 +79,10 @@
           :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '13px'}"
         >
           <div class="column" v-for="(item, index) in UI_UX" :key="index">
-            <div class="blockSkill blockSkill-size">
+            <div class="blockSkill">
               <q-img
-                :src="require(`assets/icons/UI_UXIcons/${item.icon}.png`)"
+                class="blockSkill-size"
+                :src="require(`assets/icons/UI_UXIcons/${item.icon}.png`)"                
               />
             </div>
             <div               
@@ -111,7 +113,7 @@
           }">
         {{ t("Code") }}</h>
         <div
-          class="blockSkill row justify-center "
+          class="blockSkill row justify-center"
           :class="{ 
             'q-mt-xl': $q.screen.width > 430, 
             'q-mt-lg': $q.screen.width <= 430 
@@ -119,6 +121,8 @@
         >
           <q-img
             :src="require(`assets/icons/codeIcons.png`)"
+            :width="$q.screen.width > 430 ? '207px' : '116px'"
+            :height="$q.screen.width > 430 ? '207px' : '116px'"
           />
         </div>
         <div class="q-mt-sm">
