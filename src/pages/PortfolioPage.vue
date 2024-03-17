@@ -156,13 +156,4 @@ const arr = reactive(new ArrProjects());
     grid-row-gap: 26px;
   }
 }
-
-@media (min-width: 431px) {
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 26px;
-    grid-row-gap: 26px;
-  }
-}
 </style>

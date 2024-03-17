@@ -176,6 +176,7 @@
       >
         <div
           class="font-24 col-4 text-red-button"
+          style="cursor: pointer"
           @click="modalDis.isOpenModal = true"
         >
           {{ t("Consultation") }}
