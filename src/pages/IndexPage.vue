@@ -25,7 +25,7 @@
               :src="require(`assets/icons/stars.svg`)"
             />
             <div>{{ t("solutions") }}</div>
-            <div class="absolute" :style="$q.screen.width > 768 ? { 'right': '10px', 'top': '-30px' } : { 'display': 'none' }">
+            <div class="absolute" :style="$q.screen.width > 1024 ? { 'right': '-30px', 'top': '-5px' } : { 'display': 'none' }">
               <div class="row row-btn items-center gap-x-xs">
                 <q-btn color="white" to="/services" round>
                   <q-img

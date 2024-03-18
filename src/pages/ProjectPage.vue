@@ -71,21 +71,22 @@
                 'font-34': $q.screen.width > 1024,
                 'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
                 'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'font-10': $q.screen.width <= 430 
+                'font-12': $q.screen.width <= 430 
               }" 
               style="font-weight: 600"
             >{{ item.title }}</div>
             <pre
             :class="{
                 'font-23': $q.screen.width > 1024,
-                'font-18': $q.screen.width <= 1024 && $q.screen.width > 768, 
-                'font-13': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'font-7': $q.screen.width <= 430 
+                'font-20': $q.screen.width <= 1024 && $q.screen.width > 768, 
+                'font-18': $q.screen.width <= 768 && $q.screen.width > 430, 
+                'font-12': $q.screen.width <= 430 
               }" 
               style="
                 color: rgba(255, 255, 255, 0.65);
                 white-space: pre-line;
                 font-family: 'Nunito Sans';
+                font-weight: 600;
               "
             >
               {{ item.description }}
