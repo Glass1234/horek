@@ -138,10 +138,7 @@
   >
     <div
       style="text-transform: uppercase; gap: 120px 0; width: 100vh;"
-      :class="{
-        'font-24': $q.screen.width <= 430,
-        'font-24': $q.screen.width > 430,
-      }"
+      class="font-24"
     >
       <div class="column" style="gap: 12px 0">
         <router-link class="linkCustom" to="/portfolio"
@@ -180,10 +177,8 @@
         >
           {{ t("Consultation") }}
         </div>
-        <div class="col-4"
-        position="right">
+        <div class="col-4">
           <q-img
-
             class="cursor-pointer"
             :src="require('assets/icons/telegram.svg')"
             width="29px"
