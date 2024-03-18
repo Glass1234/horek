@@ -171,13 +171,13 @@
         style="width: 100%"
       >
         <div
-          class="font-24 col-4 text-red-button"
+          class="font-24 col-2 text-red-button"
           style="cursor: pointer"
           @click="modalDis.isOpenModal = true"
         >
           {{ t("Consultation") }}
         </div>
-        <div class="col-4">
+        <div class="col-2">
           <q-img
             class="cursor-pointer"
             :src="require('assets/icons/telegram.svg')"
