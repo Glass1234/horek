@@ -86,7 +86,6 @@
                 color: rgba(255, 255, 255, 0.65);
                 white-space: pre-line;
                 font-family: 'Nunito Sans';
-                font-weight: 600;
               "
             >
               {{ item.description }}

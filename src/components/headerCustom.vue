@@ -134,11 +134,10 @@
   </q-header>
   <q-dialog
     v-model="modalMenu"
-    position="left"
     style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(32px)"
   >
     <div
-      style="margin-left: 30px; text-transform: uppercase; gap: 120px 0"
+      style="text-transform: uppercase; gap: 120px 0; width: 100vh;"
       :class="{
         'font-24': $q.screen.width <= 430,
         'font-24': $q.screen.width > 430,
@@ -171,8 +170,8 @@
         </div>
       </div>
       <div
-        class="row justify-between items-center text-center q-pt-xl"
-        style="width: 430px"
+        class="row justify-between col col-10 items-center text-center q-pt-xl"
+        style="width: 100%"
       >
         <div
           class="font-24 col-4 text-red-button"
@@ -181,8 +180,10 @@
         >
           {{ t("Consultation") }}
         </div>
-        <div class="col-4">
+        <div class="col-4"
+        position="right">
           <q-img
+
             class="cursor-pointer"
             :src="require('assets/icons/telegram.svg')"
             width="29px"
