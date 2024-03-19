@@ -7,27 +7,28 @@
     <div
       class="column q-pb-md"
       :class="{
-        'col-7, q-pt-xl': $q.screen.width > 430,
-        'col-10, q-pt-md': $q.screen.width <= 430 
+        'q-pt-xl': $q.screen.width > 768,
+        'col-8 q-pt-md': $q.screen.width <= 768 && $q.screen.width > 430,
+        'q-pt-md': $q.screen.width <= 430 
       }"
     >
       <div class="row items-center justify-between">
         <div
-          class="row"
-          :style="$q.screen.width > 430 ? { 'gap': '0 80px' } : { 'gap': '0 40px' }"
+          class="row justify-between"
+          :style="$q.screen.width > 768 ? { 'gap': '0 80px' } : { 'gap': '0 30px', 'width': '100%' }"
         >
           <router-link class="column justify-center" to="/"
             ><q-img
               class="cursor-pointer"
               src="icons/logo.svg"
               height="auto"
-              :width="$q.screen.width > 430 ? '120px' : '75px'"
+              :width="$q.screen.width > 768 ? '120px' : '75px'"
           /></router-link>
           <div
             class="column"
             :class="{
-              'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430 
+              'font-16': $q.screen.width > 768,
+              'font-9': $q.screen.width <= 768 
             }"
           >
             <span class="cursor-pointer" style="text-decoration: underline"
@@ -43,8 +44,8 @@
           <div
             class="column"
             :class="{
-              'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430 
+              'font-16': $q.screen.width > 768,
+              'font-9': $q.screen.width <= 768 
             }"
           >
             <span class="cursor-pointer" style="text-decoration: underline"
@@ -61,7 +62,7 @@
             </span>
           </div>
         </div>
-        <div v-if="$q.screen.width > 430">
+        <div v-if="$q.screen.width > 768">
           <a href="https://t.me/horekportfolio" target="_blank">
             <q-img
               class="cursor-pointer"
@@ -71,10 +72,10 @@
           </a>
         </div>
       </div>
-      <div class="q-py-md" v-if="$q.screen.width > 430">
+      <div class="q-py-md" v-if="$q.screen.width > 768">
         <q-separator class="footerSeparator" />
       </div>
-      <div class="row items-center justify-between" style="gap: 0 60px" v-if="$q.screen.width > 430">
+      <div class="row items-center justify-between" style="gap: 0 60px" v-if="$q.screen.width > 768">
         <div class="row items-center text-uppercase font-16" style="gap: 0 60px">
           <router-link class="linkCustom" to="/portfolio">
             <span>{{ t("Portfolio") }}</span>
@@ -88,8 +89,8 @@
         </div>
         <div
           :class="{
-            hidden: $q.screen.width < 1400,
-            'font-16': $q.screen.width >= 1400,
+            hidden: $q.screen.width < 1024,
+            'font-16': $q.screen.width >= 1024,
           }"
         >
           <div class="row blockConsultation">

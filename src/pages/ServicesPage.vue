@@ -76,7 +76,7 @@
             'q-mt-md': $q.screen.width > 430,
             'q-mt-xs': $q.screen.width <= 430 
           }" 
-          :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '13px'}"
+          :style="$q.screen.width > 430 ? {'gap' : '26px'} : {'gap' : '10px'}"
         >
           <div class="column" v-for="(item, index) in UI_UX" :key="index">
             <div class="blockSkill">
