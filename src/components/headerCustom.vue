@@ -137,7 +137,7 @@
     style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(32px)"
   >
     <div
-      style="text-transform: uppercase; gap: 120px 0; width: 100vh;"
+      style="text-transform: uppercase; gap: 120px 0; width: 100vh"
       class="font-24"
     >
       <div class="column" style="gap: 12px 0">
@@ -274,7 +274,19 @@ class modalDiscuss {
   isSendRequest = false;
   userName = "";
   userContact = "";
+  lastSendTime = 0;
+
   async sendData() {
+    if (new Date().getTime() - this.lastSendTime < 20000) {
+      $q.notify({
+        position: "bottom-right",
+        message: "Слишком часто",
+        icon: "error_outline",
+      });
+      return;
+    }
+
+    this.lastSendTime = new Date().getTime();
     this.isSendRequest = true;
     $store.commit("discussionSend/postTG", {
       name: this.userName,
@@ -287,6 +299,8 @@ class modalDiscuss {
     });
     this.isSendRequest = false;
     this.isOpenModal = false;
+    this.userName = "";
+    this.userContact = "";
   }
 }
 
