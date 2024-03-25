@@ -181,6 +181,29 @@ const data = {
         { type: "img", src: require("assets/projects/content/18/3.png") },
       ],
     },
+    {
+      id: 20,
+      title: "HostWeb",
+      type: "Веб-дизайн",
+      sort_type: "Веб и UI\\UX",
+      src_preview: require("assets/projects/preview/20.png"),
+      content: [
+        { type: "img", src: require("assets/projects/content/20/1.png") },
+        {
+          type: "text",
+          title: "О сайте",
+          description:
+            "HostWeb - это современный хостинг-провайдер, который предоставляет надежные и высококачественные услуги хостинга для онлайн-проектов.",
+        },
+        {
+          type: "text",
+          title: "Дизайн",
+          description: `Для сайта созданы две страницы для покупки домена и заказа хостинга на свой сайт. Обе страницы выполнены с использованием интуитивно понятного и простого интерфейса с указанием всех преимуществ сервиса, что позволяет легко разобраться и купить домен\хостинг для своего сайта.`,
+        },
+        { type: "img", src: require("assets/projects/content/20/2.png") },
+        { type: "img", src: require("assets/projects/content/20/3.png") },
+      ],
+    },
 
     // {
     //   id: 1,
