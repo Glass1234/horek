@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if (process.env.NODE_ENV === 'production') { %>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (m, e, t, r, i, k, a) {
@@ -44,6 +45,8 @@
         /></div
     ></noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <% } %>
 
     <title><%= productName %></title>
 

@@ -204,6 +204,29 @@ const data = {
         { type: "img", src: require("assets/projects/content/20/3.png") },
       ],
     },
+    {
+      id: 21,
+      title: "LayerBit",
+      type: "Сайт",
+      sort_type: "Веб и UI\\UX",
+      src_preview: require("assets/projects/preview/21.png"),
+      content: [
+        { type: "img", src: require("assets/projects/content/21/1.png") },
+        {
+          type: "text",
+          title: "О сайте",
+          description:
+            "LayerBit - инновационная криптовалютная биржа, предлагающая широкий спектр услуг для трейдеров и инвесторов.",
+        },
+        {
+          type: "text",
+          title: "Дизайн",
+          description: `Был разработан лендинг пейдж и интерфейс дашборда для удобного хранения, продажи и покупки криптовалют.`,
+        },
+        { type: "img", src: require("assets/projects/content/21/2.png") },
+        { type: "img", src: require("assets/projects/content/21/3.png") },
+      ],
+    },
 
     // {
     //   id: 1,

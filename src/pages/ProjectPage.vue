@@ -1,15 +1,15 @@
 <template>
-  <div 
+  <div
     class="row justify-center full-width text-white"
     :class="{
-      'q-py-lg': $q.screen.width > 430
-    }" 
+      'q-py-lg': $q.screen.width > 430,
+    }"
   >
     <div
       :class="{
         'col-8': $q.screen.width > 768,
-        'col-10': $q.screen.width <= 768 && $q.screen.width > 430, 
-        'col-11': $q.screen.width <= 430 
+        'col-10': $q.screen.width <= 768 && $q.screen.width > 430,
+        'col-11': $q.screen.width <= 430,
       }"
       style="padding-bottom: 55px"
     >
@@ -17,7 +17,7 @@
         class="font-15"
         active-color="white"
         gutter="sm"
-        :style="$q.screen.width > 430 ? {} : {'display' : 'none'}"
+        :style="$q.screen.width > 430 ? {} : { display: 'none' }"
       >
         <q-breadcrumbs-el :label="t('Home')" to="/" />
         <q-breadcrumbs-el :label="t('Portfolio')" to="/portfolio" />
@@ -26,40 +26,42 @@
       <div
         :class="{
           'q-mt-xl': $q.screen.width > 430,
-          'q-mt-none': $q.screen.width <= 430 
-        }" 
+          'q-mt-none': $q.screen.width <= 430,
+        }"
       >
-        <h1 class="q-my-none"
+        <h1
+          class="q-my-none"
           :class="{
             'font-34': $q.screen.width > 1024,
-            'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
-            'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
-            'font-10': $q.screen.width <= 430 
-          }" 
-          style="line-height: 1; font-weight: 600">
+            'font-30': $q.screen.width <= 1024 && $q.screen.width > 768,
+            'font-24': $q.screen.width <= 768 && $q.screen.width > 430,
+            'font-10': $q.screen.width <= 430,
+          }"
+          style="line-height: 1; font-weight: 600"
+        >
           {{ project.title }}
         </h1>
         <h2
-          class="q-my-none"
+          class="q-my-none q-mt-md"
           :class="{
             'font-23': $q.screen.width > 1024,
-            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768, 
-            'font-18': $q.screen.width <= 768 && $q.screen.width > 430, 
+            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768,
+            'font-18': $q.screen.width <= 768 && $q.screen.width > 430,
             'font-9': $q.screen.width <= 430,
             'font-7': $q.screen.width <= 430,
-            'q-mt-xs': $q.screen.width <= 430
-          }" 
+          }"
           style="color: rgba(255, 255, 255, 0.65); line-height: 1"
         >
           {{ project.type }}
         </h2>
       </div>
-      <div class="column"
+      <div
+        class="column"
         :class="{
           'q-mt-xl': $q.screen.width > 430,
-          'q-mt-lg': $q.screen.width <= 430 
-        }" 
-        :style="$q.screen.width > 430 ? {'gap' : '70px'} : {'gap' : '26px'}"
+          'q-mt-lg': $q.screen.width <= 430,
+        }"
+        :style="$q.screen.width > 430 ? { gap: '70px' } : { gap: '26px' }"
       >
         <template v-for="(item, index) in project.content" :key="index">
           <template v-if="item.type === 'img'">
@@ -69,19 +71,21 @@
             <div
               :class="{
                 'font-34': $q.screen.width > 1024,
-                'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
-                'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'font-12': $q.screen.width <= 430 
-              }" 
+                'font-30': $q.screen.width <= 1024 && $q.screen.width > 768,
+                'font-24': $q.screen.width <= 768 && $q.screen.width > 430,
+                'font-12': $q.screen.width <= 430,
+              }"
               style="font-weight: 600"
-            >{{ item.title }}</div>
+            >
+              {{ item.title }}
+            </div>
             <pre
-            :class="{
+              :class="{
                 'font-23': $q.screen.width > 1024,
-                'font-20': $q.screen.width <= 1024 && $q.screen.width > 768, 
-                'font-18': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'font-12': $q.screen.width <= 430 
-              }" 
+                'font-20': $q.screen.width <= 1024 && $q.screen.width > 768,
+                'font-18': $q.screen.width <= 768 && $q.screen.width > 430,
+                'font-12': $q.screen.width <= 430,
+              }"
               style="
                 color: rgba(255, 255, 255, 0.65);
                 white-space: pre-line;

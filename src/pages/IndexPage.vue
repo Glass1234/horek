@@ -2,21 +2,26 @@
   <q-page class="relative-position">
     <q-img
       class="absolute"
-      :style="$q.screen.width > 430 ? { 'top': '35px' } : { 'top': '-30px' }"
-      src="images/line.png" />
+      :style="$q.screen.width > 430 ? { top: '35px' } : { top: '-30px' }"
+      src="images/line.png"
+    />
     <div
       class="text-white column items-center sticky"
-      :style="$q.screen.width <= 430 ? { 'padding-top': '0px', 'z-index': '10' } : {'padding-top': '100px', 'z-index': '10' }"
+      :style="
+        $q.screen.width <= 430
+          ? { 'padding-top': '0px', 'z-index': '10' }
+          : { 'padding-top': '100px', 'z-index': '10' }
+      "
     >
       <div>
         <div style="line-height: 1">
           <div
-            class="row items-baseline relative-position justify-center" 
-            :class="{ 
-              'font-82': $q.screen.width > 1024, 
-              'font-64': $q.screen.width <= 1024 && $q.screen.width > 768, 
-              'font-50': $q.screen.width <= 768 && $q.screen.width > 430, 
-              'font-30': $q.screen.width <= 430 
+            class="row items-baseline relative-position justify-center"
+            :class="{
+              'font-82': $q.screen.width > 1024,
+              'font-64': $q.screen.width <= 1024 && $q.screen.width > 768,
+              'font-50': $q.screen.width <= 768 && $q.screen.width > 430,
+              'font-30': $q.screen.width <= 430,
             }"
           >
             <div class="text-red-button">{{ t("Quality") }}</div>
@@ -25,7 +30,14 @@
               :src="require(`assets/icons/stars.svg`)"
             />
             <div>{{ t("solutions") }}</div>
-            <div class="absolute" :style="$q.screen.width > 1024 ? { 'right': '-30px', 'top': '-5px' } : { 'display': 'none' }">
+            <div
+              class="absolute"
+              :style="
+                $q.screen.width > 1024
+                  ? { right: '-30px', top: '-5px' }
+                  : { display: 'none' }
+              "
+            >
               <div class="row row-btn items-center gap-x-xs">
                 <q-btn color="white" to="/services" round>
                   <q-img
@@ -46,11 +58,11 @@
           </div>
           <div
             class="row items-center justify-center"
-            :class="{ 
-              'font-82': $q.screen.width > 1024, 
-              'font-64': $q.screen.width <= 1024 && $q.screen.width > 768, 
-              'font-50': $q.screen.width <= 768 && $q.screen.width > 430, 
-              'font-30': $q.screen.width <= 430 
+            :class="{
+              'font-82': $q.screen.width > 1024,
+              'font-64': $q.screen.width <= 1024 && $q.screen.width > 768,
+              'font-50': $q.screen.width <= 768 && $q.screen.width > 430,
+              'font-30': $q.screen.width <= 430,
             }"
           >
             <div>{{ t("for") }}</div>
@@ -63,51 +75,69 @@
         </div>
         <div
           class="text-center"
-          :class="{ 
-            'font-25': $q.screen.width > 1024, 
-            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768, 
-            'font-18': $q.screen.width <= 768 && $q.screen.width > 430, 
-            'font-9': $q.screen.width <= 430 
+          :class="{
+            'font-25': $q.screen.width > 1024,
+            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768,
+            'font-18': $q.screen.width <= 768 && $q.screen.width > 430,
+            'font-9': $q.screen.width <= 430,
           }"
           style="line-height: 38px; color: #beb6b8"
-          :style="$q.screen.width > 430 ? { 'padding-top': '30px' } : { 'padding-top': '9px' }"
+          :style="
+            $q.screen.width > 430
+              ? { 'padding-top': '30px' }
+              : { 'padding-top': '9px' }
+          "
         >
           {{ t("Develop digital sales projects") }}
         </div>
       </div>
-      <div 
+      <div
         class="row justify-center full-width"
-        :style="$q.screen.width > 430 ? { 'padding-top': '130px' } : { 'padding-top': '30px' }"
+        :style="
+          $q.screen.width > 430
+            ? { 'padding-top': '130px' }
+            : { 'padding-top': '30px' }
+        "
       >
-        <div 
+        <div
           :class="{
             'col-8': $q.screen.width > 1024,
-            'col-11': $q.screen.width <= 1024 }"
-          :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+            'col-11': $q.screen.width <= 1024,
+          }"
+          :style="$q.screen.width > 430 ? {} : { padding: '0 7px' }"
         >
-          <div 
+          <div
             class="text-left"
-            :class="{ 
-              'font-34': $q.screen.width > 1024, 
-              'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
-              'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
-              'font-16': $q.screen.width <= 430 
+            :class="{
+              'font-34': $q.screen.width > 1024,
+              'font-30': $q.screen.width <= 1024 && $q.screen.width > 768,
+              'font-24': $q.screen.width <= 768 && $q.screen.width > 430,
+              'font-16': $q.screen.width <= 430,
             }"
-          >{{ t("Some of our projects") }}</div>
-          <div 
+          >
+            {{ t("Some of our projects") }}
+          </div>
+          <div
             :class="{
               'q-mt-xl': $q.screen.width > 430,
-              'q-mt-lg': $q.screen.width <= 430 
+              'q-mt-lg': $q.screen.width <= 430,
             }"
           >
             <div
               :class="{
-                'gridProject': $q.screen.width > 430,
-                'row': $q.screen.width <= 430 
+                gridProject: $q.screen.width > 430,
+                row: $q.screen.width <= 430,
               }"
               :style="$q.screen.width <= 430 ? { 'grid-row-gap': '26px' } : {}"
             >
-              <div v-for="(item, index) in projects" :key="index" :class="{ 'col-6': $q.screen.width > 430, 'col-12': $q.screen.width <= 430 }">
+              <div
+                v-for="(item, index) in projects"
+                :key="index"
+                :class="{
+                  'col-6': $q.screen.width > 430,
+                  'col-12': $q.screen.width <= 430,
+                }"
+              >
                 <cardProject :project="item" />
               </div>
             </div>
@@ -116,59 +146,71 @@
       </div>
       <div
         class="row justify-center full-width"
-        :style="$q.screen.width <= 430 ? { 'padding-top': '26px' } : {'padding-top': '67px'}"
+        :style="
+          $q.screen.width <= 430
+            ? { 'padding-top': '26px' }
+            : { 'padding-top': '67px' }
+        "
       >
         <q-btn
           class="bg-red-button font-16"
           rounded
           unelevated
           no-caps
-          :style="$q.screen.width <= 430 ? { 'width': '150px' } : {'width': '195px' }"
+          :style="
+            $q.screen.width <= 430 ? { width: '150px' } : { width: '195px' }
+          "
           to="/portfolio"
           :label="t('View All')"
         >
           <q-icon
-          class="q-ml-sm"
-          name="bi-arrow-right"
-          size="16px"
-          :style="$q.screen.width <= 430 ? { 'display': 'none' } : {}"
+            class="q-ml-sm"
+            name="bi-arrow-right"
+            size="16px"
+            :style="$q.screen.width <= 430 ? { display: 'none' } : {}"
           ></q-icon>
         </q-btn>
       </div>
       <div
         class="row justify-center full-width"
-        :style="$q.screen.width <= 430 ? { 'padding-top': '26px', 'padding-bottom': '40px' } : {'padding-top': '114px', 'padding-bottom': '140px' }"
+        :style="
+          $q.screen.width <= 430
+            ? { 'padding-top': '26px', 'padding-bottom': '40px' }
+            : { 'padding-top': '114px', 'padding-bottom': '140px' }
+        "
       >
         <div
           :class="{
             'col-8': $q.screen.width > 430,
-            'col-10': $q.screen.width <= 1024 && $q.screen.width > 430, 
-            'col-11': $q.screen.width <= 430 
+            'col-10': $q.screen.width <= 1024 && $q.screen.width > 430,
+            'col-11': $q.screen.width <= 430,
           }"
-          :style="$q.screen.width > 430 ? {} : {'padding' : '0 7px'}"
+          :style="$q.screen.width > 430 ? {} : { padding: '0 7px' }"
         >
           <div
-          :class="{ 
-              'font-34': $q.screen.width > 1024, 
-              'font-30': $q.screen.width <= 1024 && $q.screen.width > 768, 
-              'font-24': $q.screen.width <= 768 && $q.screen.width > 430, 
-              'font-16': $q.screen.width <= 430 
+            :class="{
+              'font-34': $q.screen.width > 1024,
+              'font-30': $q.screen.width <= 1024 && $q.screen.width > 768,
+              'font-24': $q.screen.width <= 768 && $q.screen.width > 430,
+              'font-16': $q.screen.width <= 430,
             }"
-          >{{ t("About Us") }}</div>
-          <div 
+          >
+            {{ t("About Us") }}
+          </div>
+          <div
             class="row justify-center"
             :class="{
               'q-mt-xl': $q.screen.width > 430,
-              'q-mt-lg': $q.screen.width <= 430 
+              'q-mt-lg': $q.screen.width <= 430,
             }"
             style="gap: 26px"
           >
-            <div 
+            <div
               class="aboutCard"
               :class="{
-                'col': $q.screen.width > 430,
-                'col-7': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'col-12': $q.screen.width <= 430
+                col: $q.screen.width > 430,
+                'col-7': $q.screen.width <= 768 && $q.screen.width > 430,
+                'col-12': $q.screen.width <= 430,
               }"
             >
               <div>
@@ -190,12 +232,13 @@
                     </div>
                     <div class="text-center q-mt-sm">
                       <span
-                      :class="{
-                        'font-24': $q.screen.width <= 430,
-                        'font-16': $q.screen.width < 1600 && $q.screen.width > 430,
-                        'font-27': $q.screen.width >= 1600
-                      }"
-                      style="line-height: 1.2;"
+                        :class="{
+                          'font-24': $q.screen.width <= 430,
+                          'font-16':
+                            $q.screen.width < 1600 && $q.screen.width > 430,
+                          'font-27': $q.screen.width >= 1600,
+                        }"
+                        style="line-height: 1.2"
                         >{{
                           t(
                             "Follow trends and use the latest technologies in work"
@@ -207,12 +250,12 @@
                 </q-img>
               </div>
             </div>
-            <div 
+            <div
               class="aboutCard"
               :class="{
-                'col': $q.screen.width > 430,
-                'col-7': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'col-12': $q.screen.width <= 430 
+                col: $q.screen.width > 430,
+                'col-7': $q.screen.width <= 768 && $q.screen.width > 430,
+                'col-12': $q.screen.width <= 430,
               }"
             >
               <div>
@@ -236,10 +279,11 @@
                       <span
                         :class="{
                           'font-24': $q.screen.width <= 430,
-                          'font-16': $q.screen.width < 1600 && $q.screen.width > 430,
-                          'font-27': $q.screen.width >= 1600
+                          'font-16':
+                            $q.screen.width < 1600 && $q.screen.width > 430,
+                          'font-27': $q.screen.width >= 1600,
                         }"
-                        style="line-height: 1.2;"
+                        style="line-height: 1.2"
                         >{{ t("Continuously recording workflow") }}</span
                       >
                     </div>
@@ -247,12 +291,12 @@
                 </q-img>
               </div>
             </div>
-            <div 
+            <div
               class="aboutCard"
               :class="{
-                'col': $q.screen.width > 430,
-                'col-7': $q.screen.width <= 768 && $q.screen.width > 430, 
-                'col-12': $q.screen.width <= 430 
+                col: $q.screen.width > 430,
+                'col-7': $q.screen.width <= 768 && $q.screen.width > 430,
+                'col-12': $q.screen.width <= 430,
               }"
             >
               <div>
@@ -276,10 +320,11 @@
                       <span
                         :class="{
                           'font-23': $q.screen.width <= 430,
-                          'font-16': $q.screen.width < 1600 && $q.screen.width > 430,
-                          'font-27': $q.screen.width >= 1600
+                          'font-16':
+                            $q.screen.width < 1600 && $q.screen.width > 430,
+                          'font-27': $q.screen.width >= 1600,
                         }"
-                        style="line-height: 1.2;"
+                        style="line-height: 1.2"
                         >{{
                           t("After continuing to support project development")
                         }}</span
@@ -297,7 +342,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 import cardProject from "components/cardProject.vue";
 
@@ -324,13 +369,12 @@ const projects = ref([
     src_preview: require("assets/projects/mainPreview/3.png"),
   },
   {
-    id: 12,
-    name: "ExtraMedia",
-    desciption: "Студия перевода и озвучки",
-    src_preview: require("assets/projects/mainPreview/4.png"),
+    id: 21,
+    name: "LayerBit",
+    desciption: "Удобный мир криптовалют",
+    src_preview: require("assets/projects/mainPreview/21.png"),
   },
 ]);
-
 </script>
 
 <style scoped lang="scss">
@@ -357,7 +401,7 @@ const projects = ref([
 
 .dynamicStars {
   width: 18px;
-  height: 18px
+  height: 18px;
 }
 
 .dynamicArrow {
@@ -369,7 +413,7 @@ const projects = ref([
 @media (min-width: 769px) {
   .dynamicStars {
     width: 32px;
-    height: 32px
+    height: 32px;
   }
 
   .dynamicArrow {
@@ -382,7 +426,7 @@ const projects = ref([
 @media (min-width: 431px) {
   .dynamicStars {
     width: 52px;
-    height: 52px; 
+    height: 52px;
   }
 
   .dynamicArrow {
