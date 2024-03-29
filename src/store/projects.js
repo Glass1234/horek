@@ -144,7 +144,7 @@ const data = {
     {
       id: 19,
       title: "Ani-me",
-      type: "Сайт, логотип",
+      type: "Сайт",
       sort_type: "Веб и UI\\UX",
       src_preview: require("assets/projects/preview/19.png"),
       content: [
@@ -184,7 +184,7 @@ const data = {
     {
       id: 20,
       title: "HostWeb",
-      type: "Веб-дизайн",
+      type: "Сайт",
       sort_type: "Веб и UI\\UX",
       src_preview: require("assets/projects/preview/20.png"),
       content: [
@@ -225,6 +225,28 @@ const data = {
         },
         { type: "img", src: require("assets/projects/content/21/2.png") },
         { type: "img", src: require("assets/projects/content/21/3.png") },
+      ],
+    },
+    {
+      id: 22,
+      title: "Vanilca",
+      type: "Сайт",
+      sort_type: "Веб и UI\\UX",
+      src_preview: require("assets/projects/preview/22.png"),
+      content: [
+        { type: "img", src: require("assets/projects/content/22/1.png") },
+        {
+          type: "text",
+          title: "О проекте",
+          description:
+            "Vanilca - майнкрафт проект, представляющий собой сервер с упором на ванильное выживание.",
+        },
+        {
+          type: "text",
+          title: "Дизайн",
+          description: `Был разработан дизайн чистый и солидный дизайн страницы, подходящий под тематику ванильности проекта.`,
+        },
+        { type: "img", src: require("assets/projects/content/22/2.png") },
       ],
     },
 
