@@ -42,13 +42,10 @@
           {{ project.title }}
         </h1>
         <h2
-          class="q-my-none q-mt-md"
+          class="q-my-none"
           :class="{
-            'font-23': $q.screen.width > 1024,
-            'font-20': $q.screen.width <= 1024 && $q.screen.width > 768,
-            'font-18': $q.screen.width <= 768 && $q.screen.width > 430,
-            'font-9': $q.screen.width <= 430,
-            'font-7': $q.screen.width <= 430,
+            'font-23 q-mt-md': $q.screen.width > 1024,
+            'font-10 q-mt-xs': $q.screen.width <= 1024,
           }"
           style="color: rgba(255, 255, 255, 0.65); line-height: 1"
         >

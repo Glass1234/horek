@@ -65,4 +65,28 @@ export default {
   "SMM design (Packaging)": "SMM-дизайн (Упаковка)",
   Brandbook: "Брендбук",
   All: "Все",
+  "Turnkey website from 20,000 ₽": "Сайт под ключ от 20 000 ₽",
+  "Our specialization is the comprehensive development of your website for business success in the online sphere":
+    "Наша специализация - комплексная разработка вашего сайта для успеха бизнеса в онлайн-сфере",
+  "View portfolio": "Смотреть портфолио",
+  "Why us?": "Почему мы?",
+  "High-quality development": "Качественная разработка",
+  "Individual approach": "Индивидуальный подход",
+  "Support and update": "Поддержка и обновление",
+  "We will create a unique and attractive appearance for the site and ensure its optimal performance.":
+    "Создадим уникальный и привлекательный внешний вид сайта, а также обеспечат его оптимальную работу.",
+  "We take into account all your wishes and needs to create a website that perfectly suits your business.":
+    "Учитываем все ваши пожелания и потребности, чтобы создать сайт, идеально соответствующий вашему бизнесу.",
+  "We provide reliable technical support and assistance in the further development and updating of your website.":
+    "Мы предоставляем надежную техническую поддержку и помощь в дальнейшем развитии и обновлении вашего сайта.",
+  "Additional services": "Дополнительные услуги",
+  "Graphic design": "Графический дизайн",
+  "Motion design": "Motion-дизайн",
+  Development: "Разработка",
+  "Branding, corporate identity, advertising creatives, SMM design, brand book":
+    "Брендинг, фирменный стиль, рекламные креативы, SMM-дизайн, брендбук",
+  "We will help you professionally revive your project and attract the attention of your audience through the creation of high-quality animations":
+    "Поможем профессионально оживить ваш проект и привлечь внимание аудитории через создание качественных анимаций",
+  "Telegram chatbots, various scripts, Back-end and Front-end, everything related to website development, Gui applications":
+    "Телеграм чат-боты, различные скрипты, Back-end и Front-end, все что связано с разработкой сайтов, Gui приложения",
 };

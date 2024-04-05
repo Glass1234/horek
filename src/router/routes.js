@@ -15,6 +15,7 @@ const routes = [
         name: "project",
         component: () => import("pages/ProjectPage.vue"),
       },
+      { path: "/ad", component: () => import("pages/AdvertisingPage.vue") },
     ],
   },
 

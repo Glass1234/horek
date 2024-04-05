@@ -7,15 +7,19 @@
     <div
       class="column q-pb-md"
       :class="{
-        'q-pt-xl': $q.screen.width > 768,
-        'col-8 q-pt-md': $q.screen.width <= 768 && $q.screen.width > 430,
-        'q-pt-md': $q.screen.width <= 430 
+        'q-pt-xl col-8': $q.screen.width > 768,
+        'q-pt-md': $q.screen.width <= 768 && $q.screen.width > 430,
+        'q-pt-md': $q.screen.width <= 430,
       }"
     >
       <div class="row items-center justify-between">
         <div
           class="row justify-between"
-          :style="$q.screen.width > 768 ? { 'gap': '0 80px' } : { 'gap': '0 30px', 'width': '100%' }"
+          :style="
+            $q.screen.width > 768
+              ? { gap: '0 80px' }
+              : { gap: '0 30px', width: '100%' }
+          "
         >
           <router-link class="column justify-center" to="/"
             ><q-img
@@ -28,7 +32,7 @@
             class="column"
             :class="{
               'font-16': $q.screen.width > 768,
-              'font-9': $q.screen.width <= 768 
+              'font-9': $q.screen.width <= 768,
             }"
           >
             <span class="cursor-pointer" style="text-decoration: underline"
@@ -45,7 +49,7 @@
             class="column"
             :class="{
               'font-16': $q.screen.width > 768,
-              'font-9': $q.screen.width <= 768 
+              'font-9': $q.screen.width <= 768,
             }"
           >
             <span class="cursor-pointer" style="text-decoration: underline"
@@ -75,8 +79,15 @@
       <div class="q-py-md" v-if="$q.screen.width > 768">
         <q-separator class="footerSeparator" />
       </div>
-      <div class="row items-center justify-between" style="gap: 0 60px" v-if="$q.screen.width > 768">
-        <div class="row items-center text-uppercase font-16" style="gap: 0 60px">
+      <div
+        class="row items-center justify-between"
+        style="gap: 0 60px"
+        v-if="$q.screen.width > 768"
+      >
+        <div
+          class="row items-center text-uppercase font-16"
+          style="gap: 0 60px"
+        >
           <router-link class="linkCustom" to="/portfolio">
             <span>{{ t("Portfolio") }}</span>
           </router-link>
@@ -94,10 +105,16 @@
           }"
         >
           <div class="row blockConsultation">
-            <div class="q-px-lg q-py-sm">{{ t("shall we discuss your project?") }}</div>
+            <div class="q-px-lg q-py-sm">
+              {{ t("shall we discuss your project?") }}
+            </div>
             <q-space />
             <q-separator class="bg-red-7" vertical />
-            <div class="text-red-7 text-uppercase q-px-lg q-py-sm cursor-pointer">{{ t("Consultation") }}</div>
+            <div
+              class="text-red-7 text-uppercase q-px-lg q-py-sm cursor-pointer"
+            >
+              {{ t("Consultation") }}
+            </div>
           </div>
         </div>
       </div>

@@ -66,4 +66,28 @@ export default {
   "SMM design (Packaging)": "SMM design (Packaging)",
   Brandbook: "Brandbook",
   All: "All",
+  "Turnkey website from 20,000 ₽": "Turnkey website from 20,000 ₽",
+  "Our specialization is the comprehensive development of your website for business success in the online sphere":
+    "Our specialization is the comprehensive development of your website for business success in the online sphere",
+  "View portfolio": "View portfolio",
+  "Why us?": "Why us?",
+  "High-quality development": "High-quality development",
+  "Individual approach": "Individual approach",
+  "Support and update": "Support and update",
+  "We will create a unique and attractive appearance for the site and ensure its optimal performance.":
+    "We will create a unique and attractive appearance for the site and ensure its optimal performance.",
+  "We take into account all your wishes and needs to create a website that perfectly suits your business.":
+    "We take into account all your wishes and needs to create a website that perfectly suits your business.",
+  "We provide reliable technical support and assistance in the further development and updating of your website.":
+    "We provide reliable technical support and assistance in the further development and updating of your website.",
+  "Additional services": "Additional services",
+  "Graphic design": "Graphic design",
+  "Motion design": "Motion design",
+  Development: "Development",
+  "Branding, corporate identity, advertising creatives, SMM design, brand book":
+    "Branding, corporate identity, advertising creatives, SMM design, brand book",
+  "We will help you professionally revive your project and attract the attention of your audience through the creation of high-quality animations":
+    "We will help you professionally revive your project and attract the attention of your audience through the creation of high-quality animations",
+  "Telegram chatbots, various scripts, Back-end and Front-end, everything related to website development, Gui applications":
+    "Telegram chatbots, various scripts, Back-end and Front-end, everything related to website development, Gui applications",
 };
