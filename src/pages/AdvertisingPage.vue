@@ -1,17 +1,39 @@
 <template>
   <div
     class="row justify-center full-width text-white"
-    style="padding: 100px 0"
+    :style="{ padding: $q.screen.width > 1024 ? '100px 0' : '0 0 30px 0' }"
   >
-    <div class="column col-8">
-      <div class="grid justify-between">
+    <div
+      class="column"
+      :class="{
+        'col-8': $q.screen.width > 1024,
+        'col-11': $q.screen.width <= 1024,
+      }"
+    >
+      <div
+        :class="{
+          'grid justify-between': $q.screen.width > 1024,
+          'column reverse justify-end': $q.screen.width <= 1024,
+        }"
+        :style="{ gap: $q.screen.width <= 1024 ? '30px 0' : '0' }"
+      >
         <div class="column justify-between" style="gap: 30px 0">
           <div style="max-width: 430px">
-            <h1 class="q-my-none text-h2">
+            <h1
+              class="q-my-none"
+              :class="{
+                'text-h2': $q.screen.width > 1024,
+                'text-h4': $q.screen.width <= 1024,
+              }"
+            >
               {{ t("Turnkey website from 20,000 ₽") }}
             </h1>
             <span
-              class="q-mt-lg block text-h5"
+              class="q-mt-lg block"
+              :class="{
+                'text-h5': $q.screen.width > 1024,
+                'text-h6': $q.screen.width <= 1024,
+              }"
               style="color: #ffffffb2; line-height: 38px"
               >{{
                 t(
@@ -31,28 +53,66 @@
             />
           </div>
         </div>
-        <q-img
-          fit="none"
-          :src="require('assets/images/AD.png')"
-          style="height: 438px;"
-        />
+        <div v-if="$q.screen.width > 1024">
+          <q-img
+            fit="contain"
+            :src="require('assets/images/AD.png')"
+            style="max-width: 100%; height: 438px"
+          />
+        </div>
+        <div v-else>
+          <img
+            :src="require('assets/images/AD.png')"
+            style="max-width: 100%; max-height: 438px"
+          />
+        </div>
       </div>
-      <div style="margin-top: 125px">
-        <h2 class="q-my-none text-h2">{{ t("Why us?") }}</h2>
+      <div :style="{ 'margin-top': $q.screen.width > 1024 ? '125px' : '50px' }">
+        <h2
+          class="q-my-none"
+          :class="{
+            'text-h2': $q.screen.width > 1024,
+            'text-h4': $q.screen.width <= 1024,
+          }"
+        >
+          {{ t("Why us?") }}
+        </h2>
         <div
           class="row justify-between items-baseline q-mt-xl"
           style="gap: 30px"
         >
-          <div style="width: 430px">
-            <q-avatar size="70px" style="background-color: #26272b">
-              <q-img :src="require('assets/icons/armor.svg')" width="29px" />
-            </q-avatar>
+          <div
+            style="max-width: 430px"
+            :class="{
+              'text-center': $q.screen.width <= 1024,
+            }"
+          >
+            <div
+              :class="{
+                'text-h2': $q.screen.width > 1024,
+                'row justify-center': $q.screen.width <= 1024,
+              }"
+            >
+              <q-avatar size="70px" style="background-color: #26272b">
+                <q-img :src="require('assets/icons/armor.svg')" width="29px" />
+              </q-avatar>
+            </div>
 
-            <h3 class="block q-my-none text-h4 q-mt-sm">
+            <h3
+              class="block q-my-none q-mt-sm"
+              :class="{
+                'text-h4': $q.screen.width > 1024,
+                'text-h5': $q.screen.width <= 1024,
+              }"
+            >
               {{ t("High-quality development") }}
             </h3>
             <div
-              class="q-mt-sm block text-h5"
+              class="q-mt-sm block"
+              :class="{
+                'text-h5': $q.screen.width > 1024,
+                'text-h6': $q.screen.width <= 1024,
+              }"
               style="color: #ffffffb2; line-height: 36px"
             >
               {{
@@ -62,16 +122,38 @@
               }}
             </div>
           </div>
-          <div style="width: 430px">
-            <q-avatar size="70px" style="background-color: #26272b">
-              <q-img :src="require('assets/icons/pazle.svg')" width="29px" />
-            </q-avatar>
+          <div
+            style="max-width: 430px"
+            :class="{
+              'text-center': $q.screen.width <= 1024,
+            }"
+          >
+            <div
+              :class="{
+                'text-h2': $q.screen.width > 1024,
+                'row justify-center': $q.screen.width <= 1024,
+              }"
+            >
+              <q-avatar size="70px" style="background-color: #26272b">
+                <q-img :src="require('assets/icons/pazle.svg')" width="29px" />
+              </q-avatar>
+            </div>
 
-            <h3 class="block q-my-none text-h4 q-mt-sm">
+            <h3
+              class="block q-my-none q-mt-sm"
+              :class="{
+                'text-h4': $q.screen.width > 1024,
+                'text-h5': $q.screen.width <= 1024,
+              }"
+            >
               {{ t("Individual approach") }}
             </h3>
             <div
-              class="q-mt-sm block text-h5"
+              class="q-mt-sm block"
+              :class="{
+                'text-h5': $q.screen.width > 1024,
+                'text-h6': $q.screen.width <= 1024,
+              }"
               style="color: #ffffffb2; line-height: 36px"
             >
               {{
@@ -81,19 +163,41 @@
               }}
             </div>
           </div>
-          <div style="width: 430px">
-            <q-avatar size="70px" style="background-color: #26272b">
-              <q-img
-                :src="require('assets/icons/armorCircle.svg')"
-                width="29px"
-              />
-            </q-avatar>
+          <div
+            style="max-width: 430px"
+            :class="{
+              'text-center': $q.screen.width <= 1024,
+            }"
+          >
+            <div
+              :class="{
+                'text-h2': $q.screen.width > 1024,
+                'row justify-center': $q.screen.width <= 1024,
+              }"
+            >
+              <q-avatar size="70px" style="background-color: #26272b">
+                <q-img
+                  :src="require('assets/icons/armorCircle.svg')"
+                  width="29px"
+                />
+              </q-avatar>
+            </div>
 
-            <h3 class="block q-my-none text-h4 q-mt-sm">
+            <h3
+              class="block q-my-none q-mt-sm"
+              :class="{
+                'text-h4': $q.screen.width > 1024,
+                'text-h5': $q.screen.width <= 1024,
+              }"
+            >
               {{ t("Support and update") }}
             </h3>
             <div
-              class="q-mt-sm block text-h5"
+              class="q-mt-sm block"
+              :class="{
+                'text-h5': $q.screen.width > 1024,
+                'text-h6': $q.screen.width <= 1024,
+              }"
               style="color: #ffffffb2; line-height: 36px"
             >
               {{
@@ -105,10 +209,22 @@
           </div>
         </div>
       </div>
-      <div style="margin-top: 125px">
-        <h2 class="q-my-none text-h2">{{ t("Additional services") }}</h2>
+      <div :style="{ 'margin-top': $q.screen.width > 1024 ? '125px' : '50px' }">
+        <h2
+          class="q-my-none"
+          :class="{
+            'text-h2': $q.screen.width > 1024,
+            'text-h4': $q.screen.width <= 1024,
+          }"
+        >
+          {{ t("Additional services") }}
+        </h2>
         <div
-          class="row justify-between items-center q-mt-xl"
+          class="row justify-between items-center"
+          :class="{
+            'q-mt-xl': $q.screen.width > 1024,
+            'q-mt-lg': $q.screen.width <= 1024,
+          }"
           style="align-items: stretch; gap: 30px"
         >
           <div
@@ -120,7 +236,7 @@
               max-width: 430px;
             "
           >
-            <h3 class="block q-my-none q-mt-sm" style="font-size: 30px">
+            <h3 class="block q-my-none" style="font-size: 30px">
               {{ t("Graphic design") }}
             </h3>
             <div
@@ -143,7 +259,7 @@
               max-width: 430px;
             "
           >
-            <h3 class="block q-my-none q-mt-sm" style="font-size: 30px">
+            <h3 class="block q-my-none" style="font-size: 30px">
               {{ t("Motion design") }}
             </h3>
             <div
@@ -166,7 +282,7 @@
               max-width: 430px;
             "
           >
-            <h3 class="block q-my-none q-mt-sm" style="font-size: 30px">
+            <h3 class="block q-my-none" style="font-size: 30px">
               {{ t("Development") }}
             </h3>
             <div
