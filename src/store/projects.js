@@ -249,29 +249,34 @@ const data = {
         { type: "img", src: require("assets/projects/content/22/2.png") },
       ],
     },
-
-    // {
-    //   id: 1,
-    //   title: "Horektrade 1",
-    //   description: "automatic crypto exchanger Графика",
-    //   type: "Графика",
-    //   content: [
-    //     { type: "img", src: require("assets/images/horek.png") },
-    //     {
-    //       type: "text",
-    //       title: "Lorem ipsum.",
-    //       description:
-    //         "Lorem ipsum dolor sit amet consectetur. Diam viverra hendrerit sagittis lacus sit placerat. Ultrices enim id sed enim. Accumsan enim morbi sapien non bibendum amet in eu non. Pretium enim vulputate hendrerit pharetra malesuada faucibus.",
-    //     },
-    //     { type: "img", src: require("assets/images/horek.png") },
-    //     {
-    //       type: "text",
-    //       title: "Lorem ipsum.",
-    //       description:
-    //         "Lorem ipsum dolor sit amet consectetur. Diam viverra hendrerit sagittis lacus sit placerat. Ultrices enim id sed enim. Accumsan enim morbi sapien non bibendum amet in eu non. Pretium enim vulputate hendrerit pharetra malesuada faucibus.",
-    //     },
-    //   ],
-    // },
+    {
+      id: 23,
+      title: "Cupful",
+      type: "Брендинг",
+      sort_type: "Графика",
+      src_preview: require("assets/projects/preview/23.png"),
+      content: [
+        { type: "img", src: require("assets/projects/content/23/1.png") },
+        {
+          type: "text",
+          title: "О магазине",
+          description: `CupFul - ваш проводник в мире китайского чая. Основной ассортимент охватывает широкий спектр китайских чаев - от традиционных вариантов, таких как пуэр и улун, до редких и дорогих сортов.`,
+        },
+        {
+          type: "text",
+          title: "Дизайн",
+          description: `Основной цвет дизайна - зеленый. Этот цвет ассоциируется с природой, свежестью, ростом и жизненной энергией, что идеально отражает философию CupFul - приносить своим клиентам не только вкус и качество чая, но и чувство связи с природой и гармонии с собой.\n
+          Основным символом в дизайне является Гайвань - традиционный китайский чайный посуд для заваривания чая. Этот символ отражает идею бренда, воплощая в себе идею внимания к деталям и традиций чаепития.\n
+          Фирменный стиль магазина выполен в минималистичном стиле, что стремиться создать атмосферу спокойствия и простоты.`,
+        },
+        { type: "img", src: require("assets/projects/content/23/2.png") },
+        { type: "img", src: require("assets/projects/content/23/3.png") },
+        { type: "img", src: require("assets/projects/content/23/4.png") },
+        { type: "img", src: require("assets/projects/content/23/5.png") },
+        { type: "img", src: require("assets/projects/content/23/6.png") },
+        { type: "img", src: require("assets/projects/content/23/7.png") },
+      ],
+    },
   ],
 };
 
