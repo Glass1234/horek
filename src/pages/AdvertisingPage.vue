@@ -79,6 +79,9 @@
         </h2>
         <div
           class="row justify-between items-baseline q-mt-xl"
+          :class="{
+            'no-wrap': $q.screen.width > 1024,
+          }"
           style="gap: 30px"
         >
           <div
@@ -93,13 +96,14 @@
                 'row justify-center': $q.screen.width <= 1024,
               }"
             >
-              <q-avatar size="70px" style="background-color: #26272b">
-                <q-img :src="require('assets/icons/armor.svg')" width="29px" />
+              <q-avatar size="71px" style="background-color: #26272b">
+                <q-img :src="require('assets/icons/armor.svg')" width="42px" />
               </q-avatar>
             </div>
 
             <h3
-              class="block q-my-none q-mt-sm"
+              class="block q-my-none"
+              style="margin-top: 17px"
               :class="{
                 'text-h4': $q.screen.width > 1024,
                 'text-h5': $q.screen.width <= 1024,
@@ -108,12 +112,12 @@
               {{ t("High-quality development") }}
             </h3>
             <div
-              class="q-mt-sm block"
+              class="block"
               :class="{
                 'text-h5': $q.screen.width > 1024,
                 'text-h6': $q.screen.width <= 1024,
               }"
-              style="color: #ffffffb2; line-height: 36px"
+              style="color: #ffffffb2; line-height: 36px; margin-top: 14px"
             >
               {{
                 t(
@@ -134,13 +138,14 @@
                 'row justify-center': $q.screen.width <= 1024,
               }"
             >
-              <q-avatar size="70px" style="background-color: #26272b">
-                <q-img :src="require('assets/icons/pazle.svg')" width="29px" />
+              <q-avatar size="71px" style="background-color: #26272b">
+                <q-img :src="require('assets/icons/pazle.svg')" width="42px" />
               </q-avatar>
             </div>
 
             <h3
-              class="block q-my-none q-mt-sm"
+              class="block q-my-none"
+              style="margin-top: 17px"
               :class="{
                 'text-h4': $q.screen.width > 1024,
                 'text-h5': $q.screen.width <= 1024,
@@ -149,12 +154,12 @@
               {{ t("Individual approach") }}
             </h3>
             <div
-              class="q-mt-sm block"
+              class="block"
               :class="{
                 'text-h5': $q.screen.width > 1024,
                 'text-h6': $q.screen.width <= 1024,
               }"
-              style="color: #ffffffb2; line-height: 36px"
+              style="color: #ffffffb2; line-height: 36px; margin-top: 14px"
             >
               {{
                 t(
@@ -175,16 +180,17 @@
                 'row justify-center': $q.screen.width <= 1024,
               }"
             >
-              <q-avatar size="70px" style="background-color: #26272b">
+              <q-avatar size="71px" style="background-color: #26272b">
                 <q-img
                   :src="require('assets/icons/armorCircle.svg')"
-                  width="29px"
+                  width="46px"
                 />
               </q-avatar>
             </div>
 
             <h3
-              class="block q-my-none q-mt-sm"
+              class="block q-my-none"
+              style="margin-top: 17px"
               :class="{
                 'text-h4': $q.screen.width > 1024,
                 'text-h5': $q.screen.width <= 1024,
@@ -193,12 +199,12 @@
               {{ t("Support and update") }}
             </h3>
             <div
-              class="q-mt-sm block"
+              class="block"
               :class="{
                 'text-h5': $q.screen.width > 1024,
                 'text-h6': $q.screen.width <= 1024,
               }"
-              style="color: #ffffffb2; line-height: 36px"
+              style="color: #ffffffb2; line-height: 36px; margin-top: 14px"
             >
               {{
                 t(
@@ -222,7 +228,7 @@
         <div
           class="row justify-between items-center"
           :class="{
-            'q-mt-xl': $q.screen.width > 1024,
+            'q-mt-xl no-wrap': $q.screen.width > 1024,
             'q-mt-lg': $q.screen.width <= 1024,
           }"
           style="align-items: stretch; gap: 30px"
