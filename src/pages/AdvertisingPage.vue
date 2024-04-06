@@ -70,10 +70,7 @@
       <div :style="{ 'margin-top': $q.screen.width > 1024 ? '125px' : '50px' }">
         <h2
           class="q-my-none"
-          :class="{
-            'text-h2': $q.screen.width > 1024,
-            'text-h4': $q.screen.width <= 1024,
-          }"
+          :style="{ 'font-size': $q.screen.width > 1024 ? '48px' : '30px' }"
         >
           {{ t("Why us?") }}
         </h2>
@@ -218,10 +215,7 @@
       <div :style="{ 'margin-top': $q.screen.width > 1024 ? '125px' : '50px' }">
         <h2
           class="q-my-none"
-          :class="{
-            'text-h2': $q.screen.width > 1024,
-            'text-h4': $q.screen.width <= 1024,
-          }"
+          :style="{ 'font-size': $q.screen.width > 1024 ? '48px' : '30px' }"
         >
           {{ t("Additional services") }}
         </h2>
