@@ -37,7 +37,7 @@ import headerCustom from "components/headerCustom.vue";
 import footerCustom from "components/footerCustom.vue";
 
 import { useStore } from "vuex";
-import { useSSRContext, computed } from "vue";
+import { useSSRContext, computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 
@@ -69,6 +69,25 @@ locale.value =
   $store.getters["languageClient/getLangHTTP"] === "ru" ? "ru-RU" : "en-US";
 
 const isIndexPage = computed(() => route?.path === "/");
+
+onMounted(() => {
+  if (process.env.NODE_ENV === "production") {
+    async function fetchVideo() {
+      const response = await fetch(require("assets/videos/mem.mp4"));
+      const blob = await response.blob();
+      return blob;
+    }
+
+    (async () => {
+      const videoBlob = await fetchVideo();
+      const url = URL.createObjectURL(videoBlob);
+      console.log("ТУТ КОТЫ");
+      console.log("|    |");
+      console.log("v    v");
+      console.info(url);
+    })();
+  }
+});
 </script>
 
 <style scoped lang="scss"></style>
