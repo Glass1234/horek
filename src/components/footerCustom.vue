@@ -111,6 +111,7 @@
             <q-space />
             <q-separator class="bg-red-7" vertical />
             <div
+              @click="modalDis.isOpenModal = true"
               class="text-red-7 text-uppercase q-px-lg q-py-sm cursor-pointer"
             >
               {{ t("Consultation") }}
@@ -120,14 +121,22 @@
       </div>
     </div>
   </q-footer>
+  <q-dialog v-model="modalDis.isOpenModal">
+    <communicationModal />
+  </q-dialog>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import communicationModal from "components/communicationModal.vue";
+import { reactive, computed } from "vue";
 import { useRoute } from "vue-router";
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+
+const modalDis = reactive({
+  isOpenModal: false,
+});
 
 const route = useRoute();
 const isIndexPage = computed(() => route?.path === "/");
