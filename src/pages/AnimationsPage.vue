@@ -24,6 +24,7 @@
             <animation
               :indexItem="index + 1"
               :isCenter="item.isCenter"
+              :isOnlyText="item.isOnlyText"
               :settings="item.settings"
             />
           </div>
@@ -39,6 +40,14 @@ import { useI18n } from "vue-i18n";
 import { ref } from "vue";
 const { t } = useI18n();
 const items = ref([
+  {
+    isCenter: true,
+    isOnlyText: true,
+    settings: {
+      from: {},
+      to: [{ opacity: 0 }, { y: -30 }, { y: 0, opacity: 1 }],
+    },
+  },
   {
     isCenter: true,
     settings: {
@@ -276,20 +285,6 @@ const items = ref([
         "font-size": "5rem",
         "font-weight": 900,
         color: "yellow",
-        repeat: -1,
-        ease: "none",
-        duration: 3,
-        yoyo: true,
-      },
-    },
-  },
-  {
-    isCenter: true,
-    settings: {
-      from: { "letter-spacing": "-10px", color: "#00000000" },
-      to: {
-        "letter-spacing": "70px",
-        color: "#FFFFFFFF",
         repeat: -1,
         ease: "none",
         duration: 3,

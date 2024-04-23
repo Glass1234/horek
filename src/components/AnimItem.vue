@@ -4,7 +4,13 @@
       class="item q-pa-md column justify-center"
       :class="{ 'items-center': isCenter }"
     >
-      <div class="cube" :ref="(element) => (anim.refItem = element)">123</div>
+      <div
+        class="cube"
+        :class="{ 'cube-transperent': isOnlyText }"
+        :ref="(element) => (anim.refItem = element)"
+      >
+        123
+      </div>
     </div>
     <div class="row items-center justify-between">
       <span class="text-h6"> Анимация №{{ indexItem }} </span>
@@ -24,6 +30,10 @@ import { gsap } from "gsap";
 const props = defineProps({
   indexItem: Number,
   settings: Object,
+  isOnlyText: {
+    type: Boolean,
+    default: false,
+  },
   isCenter: {
     type: Boolean,
     default: false,
@@ -35,15 +45,24 @@ class Animation {
   refItem = ref(null);
   GSAP = null;
   inject(settings) {
-    this.GSAP = gsap.fromTo(this.refItem, settings.from, settings.to);
+    if (typeof settings.to == "object" && !Array.isArray(settings.to)) {
+      this.GSAP = gsap.fromTo(this.refItem, settings.from, {
+        ...settings.to,
+        ease: "power2.inOut",
+      });
+    } else if (Array.isArray(settings.to)) {
+      let tmp = gsap.timeline({ repeat: -1, ease: "power2.inOut" });
+      Array.from(settings.to).forEach((element) => {
+        tmp.to(this.refItem, Object.fromEntries(Object.entries(element)));
+      });
+      this.GSAP = tmp;
+    }
   }
   stop() {
-    console.log("stop");
     this.isPlay = false;
     this.GSAP.pause();
   }
   start() {
-    console.log("start");
     this.isPlay = true;
     this.GSAP.play();
   }
@@ -61,6 +80,9 @@ onMounted(() => {
   border: 1px solid #ffffff1a;
   background: #ffffff0a;
   border-radius: 20px;
+}
+.cube-transperent {
+  background-color: transparent !important;
 }
 .cube {
   width: 50px;
