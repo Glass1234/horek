@@ -277,6 +277,43 @@ const data = {
         { type: "img", src: require("assets/projects/content/23/7.png") },
       ],
     },
+    {
+      id: 24,
+      title: "PayWex",
+      type: "Брендинг",
+      sort_type: "Графика",
+      src_preview: require("assets/projects/preview/24.png"),
+      content: [
+        { type: "img", src: require("assets/projects/content/24/1.png") },
+        {
+          type: "text",
+          title: "О проекте",
+          description: `PayWex - современная платежная система для цифровых финансовых операций PayWex выступает как ведущая платформа, предлагающая пользователям экспресс-методы проведения транзакций с уникальной комбинацией безопасности, эффективности и удобства.\n
+          Услуги которые мы оказали:\n- Разработка логотипа\n- Разработка визуального брендинга\n- Разработка дизайна лендинга и дашбоарда`,
+        },
+        {
+          type: "text",
+          title: "Логотип",
+          description: `Логотип состоит из сочетания иконки и названия платежной системы. Иконка представляет собой прямоугольник с закругленными углами, внутри которого расположена белая буква "W", стилизованная с использованием отрезов и геометрических фигур. Для логотипа использован современный шрифт без засечек.\n
+          Общий стиль - минимализм и современность. Решения обусловены отражением принципов прямоты, прозрачности и лаконичности платежной системы.`,
+        },
+        {
+          type: "text",
+          title: "Цвета бренда",
+          description: `Каждый цвет выбран с упором на философию бренда.\n
+          Ярко-синий цвет часто ассоциируется с надежностью, безопасностью и доверием. Темно-синий цвет носит характер профессионализма и стабильности.\n
+          Белый цвет используется для создания контраста и чистоты дизайна.`,
+        },
+        { type: "img", src: require("assets/projects/content/24/2.png") },
+        { type: "img", src: require("assets/projects/content/24/3.png") },
+        { type: "img", src: require("assets/projects/content/24/4.png") },
+        { type: "img", src: require("assets/projects/content/24/5.png") },
+        { type: "img", src: require("assets/projects/content/24/6.png") },
+        { type: "img", src: require("assets/projects/content/24/7.png") },
+        { type: "img", src: require("assets/projects/content/24/8.png") },
+        { type: "img", src: require("assets/projects/content/24/9.png") },
+      ],
+    },
   ],
 };
 
