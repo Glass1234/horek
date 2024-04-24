@@ -227,28 +227,28 @@ const data = {
         { type: "img", src: require("assets/projects/content/21/3.png") },
       ],
     },
-    {
-      id: 22,
-      title: "Vanilca",
-      type: "Сайт",
-      sort_type: "Веб и UI\\UX",
-      src_preview: require("assets/projects/preview/22.png"),
-      content: [
-        { type: "img", src: require("assets/projects/content/22/1.png") },
-        {
-          type: "text",
-          title: "О проекте",
-          description:
-            "Vanilca - майнкрафт проект, представляющий собой сервер с упором на ванильное выживание.",
-        },
-        {
-          type: "text",
-          title: "Дизайн",
-          description: `Был разработан чистый и солидный дизайн страницы, подходящий под тематику ванильности проекта.`,
-        },
-        { type: "img", src: require("assets/projects/content/22/2.png") },
-      ],
-    },
+    // {
+    //   id: 22,
+    //   title: "Vanilca",
+    //   type: "Сайт",
+    //   sort_type: "Веб и UI\\UX",
+    //   src_preview: require("assets/projects/preview/22.png"),
+    //   content: [
+    //     { type: "img", src: require("assets/projects/content/22/1.png") },
+    //     {
+    //       type: "text",
+    //       title: "О проекте",
+    //       description:
+    //         "Vanilca - майнкрафт проект, представляющий собой сервер с упором на ванильное выживание.",
+    //     },
+    //     {
+    //       type: "text",
+    //       title: "Дизайн",
+    //       description: `Был разработан чистый и солидный дизайн страницы, подходящий под тематику ванильности проекта.`,
+    //     },
+    //     { type: "img", src: require("assets/projects/content/22/2.png") },
+    //   ],
+    // },
     {
       id: 23,
       title: "Cupful",
