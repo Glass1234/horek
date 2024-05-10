@@ -90,9 +90,11 @@
 .gap-x-xs {
   gap: 0 4px;
 }
+
 .gap-x-md {
   gap: 0 16px;
 }
+
 .gap-x-lg {
   gap: 0 24px;
 }
@@ -107,4 +109,23 @@ img {
 
 .sticky {
   position: sticky;
+}
+
+.btn-shdow {
+  box-shadow: 0px 1px 2px 0px #1018280f, 0px 1px 3px 0px #1018281a;
+}
+
+.linkCustom {
+  color: #661424;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.linkCustom:hover {
+  color: $red-7;
+}
+
+.underline{
+  text-decoration: underline;
 }

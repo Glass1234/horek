@@ -1,269 +1,134 @@
 <template>
-  <div
-    class="row justify-center full-width text-white"
-    :class="{
-      'q-pt-lg': $q.screen.width > 430,
-    }"
-    :style="
-      $q.screen.width > 430
-        ? { 'padding-bottom': '100px' }
-        : { 'padding-bottom': '26px', 'margin-top': '-30px' }
-    "
-  >
-    <div
-      :class="{
-        'col-8': $q.screen.width > 768,
-        'col-10': $q.screen.width <= 768 && $q.screen.width > 430,
-        'col-11': $q.screen.width <= 430,
-      }"
-      :style="$q.screen.width > 430 ? {} : { padding: '0 7px' }"
-    >
-      <q-breadcrumbs
-        class="font-15"
-        active-color="white"
-        gutter="sm"
-        :style="$q.screen.width > 430 ? {} : { display: 'none' }"
-      >
-        <q-breadcrumbs-el :label="t('Home')" to="/" />
-        <q-breadcrumbs-el :label="t('Services')" />
-      </q-breadcrumbs>
+  <div class="row justify-center full-width"
+       style="padding-bottom: 75px">
+    <div class="col-8 column items-center" style="color: #101828; gap:75px">
       <div>
-        <h2
-          class="q-mb-none"
-          :class="{
-            'font-34': $q.screen.width > 430,
-            'font-16': $q.screen.width <= 430,
-          }"
-        >
-          {{ t("Graphic arts") }}
-        </h2>
-        <div
-          class="row"
-          :class="{
-            'q-mt-md': $q.screen.width > 430,
-            'q-mt-xs': $q.screen.width <= 430,
-          }"
-          :style="$q.screen.width > 430 ? { gap: '62px' } : { gap: '10px' }"
-        >
-          <div class="column" v-for="(item, index) in graphics" :key="index">
-            <div class="blockSkill">
-              <q-img
-                class="blockSkill-size"
-                :src="require(`assets/icons/servicesIcons/${item.icon}.png`)"
-              />
+        <h2 class="text-center">Графический дизайн</h2>
+        <div class="row justify-center" style="gap:27px; margin-top: 50px">
+          <div class="bg-main-page container column justify-between"
+               v-for="(item,index) in graphicsItems" :key="index">
+            <div class="row justify-center">
+              <q-img :src="require(`assets/icons/graphDesign/${item.icon}.svg`)" alt="item.name" height="114px"
+                     fit="none"/>
             </div>
-            <div
-              :class="{
-                'q-mt-sm': $q.screen.width > 430,
-                'q-mt-xs': $q.screen.width <= 430,
-              }"
-            >
-              <span
-                :class="{
-                  'font-16': $q.screen.width > 430,
-                  'font-9': $q.screen.width <= 430,
-                }"
-                >{{ item.name }}</span
-              >
+            <div class="column justify-center col">
+              <span class="text-weight-regular text-center no-margin text-h6">{{ item.name }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div
-        :class="{
-          'q-mb-md': $q.screen.width > 430,
-          'q-mb-lg': $q.screen.width <= 430,
-        }"
-      >
-        <h2
-          class="q-mb-none"
-          :class="{
-            'font-34': $q.screen.width > 430,
-            'font-16': $q.screen.width <= 430,
-          }"
-        >
-          {{ t("Web and") }} UI\UX
-        </h2>
-        <div
-          class="row"
-          :class="{
-            'q-mt-md': $q.screen.width > 430,
-            'q-mt-xs': $q.screen.width <= 430,
-          }"
-          :style="$q.screen.width > 430 ? { gap: '62px' } : { gap: '10px' }"
-        >
-          <div class="column" v-for="(item, index) in UI_UX" :key="index">
-            <div class="blockSkill">
-              <q-img
-                class="blockSkill-size"
-                :src="require(`assets/icons/UI_UXIcons/${item.icon}.png`)"
-              />
+      <div>
+        <h2 class="text-center">Веб и UI\UX</h2>
+        <div class="row justify-center" style="gap:27px; margin-top: 50px">
+          <div class="bg-main-page container column justify-between"
+               v-for="(item,index) in UI_UX" :key="index">
+            <div class="row justify-center">
+              <q-img :src="require(`assets/icons/UI_UXIcons/${item.icon}.svg`)" alt="item.name" height="114px"
+                     fit="none"/>
             </div>
-            <div
-              :class="{
-                'q-mt-sm': $q.screen.width > 430,
-                'q-mt-xs': $q.screen.width <= 430,
-              }"
-            >
-              <span
-                :class="{
-                  'font-16': $q.screen.width > 430,
-                  'font-9': $q.screen.width <= 430,
-                }"
-                >{{ item.name }}</span
-              >
+            <div class="column justify-center col">
+              <span class="text-weight-regular text-center no-margin text-h6">{{ item.name }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div
-        :class="{
-          'q-pt-xl': $q.screen.width > 430,
-          'q-pt-md': $q.screen.width <= 430,
-        }"
-      >
-        <h
-          :class="{
-            'font-34': $q.screen.width > 430,
-            'font-16': $q.screen.width <= 430,
-          }"
-        >
-          {{ t("Code") }}</h
-        >
-        <div
-          class="blockSkill row justify-center"
-          :class="{
-            'q-mt-xl': $q.screen.width > 430,
-            'q-mt-lg': $q.screen.width <= 430,
-          }"
-        >
-          <q-img
-            :src="require(`assets/icons/codeIcons.png`)"
-            :width="$q.screen.width > 430 ? '207px' : '116px'"
-            :height="$q.screen.width > 430 ? '207px' : '116px'"
-          />
-        </div>
-        <div class="q-mt-sm">
-          <div
-            class="row items-center no-wrap"
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430,
-            }"
-          >
-            <q-chip
-              color="red-7"
-              text-color="white"
-              :clickable="false"
-              label="FRONTEND"
-              :style="
-                $q.screen.width > 430
-                  ? { 'min-width': '115px', 'max-width': '115px' }
-                  : { 'min-width': '65px', 'max-width': '65px' }
-              "
-              :class="{
-                'font-16': $q.screen.width > 430,
-                'font-9': $q.screen.width <= 430,
-              }"
-            />
-            <span class="q-ml-sm" style="word-wrap: break-word"
-              >SSR, SPA, PWA, vue3, vueRouter, vuex, pinia, axios, quasar,
-              tailwind, css, scss, html, js</span
-            >
-          </div>
-          <div
-            class="row no-wrap q-mt-sm"
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430,
-            }"
-          >
-            <q-chip
-              color="red-7"
-              text-color="white"
-              :clickable="false"
-              :class="{
-                'font-16': $q.screen.width > 430,
-                'font-9': $q.screen.width <= 430,
-              }"
-              label="OTHER"
-              :style="
-                $q.screen.width > 430
-                  ? { 'min-width': '115px', 'max-width': '115px' }
-                  : { 'min-width': '65px', 'max-width': '65px' }
-              "
-            />
-            <div class="q-ml-sm" style="word-wrap: break-word">
-              <span>Non-GUI {{ t("applications in") }} C/C++/Python/Java</span
-              ><br />
-              <span
-                >{{ t("Development of bots for VKontakte and") }} Discord</span
-              ><br />
-              <span>{{ t("Working with the HTTP protocol") }}</span
-              ><br />
-              <span>{{
-                t("Writing parsers for websites and other resources")
-              }}</span
-              ><br />
-              <span>{{ t("Microcontroller programming") }}</span
-              ><br />
-              <span>{{ t("Experience with") }} Linux</span><br />
+      <div>
+        <h2 class="text-center">Моушен дизайн</h2>
+        <div class="row justify-center" style="gap:27px; margin-top: 50px">
+          <div class="bg-main-page container column justify-between"
+               v-for="(item,index) in animaitedItems" :key="index">
+            <div class="row justify-center">
+              <q-img :src="require(`assets/icons/animaited/${item.icon}.svg`)" alt="item.name" height="114px"
+                     fit="none"/>
+            </div>
+            <div class="column justify-center col">
+              <span class="text-weight-regular text-center no-margin text-h6">{{ item.name }}</span>
             </div>
           </div>
         </div>
-        <h3
-          class="q-mb-none"
-          :class="{
-            'font-34': $q.screen.width > 430,
-            'font-16': $q.screen.width <= 430,
-          }"
-        >
-          {{ t("Didn't find what you were looking for?") }}
-        </h3>
-        <div
-          :class="{
-            'q-mt-sm': $q.screen.width > 430,
-            'q-mt-none': $q.screen.width <= 430,
-          }"
-        >
-          <span
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430,
-            }"
-            >{{
-              t(
-                "Write to us for a consultation via Telegram or Email, and the manager will assist in finding the necessary information. We are always ready to help you resolve any questions and provide the necessary support."
-              )
-            }}</span
-          >
+      </div>
+      <div>
+        <h2 class="text-center">Разработка</h2>
+        <div class="row justify-center" style="gap:27px; margin-top: 50px">
+          <div class="bg-main-page container column justify-between"
+               v-for="(item,index) in develop" :key="index">
+            <div class="row justify-center">
+              <q-img :src="require(`assets/icons/develop/${item.icon}.svg`)" alt="item.name" height="114px"
+                     fit="none"/>
+            </div>
+            <div class="column justify-center col">
+              <span class="text-weight-regular text-center no-margin text-h6">{{ item.name }}</span>
+            </div>
+          </div>
         </div>
-        <h3
-          class="q-mb-none"
-          :class="{
-            'font-34': $q.screen.width > 430,
-            'font-16': $q.screen.width <= 430,
-          }"
-        >
-          {{ t("Prices") }}
-        </h3>
-        <div
-          :class="{
-            'q-mt-sm': $q.screen.width > 430,
-            'q-mt-none': $q.screen.width <= 430,
-          }"
-        >
-          <span
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-9': $q.screen.width <= 430,
-            }"
-            >{{
-              t(
-                "Unique price for a unique project. We adapt the cost of our services to your technical requirements. Find out the exact cost of your project by contacting the manager."
-              )
-            }}</span
-          >
+      </div>
+      <div class="text-center column" style="gap:50px">
+        <h2 class="block">Форматы работы</h2>
+        <div class="row full-width justify-center">
+          <div class="col-7">
+            <div class="row justify-center no-wrap" style="gap:27px;">
+              <div class="container column" style="padding: 25px 17px; width: auto; height: auto">
+                <div class="row justify-center">
+                  <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
+                    <q-img :src="require('assets/icons/location.svg')" width="23px"/>
+                  </div>
+                </div>
+                <span class="text-h5 text-weight-regular q-mt-md">Фиксированная цена</span>
+                <h5 style="font-size: 16px; line-height: 25px; margin-top: 8px">В этом формате устанавливается
+                  фиксированная стоимость за весь проект. Это идеальный вариант для
+                  небольших проектов, когда объем работ и сроки четко определены. Но менее гибок для дополнительных
+                  изменений, что часто случается на больших проектах.
+                </h5>
+              </div>
+              <div class="container column" style="padding: 25px 17px; width: auto; height: auto">
+                <div class="row justify-center">
+                  <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
+                    <q-img :src="require('assets/icons/time.svg')" width="23px"/>
+                  </div>
+                </div>
+                <span class="text-h5 text-weight-regular q-mt-md">Оплата за часы</span>
+                <h5 style="font-size: 16px; line-height: 25px; margin-top: 8px">Оплата производится за фактически
+                  отработанное время. Этот формат подходит для более сложных проектов с нечетким объемом работ или
+                  гибкими требованиями. При этом выборе формата работы мы будем использовать специальный софт.
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center column">
+        <h2 class="block">Не нашли что искали?</h2>
+        <div class="row justify-center">
+          <h5 class="block col-8">Напишите нам для консультации через Telegram или Email, и менеджер окажет помощь в
+            поиске нужной информации. Мы всегда готовы помочь вам решить любые вопросы и предоставить необходимую
+            поддержку.</h5>
+        </div>
+      </div>
+      <div class="text-center column">
+        <h2 class="block">Цены</h2>
+        <div class="row justify-center">
+          <h5 class="block col-8">Цена уникальна для важдого проекта. Мы адаптируем стоимость наших услуг под ваши
+            технические требования, бюджет и сроки. Узнайте точную стоимость вашего проекта, связавшись с
+            менеджером.</h5>
+        </div>
+      </div>
+      <div class="column text-center full-width">
+        <div class="row justify-center">
+          <div class="column justify-start col-8 container full-width" style="height: fit-content; padding: 46px 0">
+            <h2 class="block">Узнать цену проекта</h2>
+            <h5 class="block">Получите бесплатный расчет стоимости ваших идей</h5>
+            <div class="row justify-center" style="margin-top: 35px; gap:16px;">
+              <q-btn class="bg-red-button text-white linkCustom" style="border-radius: 8px; font-weight: 500"
+                     :ripple="{ color: 'black' }" unelevated no-caps padding="16px 30px"
+                     label="Консультация"
+              />
+              <q-btn class="bg-white linkCustom btn-shdow" style="border-radius: 8px; font-weight: 500"
+                     :ripple="{ color: 'black' }" unelevated no-caps padding="16px 30px"
+                     label="Написать нам по контактам"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -271,95 +136,130 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-const graphics = ref([
+import {ref} from "vue";
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n();
+const graphicsItems = ref([
   {
     icon: "1",
-    name: t("Logo"),
+    name: "Логотип",
   },
   {
     icon: "2",
-    name: t("Form style"),
+    name: "Фирменный стиль",
   },
   {
     icon: "3",
-    name: t("Advertising creative"),
+    name: "Рекламный креатив",
   },
   {
     icon: "4",
-    name: t("SMM design (Packaging)"),
+    name: "SMM-дизайн",
   },
   {
     icon: "5",
-    name: t("Brandbook"),
+    name: "Брендбук",
   },
 ]);
 
 const UI_UX = ref([
   {
     icon: "1",
-    name: t("Landing"),
+    name: "Лендинг",
   },
   {
     icon: "2",
-    name: t("Corporate website"),
+    name: "Корпоративный сайт",
   },
   {
     icon: "3",
-    name: t("Promo website"),
+    name: "Промо-сайт",
   },
   {
     icon: "4",
-    name: t("Online store"),
+    name: "Интернет-магазин",
   },
   {
     icon: "5",
-    name: t("Online service"),
+    name: "Онлайн-сервис",
   },
   {
     icon: "6",
-    name: t("Mobile app"),
+    name: "Пользовательский интерфейс",
   },
   {
     icon: "7",
-    name: t("User interface"),
+    name: "Мобильное приложение",
+  },
+]);
+
+const animaitedItems = ref([
+  {
+    icon: "1",
+    name: "Анимированный логотип",
+  },
+  {
+    icon: "2",
+    name: "Анимированный ролик",
+  },
+  {
+    icon: "3",
+    name: "Анимированный рекламный креатив",
+  },
+  {
+    icon: "4",
+    name: "Анимации для сайта",
+  },
+]);
+
+const develop = ref([
+  {
+    icon: "1",
+    name: "Чат-бот",
+  },
+  {
+    icon: "2",
+    name: "Front-end",
+  },
+  {
+    icon: "3",
+    name: "Back-end",
+  },
+  {
+    icon: "4",
+    name: "Desktop приложение",
   },
 ]);
 </script>
 
 <style scoped lang="scss">
-.blockSkill {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.04),
-    rgba(255, 255, 255, 0.04)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
+.container {
+  box-shadow: 0 1px 2px 0 #1018280F, 0 1px 3px 0 #1018281A;
+  border: 1px solid #D0D5DD;
+  border-radius: 14px;
+  width: 263px;
+  height: 263px;
+  padding: 40px 0 0;
 }
 
-.blockSkill-size {
-  width: 116px;
-  height: 116px;
+.container span {
+  padding: 0 16px;
 }
 
-@media (min-width: 769px) {
-  .blockSkill-size {
-    width: 207px;
-    height: 207px;
-  }
+h2 {
+  font-size: 36px;
+  color: #101828;
+  font-weight: 600;
+  line-height: 44px;
+  margin: 12px 0 0 0;
 }
 
-@media (min-width: 431px) {
-  .blockSkill-size {
-    width: 190px;
-    height: 190px;
-  }
-}
-
-:deep(.q-chip__content) {
-  justify-content: center;
+h5 {
+  color: #475467;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 20px 0 0 0;
 }
 </style>

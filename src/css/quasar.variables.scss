@@ -12,9 +12,9 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-$typography-font-family: "Nunito Sans", sans-serif !default;
+$typography-font-family: "Inter", sans-serif !default;
 
 $text-weights: (
   thin: 300,
@@ -25,7 +25,7 @@ $text-weights: (
   bolder: 800,
 ) !default;
 
-$main-page: #04060a;
+$main-page: #FCFCFC;
 $header-color: rgba(4, 6, 10, 0.21);
 $grey-separator: rgba(255, 255, 255, 0.1);
 $red-button: #dc143b;
@@ -33,15 +33,19 @@ $red-button: #dc143b;
 .bg-main-page {
   background-color: $main-page;
 }
+
 .bg-header-black {
   background-color: $header-color;
 }
+
 .bg-grey-separator {
   background-color: $grey-separator !important;
 }
+
 .bg-red-button {
   background-color: $red-button !important;
 }
+
 .text-red-button {
   color: $red-button;
 }
@@ -50,6 +54,7 @@ $red-button: #dc143b;
 
 $red-7: #dc143b;
 $red-6: #470c1a;
+$blue-1: #344054;
 
 // --------------------------------------
 

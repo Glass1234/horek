@@ -1,63 +1,56 @@
 <template>
-  <div
-    class="relative-position bg-red-7"
-    style="width: 430px; border-radius: 30px"
-  >
-    <div class="sticky" style="padding: 30px; z-index: 10">
-      <div class="text-center text-white">
-        <div class="font-28">{{ t("Discuss your project") }}</div>
-        <div class="font-16" style="color: rgba(255, 255, 255, 0.75)">
-          {{ t("Specify the contact person to contact") }}<br />
-          {{ t("(Telegram or Email)") }}
-        </div>
+  <div class="bg-white" style="padding: 39px 37px; z-index: 10; border-radius: 18px">
+    <div class="text-center">
+      <div class="text-h5 text-weight-regular" style="color: #1C274C;">
+        Запрос на<br>консультацию
       </div>
-      <div class="q-mt-lg column" style="gap: 8px">
-        <q-input
-          v-model="modalDis.userName"
-          :placeholder="t('Name')"
-          color="green-2"
-          bg-color="white"
-          outlined
-          dense
-          class="inputCustom"
-        />
-        <q-input
-          v-model="modalDis.userContact"
-          :placeholder="t('Contact')"
-          color="green-2"
-          bg-color="white"
-          outlined
-          dense
-          class="inputCustom"
-        />
-        <q-btn
-          @click="modalDis.sendData()"
-          :disable="
-            !(modalDis.userName.length > 0 && modalDis.userContact.length > 0)
-          "
-          :loading="modalDis.isSendRequest"
-          :label="t('Send')"
-          color="black"
-          no-caps
-          style="border-radius: 8px"
-        />
+      <div class="font-16 q-mt-sm" style="color: #475467">
+        Укажите контакты для связи<br>(Telegram или Email)
       </div>
     </div>
-    <div class="absolute" style="bottom: 0; left: 0">
-      <q-img src="images/modalLogoLeft.png" height="286px" width="299px" />
+    <div class="q-mt-lg column" style="gap: 16px; width: 320px;">
+      <div class="column" style="gap: 6px">
+        <span class="text-subtitle2" style="color: #344054">Имя</span>
+        <q-input class="inputCustom" placeholder="Введите имя"
+                 v-model="modalDis.userName"
+                 color="red-7" bg-color="white" outlined dense/>
+      </div>
+      <div class="column" style="gap: 6px">
+        <span class="text-subtitle2" style="color: #344054">Контакт</span>
+        <q-input class="inputCustom" placeholder="Введите контакт"
+                 v-model="modalDis.userName"
+                 color="red-7" bg-color="white" outlined dense/>
+      </div>
+      <div class="column" style="gap: 6px">
+        <span class="text-subtitle2" style="color: #344054">Бюджет</span>
+        <q-input class="inputCustom" placeholder="Введите бюджет"
+                 v-model="modalDis.userName"
+                 color="red-7" bg-color="white" outlined dense/>
+      </div>
+      <div class="column" style="gap: 6px">
+        <span class="text-subtitle2" style="color: #344054">Описание вашей задачи</span>
+        <q-input class="inputCustom" placeholder="Введите описание"
+                 v-model="modalDis.userName"
+                 color="red-7" bg-color="white" outlined dense type="textarea"/>
+      </div>
+    </div>
+    <div class="q-mt-lg">
+      <q-btn class="bg-red-button text-white linkCustom full-width" style="border-radius: 8px; font-weight: 500"
+             :ripple="{ color: 'black' }" unelevated no-caps padding="10px 14px"
+             label="Отправить"/>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
-import { useStore } from "vuex";
-import { useI18n } from "vue-i18n";
-import { useQuasar } from "quasar";
+import {reactive, ref} from "vue";
+import {useStore} from "vuex";
+import {useI18n} from "vue-i18n";
+import {useQuasar} from "quasar";
 
 const $q = useQuasar();
 
-const { t, locale } = useI18n();
+const {t, locale} = useI18n();
 
 const $store = useStore();
 
@@ -96,3 +89,14 @@ class modalDiscuss {
 
 const modalDis = reactive(new modalDiscuss());
 </script>
+
+<style scoped lang="scss">
+.inputCustom:deep(.q-field__control) {
+  border-radius: 8px;
+}
+
+.inputCustom:deep(.q-field__native) {
+  color: #667085;
+  resize: none;
+}
+</style>

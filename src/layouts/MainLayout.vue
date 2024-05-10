@@ -9,26 +9,13 @@
           : { 'max-width': '100%', 'max-height': '100%' }
       "
     />
-    <headerCustom />
+    <headerCustom/>
 
-    <q-page-container
-      class="sticky"
-      style="z-index: 10"
-      :style="
-        $q.screen.width > 768
-          ? { 'padding-top': '80px' }
-          : { 'padding-top': '10px' }
-      "
-    >
-      <router-view />
+    <q-page-container class="sticky"
+                      style="z-index: 10; padding-top: 200px;">
+      <router-view/>
     </q-page-container>
-    <footerCustom />
-    <q-img
-      v-if="isIndexPage"
-      class="absolute"
-      src="images/footerglow.png"
-      style="max-width: 100%; max-height: 100%; bottom: 0"
-    />
+    <footerCustom/>
   </q-layout>
 </template>
 
@@ -36,10 +23,10 @@
 import headerCustom from "components/headerCustom.vue";
 import footerCustom from "components/footerCustom.vue";
 
-import { useStore } from "vuex";
-import { useSSRContext, computed, onMounted } from "vue";
-import { useRoute } from "vue-router";
-import { useI18n } from "vue-i18n";
+import {useStore} from "vuex";
+import {useSSRContext, computed, onMounted} from "vue";
+import {useRoute} from "vue-router";
+import {useI18n} from "vue-i18n";
 
 const $store = useStore();
 
@@ -62,7 +49,7 @@ const $store = useStore();
 }
 
 // NO SSR
-const { locale } = useI18n();
+const {locale} = useI18n();
 const route = useRoute();
 
 locale.value =
