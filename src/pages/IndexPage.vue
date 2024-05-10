@@ -13,12 +13,10 @@
         <div class="row justify-center" style="margin-top: 64px; gap:16px;">
           <q-btn class="bg-red-button text-white linkCustom" style="border-radius: 8px; font-weight: 500"
                  :ripple="{ color: 'black' }" unelevated no-caps padding="16px 30px"
-                 label="Смотреть портфолио"
-          />
+                 label="Смотреть портфолио" to="/portfolio"/>
           <q-btn class="bg-white linkCustom btn-shdow" style="border-radius: 8px; font-weight: 500"
                  :ripple="{ color: 'black' }" unelevated no-caps padding="16px 30px"
-                 :label="t('Consultation')"
-          />
+                 :label="t('Consultation')" @click="modalDis.isOpenModal = true"/>
         </div>
       </div>
       <div class="column text-center full-width">
@@ -30,7 +28,7 @@
         </div>
         <div class="row justify-center">
           <div class="row justify-center col-8" style="margin-top: 50px; gap: 27px;">
-            <div class="container col column justify-between">
+            <div class="container containerP col column justify-between">
               <div class="row justify-center">
                 <div class="q-pa-sm relative-position"
                      style="border: 1px solid #D0D5DD; border-radius: 24px; overflow: hidden;">
@@ -47,7 +45,7 @@
                 <span class="q-mt-sm containerDescription">Создаем современные решения, следуем актуальным трендам и технологиям</span>
               </div>
             </div>
-            <div class="container col column justify-between">
+            <div class="container containerP col column justify-between">
               <div class="row justify-center">
                 <div class="shield-animation">
                   <q-img :src="require('assets/indexPage/armor.png')" width="103px"/>
@@ -58,7 +56,7 @@
                 <span class="q-mt-sm containerDescription">Обеспечиваем 100% анонимность и не выкладываем проект в портфолио по запросу</span>
               </div>
             </div>
-            <div class="container col column justify-between">
+            <div class="container containerP col column justify-between">
               <div class="row justify-center">
                 <div class="shield-animation">
                   <q-img :src="require('assets/indexPage/armor.png')" width="103px"/>
@@ -81,7 +79,7 @@
         </div>
         <div class="row justify-center">
           <div class="row justify-center col-8" style="margin-top: 50px; gap: 27px;">
-            <div class="container col column justify-start">
+            <div class="container containerP col column justify-start">
               <div class="row items-start">
                 <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
                   <q-img :src="require('assets/indexPage/disign.svg')" width="23px"/>
@@ -92,7 +90,7 @@
                 <span class="q-mt-sm containerDescription">Брендинг, фирменный стиль, рекламные креативы, SMM-дизайн, брендбук</span>
               </div>
             </div>
-            <div class="container col column justify-start">
+            <div class="container containerP col column justify-start">
               <div class="row items-start">
                 <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
                   <q-img :src="require('assets/indexPage/paymedCard.svg')" width="23px"/>
@@ -103,7 +101,7 @@
                 <span class="q-mt-sm containerDescription">Дизайн сайтов, мобильных приложений, пользовательских интерфейсов</span>
               </div>
             </div>
-            <div class="container col column justify-start">
+            <div class="container containerP col column justify-start">
               <div class="row items-start">
                 <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
                   <q-img :src="require('assets/indexPage/circle.svg')" width="23px"/>
@@ -114,7 +112,7 @@
                 <span class="q-mt-sm containerDescription">Поможем оживить ваш проект и привлечь внимание аудитории с помощью анимаций</span>
               </div>
             </div>
-            <div class="container col column justify-start">
+            <div class="container containerP col column justify-start">
               <div class="row items-start">
                 <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
                   <q-img :src="require('assets/indexPage/code.svg')" width="23px"/>
@@ -131,8 +129,7 @@
           <q-btn class="bg-red-button text-subtitle1 text-white linkCustom"
                  style="border-radius: 8px; font-weight: 500;"
                  :ripple="{ color: 'black' }" unelevated no-caps padding="16px 30px"
-                 label="Посмотреть все"
-          />
+                 label="Посмотреть все" to="/services"/>
         </div>
       </div>
       <div class="column text-center full-width">
@@ -144,7 +141,7 @@
         </div>
         <div class="row justify-center relative-position" style="margin-top: 50px">
           <div class="row justify-center col-8" style="gap: 27px;">
-            <div class="container col column justify-start bg-main-page">
+            <div class="container containerP col column justify-start bg-main-page">
               <div class="stageLevel column justify-center">
                 01
               </div>
@@ -153,7 +150,7 @@
                 <span class="q-mt-sm containerDescription">Обсуждаем проект, его целей и задачи, собираем общую информацию, определяем бюджет и сроки проекта</span>
               </div>
             </div>
-            <div class="container col column justify-start bg-main-page">
+            <div class="container containerP col column justify-start bg-main-page">
               <div class="stageLevel column justify-center">
                 02
               </div>
@@ -162,7 +159,7 @@
                 <span class="q-mt-sm containerDescription">Разрабатываем идеи, анализируем решения, создаем концепции и выбираем наиболее подходящие</span>
               </div>
             </div>
-            <div class="container col column justify-start bg-main-page">
+            <div class="container containerP col column justify-start bg-main-page">
               <div class="stageLevel column justify-center">
                 03
               </div>
@@ -171,7 +168,7 @@
                 <span class="q-mt-sm containerDescription">Распределяем роли, приступаем к выполнению задач согласно техническому заданию и плану</span>
               </div>
             </div>
-            <div class="container col column justify-start bg-main-page">
+            <div class="container containerP col column justify-start bg-main-page">
               <div class="stageLevel column justify-center">
                 04
               </div>
@@ -194,7 +191,7 @@
         </div>
         <div class="row justify-center" style="margin-top: 50px;">
           <div class="row justify-center col-8" style="gap: 27px;">
-            <div class="container no-padding col column justify-start">
+            <div class="container containerP no-padding col column justify-start cursor-pointer">
               <q-img class="" style="border-radius: 14px 14px 0 0; top:0"
                      :src="require('assets/projects/preview/23.png')">
                 <div class="full-width full-height"
@@ -209,7 +206,7 @@
               </q-img>
               <span class="q-mt-xs containerDescription text-left" style="padding: 0 38px 33px">Интернет-магазин китайского чая и чайной посуды</span>
             </div>
-            <div class="container no-padding col column justify-start">
+            <div class="container containerP no-padding col column justify-start cursor-pointer">
               <q-img class="" style="border-radius: 14px 14px 0 0; top:0"
                      :src="require('assets/projects/preview/23.png')">
                 <div class="full-width full-height"
@@ -224,7 +221,7 @@
               </q-img>
               <span class="q-mt-xs containerDescription text-left" style="padding: 0 38px 33px">Интернет-магазин китайского чая и чайной посуды</span>
             </div>
-            <div class="container no-padding col column justify-start">
+            <div class="container containerP no-padding col column justify-start cursor-pointer">
               <q-img class="" style="border-radius: 14px 14px 0 0; top:0"
                      :src="require('assets/projects/preview/23.png')">
                 <div class="full-width full-height"
@@ -241,7 +238,7 @@
             </div>
           </div>
           <div class="row justify-center col-8" style="gap: 27px; margin-top: 27px">
-            <div class="container no-padding col column justify-start">
+            <div class="container containerP no-padding col column justify-start cursor-pointer">
               <q-img class="" style="border-radius: 14px 14px 0 0; top:0"
                      :src="require('assets/projects/preview/23.png')">
                 <div class="full-width full-height"
@@ -256,7 +253,7 @@
               </q-img>
               <span class="q-mt-xs containerDescription text-left" style="padding: 0 38px 33px">Интернет-магазин китайского чая и чайной посуды</span>
             </div>
-            <div class="container no-padding col column justify-start">
+            <div class="container containerP no-padding col column justify-start cursor-pointer">
               <q-img class="" style="border-radius: 14px 14px 0 0; top:0"
                      :src="require('assets/projects/preview/23.png')">
                 <div class="full-width full-height"
@@ -271,7 +268,7 @@
               </q-img>
               <span class="q-mt-xs containerDescription text-left" style="padding: 0 38px 33px">Интернет-магазин китайского чая и чайной посуды</span>
             </div>
-            <div class="container no-padding col column justify-start">
+            <div class="container containerP no-padding col column justify-start cursor-pointer">
               <q-img class="" style="border-radius: 14px 14px 0 0; top:0"
                      :src="require('assets/projects/preview/23.png')">
                 <div class="full-width full-height"
@@ -292,14 +289,13 @@
           <q-btn class="bg-red-button text-subtitle1 text-white linkCustom"
                  style="border-radius: 8px; font-weight: 500;"
                  :ripple="{ color: 'black' }" unelevated no-caps padding="16px 30px"
-                 label="Посмотреть все"
-          />
+                 label="Посмотреть все" to="/portfolio"/>
         </div>
       </div>
       <div class="column text-center full-width">
         <div class="row justify-center">
-          <div class="column justify-start col-8 container" style="height: fit-content">
-            <h2 class="block">Узнать цену проекта</h2>
+          <div class="column justify-start col-8 container containerP" style="height: fit-content">
+            <h2 class="block no-margin">Узнать цену проекта</h2>
             <h5 class="block">Получите бесплатный расчет стоимости ваших идей</h5>
             <div class="row justify-center" style="margin-top: 35px; gap:16px;">
               <q-btn class="bg-red-button text-white linkCustom" style="border-radius: 8px; font-weight: 500"
@@ -315,17 +311,24 @@
         </div>
       </div>
     </div>
+    <q-dialog v-model="modalDis.isOpenModal">
+      <communicationModal/>
+    </q-dialog>
   </q-page>
 </template>
 
 <script setup>
-import {ref} from "vue";
-
+import {reactive, ref} from "vue";
+import communicationModal from "components/communicationModal.vue";
 import cardProject from "components/cardProject.vue";
 
 import {useI18n} from "vue-i18n";
 
 const {t} = useI18n();
+
+const modalDis = reactive({
+  isOpenModal: false,
+});
 
 const projects = ref([
   {
@@ -398,10 +401,7 @@ h5 {
   margin: 20px 0 0 0;
 }
 
-.container {
-  box-shadow: 0px 1px 2px 0px #1018280F, 0px 1px 3px 0px #1018281A;
-  border: 1px solid #D0D5DD;
-  border-radius: 14px;
+.containerP {
   padding: 33px 38px;
 }
 

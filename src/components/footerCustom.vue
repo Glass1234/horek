@@ -28,7 +28,7 @@
           </div>
         </q-btn>
         <q-btn
-          class="bg-red-button text-white linkCustom" style="border-radius: 8px; font-weight: 500"
+          class="bg-red-button text-white linkCustom" style="border-radius: 8px; font-weight: 500; font-size: 16px"
           :ripple="{ color: 'black' }" unelevated no-caps
           @click="modalDis.isOpenModal = true"
           :label="t('Consultation')"
@@ -36,6 +36,9 @@
       </div>
     </div>
   </q-footer>
+  <q-dialog v-model="modalDis.isOpenModal">
+    <communicationModal/>
+  </q-dialog>
 </template>
 
 <script setup>

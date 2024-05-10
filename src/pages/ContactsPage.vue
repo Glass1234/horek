@@ -1,145 +1,68 @@
 <template>
-  <div
-    class="row justify-center full-width text-white"
-    :class="{
-      'q-pt-lg': $q.screen.width > 430,
-    }"
-    :style="
-      $q.screen.width > 430
-        ? { 'padding-bottom': '100px' }
-        : { 'padding-bottom': '26px', 'margin-top': '-50px' }
-    "
-  >
-    <div
-      :class="{
-        'col-8': $q.screen.width > 768,
-        'col-10': $q.screen.width <= 768 && $q.screen.width > 430,
-        'col-11': $q.screen.width <= 430,
-      }"
-      :style="$q.screen.width > 430 ? {} : { padding: '0 7px' }"
-    >
-      <q-breadcrumbs
-        class="font-15"
-        active-color="white"
-        gutter="sm"
-        :style="$q.screen.width > 430 ? {} : { display: 'none' }"
-      >
-        <q-breadcrumbs-el :label="t('Home')" to="/" />
-        <q-breadcrumbs-el :label="t('Contacts')" />
-      </q-breadcrumbs>
-      <h1
-        class="q-mb-none"
-        :class="{
-          'font-34': $q.screen.width > 430,
-          'font-16': $q.screen.width <= 430,
-        }"
-      >
-        {{ t("Contacts") }}
-      </h1>
-      <div
-        class="row"
-        style="gap: 64px"
-        :style="$q.screen.width > 430 ? {} : { gap: '25px 72px' }"
-      >
-        <div class="column" style="gap: 4px 0">
-          <span
-            :class="{
-              'font-17': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-            style="color: rgba(255, 255, 255, 0.5)"
-          >
-            {{ t("Mail") }}
-          </span>
-          <div
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-          >
-            <a href="mailto:manager@horek.design" class="text-white"
-              >manager@horek.design
-            </a>
+  <div class="row justify-center full-width"
+       style="padding-bottom: 75px">
+    <div class="col-8 column items-center">
+      <h1 class="no-margin">Контакты</h1>
+      <div class="q-mt-md row justify-center full-width" style="gap:26px">
+        <div class="container containerP row items-center cursor-pointer col-3" style="gap:20px"
+             @click="openItem('https://t.me/horekmanager')">
+          <div class="row items-start">
+            <div style="padding: 11px; border: 1px solid #EAEAEB; border-radius: 14px;">
+              <q-img :src="require('assets/icons/telegramBlue.svg')" width="31px"/>
+            </div>
+          </div>
+          <div class="column">
+            <span class="text-h6 text-weight-regular" style="color: #101828">Telegram</span>
+            <span class="text-subtitle1" style="color: #475467">@horekmanager</span>
           </div>
         </div>
-        <div class="column" style="gap: 4px 0">
-          <span
-            :class="{
-              'font-17': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-            style="color: rgba(255, 255, 255, 0.5)"
-          >
-            Telegram
-          </span>
-          <div
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-          >
-            <a
-              href="https://t.me/horekmanager"
-              class="text-white"
-              target="_blank"
-              >@horekmanager</a
-            >
+        <div class="container containerP row items-center cursor-pointer col-3" style="gap:20px"
+             @click="openItem('https://t.me/horekportfolio')">
+          <div class="row items-start">
+            <div style="padding: 11px; border: 1px solid #EAEAEB; border-radius: 14px;">
+              <q-img :src="require('assets/icons/telegramBlue.svg')" width="31px"/>
+            </div>
+          </div>
+          <div class="column">
+            <span class="text-h6 text-weight-regular" style="color: #101828">Telegram-канал</span>
+            <span class="text-subtitle1" style="color: #475467">@horekportfolio</span>
           </div>
         </div>
-        <div class="column" style="gap: 4px 0">
-          <span
-            :class="{
-              'font-17': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-            style="color: rgba(255, 255, 255, 0.5)"
-          >
-            {{ t("Telegram channel") }}
-          </span>
-          <div
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-          >
-            <a
-              href="https://t.me/horekportfolio"
-              class="text-white"
-              target="_blank"
-              >@horekportfolio</a
-            >
+        <div class="container containerP row items-center cursor-pointer col-3" style="gap:20px"
+             @click="openItem('mailto:manager@horek.design')">
+          <div class="row items-start">
+            <div style="padding: 8px; border: 1px solid #EAEAEB; border-radius: 14px;">
+              <q-img :src="require('assets/icons/email.svg')" width="31px"/>
+            </div>
+          </div>
+          <div class="column">
+            <span class="text-h6 text-weight-regular" style="color: #101828">Email</span>
+            <span class="text-subtitle1" style="color: #475467">manager@horek.design</span>
           </div>
         </div>
-        <div class="column" style="gap: 4px 0">
-          <span
-            :class="{
-              'font-17': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-            style="color: rgba(255, 255, 255, 0.5)"
-          >
-            {{ t("Work time") }}
-          </span>
-          <div
-            :class="{
-              'font-16': $q.screen.width > 430,
-              'font-12': $q.screen.width <= 430,
-            }"
-          >
-            9:00 - 23:00 {{ t("Mon-Fri") }}
-          </div>
-        </div>
-      </div>
-      <div class="q-mt-lg">
-        <span class="font-16">{{ t("Check your contacts.") }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n();
+
+const openItem = (url) => {
+  window.open(url, '_blank');
+}
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.containerP {
+  padding: 29px 32px;
+}
+
+h1 {
+  color: #101828;
+  font-weight: 600;
+  font-size: 36px;
+}
+</style>

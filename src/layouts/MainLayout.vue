@@ -1,14 +1,9 @@
 <template>
   <q-layout class="bg-main-page position-relative" view="lHh Lpr lff">
-    <q-img
-      class="absolute"
-      src="images/luminescence.png"
-      :style="
-        $q.screen.width <= 768
-          ? { 'max-width': '100%', height: '100vh' }
-          : { 'max-width': '100%', 'max-height': '100%' }
-      "
-    />
+    <template v-if="isIndexPage">
+      <q-img class="absolute"
+             src="images/luminescence.png"/>
+    </template>
     <headerCustom/>
 
     <q-page-container class="sticky"

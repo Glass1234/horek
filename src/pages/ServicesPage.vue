@@ -5,7 +5,7 @@
       <div>
         <h2 class="text-center">Графический дизайн</h2>
         <div class="row justify-center" style="gap:27px; margin-top: 50px">
-          <div class="bg-main-page container column justify-between"
+          <div class="bg-main-page container containerP column justify-between"
                v-for="(item,index) in graphicsItems" :key="index">
             <div class="row justify-center">
               <q-img :src="require(`assets/icons/graphDesign/${item.icon}.svg`)" alt="item.name" height="114px"
@@ -20,7 +20,7 @@
       <div>
         <h2 class="text-center">Веб и UI\UX</h2>
         <div class="row justify-center" style="gap:27px; margin-top: 50px">
-          <div class="bg-main-page container column justify-between"
+          <div class="bg-main-page container containerP column justify-between"
                v-for="(item,index) in UI_UX" :key="index">
             <div class="row justify-center">
               <q-img :src="require(`assets/icons/UI_UXIcons/${item.icon}.svg`)" alt="item.name" height="114px"
@@ -35,7 +35,7 @@
       <div>
         <h2 class="text-center">Моушен дизайн</h2>
         <div class="row justify-center" style="gap:27px; margin-top: 50px">
-          <div class="bg-main-page container column justify-between"
+          <div class="bg-main-page container containerP column justify-between"
                v-for="(item,index) in animaitedItems" :key="index">
             <div class="row justify-center">
               <q-img :src="require(`assets/icons/animaited/${item.icon}.svg`)" alt="item.name" height="114px"
@@ -50,7 +50,7 @@
       <div>
         <h2 class="text-center">Разработка</h2>
         <div class="row justify-center" style="gap:27px; margin-top: 50px">
-          <div class="bg-main-page container column justify-between"
+          <div class="bg-main-page container containerP column justify-between"
                v-for="(item,index) in develop" :key="index">
             <div class="row justify-center">
               <q-img :src="require(`assets/icons/develop/${item.icon}.svg`)" alt="item.name" height="114px"
@@ -67,7 +67,7 @@
         <div class="row full-width justify-center">
           <div class="col-7">
             <div class="row justify-center no-wrap" style="gap:27px;">
-              <div class="container column" style="padding: 25px 17px; width: auto; height: auto">
+              <div class="container containerP column" style="padding: 25px 17px; width: auto; height: auto">
                 <div class="row justify-center">
                   <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
                     <q-img :src="require('assets/icons/location.svg')" width="23px"/>
@@ -80,7 +80,7 @@
                   изменений, что часто случается на больших проектах.
                 </h5>
               </div>
-              <div class="container column" style="padding: 25px 17px; width: auto; height: auto">
+              <div class="container containerP column" style="padding: 25px 17px; width: auto; height: auto">
                 <div class="row justify-center">
                   <div style="padding: 16px; border: 1px solid #EAEAEB; border-radius: 14px;">
                     <q-img :src="require('assets/icons/time.svg')" width="23px"/>
@@ -115,8 +115,8 @@
       </div>
       <div class="column text-center full-width">
         <div class="row justify-center">
-          <div class="column justify-start col-8 container full-width" style="height: fit-content; padding: 46px 0">
-            <h2 class="block">Узнать цену проекта</h2>
+          <div class="column justify-start col-8 container containerP full-width" style="height: fit-content; padding: 46px 0">
+            <h2 class="block no-margin">Узнать цену проекта</h2>
             <h5 class="block">Получите бесплатный расчет стоимости ваших идей</h5>
             <div class="row justify-center" style="margin-top: 35px; gap:16px;">
               <q-btn class="bg-red-button text-white linkCustom" style="border-radius: 8px; font-weight: 500"
@@ -234,10 +234,7 @@ const develop = ref([
 </script>
 
 <style scoped lang="scss">
-.container {
-  box-shadow: 0 1px 2px 0 #1018280F, 0 1px 3px 0 #1018281A;
-  border: 1px solid #D0D5DD;
-  border-radius: 14px;
+.containerP {
   width: 263px;
   height: 263px;
   padding: 40px 0 0;
