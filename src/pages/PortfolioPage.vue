@@ -1,102 +1,39 @@
 <template>
-  <div
-    class="row justify-center full-width text-white"
-    :class="{
-      'q-pt-lg': $q.screen.width > 430,
-    }"
-    :style="
-      $q.screen.width > 430
-        ? { 'padding-bottom': '100px' }
-        : { 'padding-bottom': '26px', 'margin-top': '-20px' }
-    "
-  >
-    <div
-      :class="{
-        'col-8': $q.screen.width > 768,
-        'col-10': $q.screen.width <= 768 && $q.screen.width > 430,
-        'col-11': $q.screen.width <= 430,
-      }"
-      :style="$q.screen.width > 430 ? {} : { padding: '0 7px' }"
-    >
-      <q-breadcrumbs
-        class="font-15"
-        active-color="white"
-        gutter="sm"
-        :style="$q.screen.width > 430 ? {} : { display: 'none' }"
-      >
-        <q-breadcrumbs-el :label="t('Home')" to="/" />
-        <q-breadcrumbs-el :label="t('Portfolio')" />
-      </q-breadcrumbs>
-      <div class="q-mt-md row" style="gap: 8px">
-        <q-chip
-          v-for="(item, index) in arr.allfilters"
-          :key="index"
-          @click="arr.addFilter(item)"
-          class="cursor-pointer"
-          :class="{
-            'font-16': $q.screen.width > 430,
-            'font-13': $q.screen.width <= 430,
-          }"
-          :color="arr.usingFilters.includes(item) ? 'red-7' : 'red-6'"
-          text-color="white"
-          :clickable="true"
-          :label="item"
-        />
+  <div class="row justify-center full-width"
+       style="padding-bottom: 75px">
+    <div class="col-8 column items-center" style="color: #101828; gap:50px">
+      <div class="row"
+           style="border-radius: 8px; outline: 1px solid #D0D5DD; overflow: hidden; box-shadow: 0 10px 24px 0 #00000014;">
+        <div class="item-filter" v-for="(item,index) in filters" :key="index">
+          {{ item }}
+        </div>
       </div>
-      <div
-        class="parent"
-        :class="{
-          'q-mt-lg': $q.screen.width > 430,
-          'q-mt-md': $q.screen.width <= 430,
-        }"
-        style="gap: 14px"
-      >
-        <div v-for="(item, index) in arr.visibleProjects" :key="index">
-          <div class="column">
-            <q-img
-              class="cursor-pointer"
-              style="height: 190px; border-radius: 14px"
-              :style="
-                $q.screen.width > 430
-                  ? { height: '190px' }
-                  : { height: '115px' }
-              "
-              @click="arr.openItem(item.id)"
-              :src="item.src_preview"
-            />
-            <div class="q-px-xs q-mt-sm">
-              <span
-                class="row"
-                :class="{
-                  'font-16': $q.screen.width > 430,
-                  'font-12': $q.screen.width <= 430,
-                }"
-                >{{ item.title }}</span
-              >
-              <span style="color: #beb6b8" class="row font-10">{{
-                item.type
-              }}</span>
-            </div>
-          </div>
+      <div class="parent full-width">
+        <div class="column" v-for="(item,index) in arr.allProjects" :key="index">
+          <q-img class="cursor-pointer" style="border-radius: 20px;"
+                 @click="arr.openItem(item.id)"
+                 :src="item.src_preview"/>
+          <div class="q-mt-md text-h6 text-weight-regular" style="color: #101828">{{ item.title }}</div>
+          <div class="q-mt-xs" style="color: #475467">{{ item.type }}</div>
         </div>
       </div>
     </div>
   </div>
-  <q-dialog v-model="arr.modalItem.flag">
-    <q-img :src="arr.modalItem.src" />
-  </q-dialog>
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import { useRouter } from "vue-router";
+import {reactive, ref} from "vue";
+import {useRouter} from "vue-router";
 import projects from "src/store/projects.js";
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n();
 
 const router = useRouter();
 
-const flag = reactive({ flag: true });
+const flag = reactive({flag: true});
+
+const filters = ref(['Все', 'Графический дизайн', 'Моушен дизайн', 'Веб и UI\\UX']);
 
 class ArrProjects {
   allProjects = [];
@@ -107,12 +44,14 @@ class ArrProjects {
     src: "",
     flag: false,
   };
+
   constructor() {
     this.allfilters = [...projects.filter];
     this.allProjects = JSON.parse(JSON.stringify(projects.items));
     this.usingFilters.push("Все");
     this._setItems();
   }
+
   _setItems() {
     if (this.usingFilters.includes("Все")) {
       this.visibleProjects = JSON.parse(JSON.stringify(this.allProjects));
@@ -122,18 +61,15 @@ class ArrProjects {
       );
     }
   }
+
   addFilter(item) {
     this.usingFilters = [item];
     this._setItems();
   }
+
   openItem(id) {
     const item = this.allProjects.filter((item) => item.id === id)[0];
-    if (item.content.length) {
-      router.push({ name: "project", params: { id } });
-    } else {
-      this.modalItem.flag = true;
-      this.modalItem.src = item.src_preview;
-    }
+    router.push({name: "project", params: {id}});
   }
 }
 
@@ -141,19 +77,26 @@ const arr = reactive(new ArrProjects());
 </script>
 
 <style scoped lang="scss">
-.parent {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 26px;
-  grid-row-gap: 26px;
+.item-filter {
+  padding: 10px 16px;
+  color: #344054;
+  font-weight: 600;
+  font-size: 14px;
+  background: white;
+  outline: 1px solid #D0D5DD;
+  cursor: pointer;
+  transition: all .2s;
 }
 
-@media (min-width: 1025px) {
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 26px;
-    grid-row-gap: 26px;
-  }
+.item-filter:hover {
+  background: rgb(230, 230, 230);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 28px;
+  grid-row-gap: 28px;
 }
 </style>

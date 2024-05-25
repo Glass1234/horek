@@ -137,6 +137,7 @@ const lang = reactive(new LanguagePage());
   width: 50%;
   margin: 0 auto;
   padding-top: 33px;
+  box-shadow: 0 13px 29px 0 #7D7D7D0D, 0 53px 53px 0 #7D7D7D0A, 0 119px 71px 0 #7D7D7D08, 0 211px 84px 0 #7D7D7D03, 0 330px 92px 0 #7D7D7D00;
 }
 
 .header-row {
