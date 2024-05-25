@@ -72,17 +72,17 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/10.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/10/1.png") },
+        {type: "img", src: require("assets/projects/content/10/1.png")},
         {
           type: "text",
           title: "🔍 Дизайн логотипа",
           description: `Логотип состоит из слова "horek", написанного строчными буквами белого цвета. Шрифт без засечек, чистый, что придает логотипу современный вид. Прописные буквы делают логотип более доступным и дружелюбным. Простота дизайна облегчает запоминание и узнаваемость.
           \nОсновной элемент — это четырехугольник с закругленными углами, повернутый так, что его углы направлены к центру круга, создавая впечатление трехмерности или движения`,
         },
-        { type: "img", src: require("assets/projects/content/10/2.png") },
-        { type: "img", src: require("assets/projects/content/10/3.png") },
-        { type: "img", src: require("assets/projects/content/10/4.png") },
-        { type: "img", src: require("assets/projects/content/10/5.png") },
+        {type: "img", src: require("assets/projects/content/10/2.png")},
+        {type: "img", src: require("assets/projects/content/10/3.png")},
+        {type: "img", src: require("assets/projects/content/10/4.png")},
+        {type: "img", src: require("assets/projects/content/10/5.png")},
       ],
     },
     {
@@ -100,15 +100,15 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/12.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/12/1.png") },
+        {type: "img", src: require("assets/projects/content/12/1.png")},
         {
           type: "text",
           title: "Дизайн",
           description:
             "ExtraMedia - команда занимающаяся переводом и озвучкой. Задача состояла в визуальном оформлении группы ВК. Был разработан логотип, баннер и аватар.",
         },
-        { type: "img", src: require("assets/projects/content/12/2.png") },
-        { type: "img", src: require("assets/projects/content/12/3.png") },
+        {type: "img", src: require("assets/projects/content/12/2.png")},
+        {type: "img", src: require("assets/projects/content/12/3.png")},
       ],
     },
     {
@@ -118,7 +118,7 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/13.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/13/1.png") },
+        {type: "img", src: require("assets/projects/content/13/1.png")},
       ],
     },
     {
@@ -128,7 +128,7 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/14.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/14/1.png") },
+        {type: "img", src: require("assets/projects/content/14/1.png")},
       ],
     },
     {
@@ -138,7 +138,7 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/15.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/15/1.png") },
+        {type: "img", src: require("assets/projects/content/15/1.png")},
       ],
     },
     {
@@ -148,15 +148,15 @@ const data = {
       sort_type: "Веб и UI\\UX",
       src_preview: require("assets/projects/preview/19.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/19/1.png") },
+        {type: "img", src: require("assets/projects/content/19/1.png")},
         {
           type: "text",
           title: "Дизайн сайта",
           description:
             "Ani-me - платформа для просмотра аниме сериалов. Задачей было разработать современный сайт для проекта и логотип.",
         },
-        { type: "img", src: require("assets/projects/content/19/2.png") },
-        { type: "img", src: require("assets/projects/content/19/3.png") },
+        {type: "img", src: require("assets/projects/content/19/2.png")},
+        {type: "img", src: require("assets/projects/content/19/3.png")},
       ],
     },
     {
@@ -166,7 +166,7 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/16.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/16/1.png") },
+        {type: "img", src: require("assets/projects/content/16/1.png")},
       ],
     },
     {
@@ -176,9 +176,9 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/18.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/18/1.png") },
-        { type: "img", src: require("assets/projects/content/18/2.png") },
-        { type: "img", src: require("assets/projects/content/18/3.png") },
+        {type: "img", src: require("assets/projects/content/18/1.png")},
+        {type: "img", src: require("assets/projects/content/18/2.png")},
+        {type: "img", src: require("assets/projects/content/18/3.png")},
       ],
     },
     {
@@ -188,7 +188,7 @@ const data = {
       sort_type: "Веб и UI\\UX",
       src_preview: require("assets/projects/preview/20.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/20/1.png") },
+        {type: "img", src: require("assets/projects/content/20/1.png")},
         {
           type: "text",
           title: "О сайте",
@@ -200,8 +200,8 @@ const data = {
           title: "Дизайн",
           description: `Для сайта созданы две страницы для покупки домена и заказа хостинга на свой сайт. Обе страницы выполнены с использованием интуитивно понятного и простого интерфейса с указанием всех преимуществ сервиса, что позволяет легко разобраться и купить домен\хостинг для своего сайта.`,
         },
-        { type: "img", src: require("assets/projects/content/20/2.png") },
-        { type: "img", src: require("assets/projects/content/20/3.png") },
+        {type: "img", src: require("assets/projects/content/20/2.png")},
+        {type: "img", src: require("assets/projects/content/20/3.png")},
       ],
     },
     {
@@ -211,7 +211,7 @@ const data = {
       sort_type: "Веб и UI\\UX",
       src_preview: require("assets/projects/preview/21.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/21/1.png") },
+        {type: "img", src: require("assets/projects/content/21/1.png")},
         {
           type: "text",
           title: "О сайте",
@@ -223,8 +223,8 @@ const data = {
           title: "Дизайн",
           description: `Был разработан лендинг пейдж и интерфейс дашборда для удобного хранения, продажи и покупки криптовалют.`,
         },
-        { type: "img", src: require("assets/projects/content/21/2.png") },
-        { type: "img", src: require("assets/projects/content/21/3.png") },
+        {type: "img", src: require("assets/projects/content/21/2.png")},
+        {type: "img", src: require("assets/projects/content/21/3.png")},
       ],
     },
     // {
@@ -256,7 +256,7 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/23.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/23/1.png") },
+        {type: "img", src: require("assets/projects/content/23/1.png")},
         {
           type: "text",
           title: "О магазине",
@@ -269,12 +269,12 @@ const data = {
           Основным символом в дизайне является Гайвань - традиционный китайский чайный посуд для заваривания чая. Этот символ отражает идею бренда, воплощая в себе идею внимания к деталям и традиций чаепития.\n
           Фирменный стиль магазина выполен в минималистичном стиле, что стремиться создать атмосферу спокойствия и простоты.`,
         },
-        { type: "img", src: require("assets/projects/content/23/2.png") },
-        { type: "img", src: require("assets/projects/content/23/3.png") },
-        { type: "img", src: require("assets/projects/content/23/4.png") },
-        { type: "img", src: require("assets/projects/content/23/5.png") },
-        { type: "img", src: require("assets/projects/content/23/6.png") },
-        { type: "img", src: require("assets/projects/content/23/7.png") },
+        {type: "img", src: require("assets/projects/content/23/2.png")},
+        {type: "img", src: require("assets/projects/content/23/3.png")},
+        {type: "img", src: require("assets/projects/content/23/4.png")},
+        {type: "img", src: require("assets/projects/content/23/5.png")},
+        {type: "img", src: require("assets/projects/content/23/6.png")},
+        {type: "img", src: require("assets/projects/content/23/7.png")},
       ],
     },
     {
@@ -284,7 +284,7 @@ const data = {
       sort_type: "Графика",
       src_preview: require("assets/projects/preview/24.png"),
       content: [
-        { type: "img", src: require("assets/projects/content/24/1.png") },
+        {type: "img", src: require("assets/projects/content/24/1.png")},
         {
           type: "text",
           title: "О проекте",
@@ -304,14 +304,37 @@ const data = {
           Ярко-синий цвет часто ассоциируется с надежностью, безопасностью и доверием. Темно-синий цвет носит характер профессионализма и стабильности.\n
           Белый цвет используется для создания контраста и чистоты дизайна.`,
         },
-        { type: "img", src: require("assets/projects/content/24/2.png") },
-        { type: "img", src: require("assets/projects/content/24/3.png") },
-        { type: "img", src: require("assets/projects/content/24/4.png") },
-        { type: "img", src: require("assets/projects/content/24/5.png") },
-        { type: "img", src: require("assets/projects/content/24/6.png") },
-        { type: "img", src: require("assets/projects/content/24/7.png") },
-        { type: "img", src: require("assets/projects/content/24/8.png") },
-        { type: "img", src: require("assets/projects/content/24/9.png") },
+        {type: "img", src: require("assets/projects/content/24/2.png")},
+        {type: "img", src: require("assets/projects/content/24/3.png")},
+        {type: "img", src: require("assets/projects/content/24/4.png")},
+        {type: "img", src: require("assets/projects/content/24/5.png")},
+        {type: "img", src: require("assets/projects/content/24/6.png")},
+        {type: "img", src: require("assets/projects/content/24/7.png")},
+        {type: "img", src: require("assets/projects/content/24/8.png")},
+        {type: "img", src: require("assets/projects/content/24/9.png")},
+      ],
+    },
+    {
+      id: 25,
+      title: "Hodler",
+      type: "Мобильное приложение",
+      sort_type: "Веб и UI\\UX",
+      src_preview: require("assets/projects/preview/25.png"),
+      content: [
+        {type: "img", src: require("assets/projects/content/25/1.png")},
+        {
+          type: "text",
+          title: "О проекте",
+          description: `Hodler - web3 криптокошелек, разработанный на основе децентрализованной системы и предоставляющий услуги управления криптовалютными активами.`,
+        },
+        {
+          type: "text",
+          title: "Дизайн",
+          description: `Основное направление дизайна  криптокошелька сосредоточено на простоте и удобстве использования. Это достигается благодаря четко организованной структуре интерфейса, интуитивно понятной навигации и минималистичному подходу к визуальному оформлению.\n
+          Синяя палитра играет ключевую роль в дизайне вашего криптокошелька, придавая ему профессиональный и современный вид. Темно-синий основной фон обеспечивает не только эстетическую привлекательность, но и функциональные преимущества, такие как хорошая читаемость текста и контрастность между элементами интерфейса.`,
+        },
+        {type: "img", src: require("assets/projects/content/25/2.png")},
+        {type: "img", src: require("assets/projects/content/25/3.png")},
       ],
     },
   ],
